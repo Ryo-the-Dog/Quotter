@@ -1,3 +1,5 @@
+import { getCookieValue } from './util' // CSRFのクッキーの値を取得するため
+
 window._ = require('lodash');
 
 /**

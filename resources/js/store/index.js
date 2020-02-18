@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 // auth.jsをインポート
 import auth from './auth'
 
+// Vuex プラグインの使用を宣言することで、this.$store からストアを参照できる。
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -12,4 +13,4 @@ const store = new Vuex.Store({
     }
 })
 
-export default store
+export default store // app.jsで読み込む

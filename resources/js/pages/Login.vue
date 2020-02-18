@@ -59,11 +59,22 @@
             }
         },
         methods: {
-            login () {
-                console.log(this.loginForm)
+            async register () {
+                // index.jsでVuex プラグインの使用を宣言したことで、this.$store からストアを参照できる。
+                // authストアのresigterアクションを呼び出す
+                // dispatch メソッドの第一引数はアクションの名前
+                // dispatch メソッドの第二引数にはフォームの入力値
+                await this.$store.dispatch('auth/register', this.registerForm)
+
+                // トップページに移動する
+                this.$router.push('/')
             },
-            register () {
-                console.log(this.registerForm)
+            async login () {
+                // authストアのloginアクションを呼び出す
+                await this.$store.dispatch('auth/login', this.loginForm)
+
+                // トップページに移動する
+                this.$router.push('/')
             },
         },
     }
