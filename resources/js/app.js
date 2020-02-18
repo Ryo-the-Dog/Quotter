@@ -1,8 +1,8 @@
 import Vue from 'vue'
 // ルーティングの定義をインポートする
-import router from './router'
+// import router from './router'
 // ルートコンポーネントをインポートする
-import App from './App.vue'
+// import App from './App.vue'
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -32,9 +32,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-    router, // ルーティングの定義を読み込む
-    components: { App }, // ルートコンポーネントの使用を宣言する
-    template: '<App />' // ルートコンポーネントを描画する
-});
+// const app = new Vue({
+//     el: '#app',
+//     router, // ルーティングの定義を読み込む
+//     components: { App }, // ルートコンポーネントの使用を宣言する
+//     template: '<App />' // ルートコンポーネントを描画する
+// });
