@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Login.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +149,8 @@
       <option name="presentableId" value="Default" />
       <updated>1581866497449</updated>
       <workItem from="1581866498788" duration="221000" />
-      <workItem from="1581907141307" duration="7463000" />
+      <workItem from="1581907141307" duration="7649000" />
+      <workItem from="1581988724823" duration="518000" />
     </task>
     <servers />
   </component>
@@ -160,22 +158,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="956" height="120" key="GridCell.Tab.0.bottom" timestamp="1581915060234">
+    <state width="956" height="120" key="GridCell.Tab.0.bottom" timestamp="1581951571381">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state width="956" height="120" key="GridCell.Tab.0.bottom/0.23.1680.999@0.23.1680.999" timestamp="1581915060234" />
-    <state width="956" height="120" key="GridCell.Tab.0.center" timestamp="1581915060233">
+    <state width="956" height="120" key="GridCell.Tab.0.bottom/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
+    <state width="956" height="120" key="GridCell.Tab.0.center" timestamp="1581951571381">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state width="956" height="120" key="GridCell.Tab.0.center/0.23.1680.999@0.23.1680.999" timestamp="1581915060233" />
-    <state width="956" height="120" key="GridCell.Tab.0.left" timestamp="1581915060232">
+    <state width="956" height="120" key="GridCell.Tab.0.center/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
+    <state width="956" height="120" key="GridCell.Tab.0.left" timestamp="1581951571380">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state width="956" height="120" key="GridCell.Tab.0.left/0.23.1680.999@0.23.1680.999" timestamp="1581915060232" />
-    <state width="956" height="120" key="GridCell.Tab.0.right" timestamp="1581915060233">
+    <state width="956" height="120" key="GridCell.Tab.0.left/0.23.1680.999@0.23.1680.999" timestamp="1581951571380" />
+    <state width="956" height="120" key="GridCell.Tab.0.right" timestamp="1581951571381">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state width="956" height="120" key="GridCell.Tab.0.right/0.23.1680.999@0.23.1680.999" timestamp="1581915060233" />
+    <state width="956" height="120" key="GridCell.Tab.0.right/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
     <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1581907268006">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
