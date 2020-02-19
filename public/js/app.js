@@ -55050,11 +55050,7 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return _store__WEBPACK_IMPORTED_MODULE_1__["default"].dispatch('auth/currentUser');
-
-          case 2:
-            // TODO　ここが原因でエラー。レスポンスが無い的な。
+            //await store.dispatch('auth/currentUser') // TODO　ここが原因でエラー。レスポンスが無い的な。
             new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
               el: '#app',
               router: _router__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -55065,7 +55061,7 @@ function () {
               template: '<App />'
             });
 
-          case 3:
+          case 1:
           case "end":
             return _context.stop();
         }
@@ -55416,9 +55412,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_PhraseList_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/PhraseList.vue */ "./resources/js/pages/PhraseList.vue");
 /* harmony import */ var _pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Login.vue */ "./resources/js/pages/Login.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 
  // ページコンポーネントをインポートする
 
+
+ // ストアをインポート
 
  // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -55431,6 +55430,22 @@ var routes = [{
 }, {
   path: '/login',
   component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/login',
+  component: _pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  // beforeEnter は定義されたルートにアクセスされてページコンポーネントが切り替わる直前に呼び出される関数
+  // 第一引数 to はアクセスされようとしているルート
+  // 第二引数 from はアクセス元のルート
+  // 第三引数 next はページの移動先（切り替わり先）を決める
+  beforeEnter: function beforeEnter(to, from, next) {
+    // ログイン状態の場合
+    if (_store__WEBPACK_IMPORTED_MODULE_4__["default"].getters['auth/check']) {
+      // 引数ありで next() を呼ぶと切り替わるはずだったページコンポーネントは生成されず、引数のページに切り替わり、リダイレクトのような動きになります。
+      next('/');
+    } else {
+      next();
+    }
+  }
 }]; // VueRouterインスタンスを作成する
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -55574,10 +55589,12 @@ var actions = {
 
             case 2:
               response = _context4.sent;
+              // TODO　この処理ができない！
+              console.log('auth.js/currentUser');
               user = response.data || null;
               context.commit('setUser', user);
 
-            case 5:
+            case 6:
             case "end":
               return _context4.stop();
           }

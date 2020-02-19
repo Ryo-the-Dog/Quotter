@@ -45,7 +45,7 @@ window.Vue = require('vue');
 // });
 // ログインチェックしてからアプリを生成する
 const createApp = async () => {
-    await store.dispatch('auth/currentUser') // TODO　ここが原因でエラー。レスポンスが無い的な。
+    //await store.dispatch('auth/currentUser') // TODO　ここが原因でエラー。レスポンスが無い的な。
 
     new Vue({
         el: '#app',

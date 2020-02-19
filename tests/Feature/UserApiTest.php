@@ -9,6 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserApiTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -21,10 +22,11 @@ class UserApiTest extends TestCase
 //        $response->assertStatus(200);
 //    }
 
-    use RefreshDatabase;
+
 
     public function setUp(): void
     {
+        echo 'ログイン中のユーザーを返却する';
         parent::setUp();
 
         // テストユーザー作成
@@ -36,13 +38,11 @@ class UserApiTest extends TestCase
      */
     public function should_ログイン中のユーザーを返却する()
     {
-        $response = $this->actingAs($this->user)->json('GET', route('user'));
+        echo 'ログイン中のユーザーを返却する';
+        $response = $this->actingAs($this->user)->json('GET', route('user')); // TODO POSTに変えてもだめ
 
-        $response
-            ->assertStatus(200)
-            ->assertJson([
-                'name' => $this->user->name,
-            ]);
+        $response->assertStatus(200)->assertJson(['name' => $this->user->name]);
+        // $this->assertGuest();
     }
 
     /**
@@ -50,6 +50,7 @@ class UserApiTest extends TestCase
      */
     public function should_ログインされていない場合は空文字を返却する()
     {
+        echo 'ログインされていない場合は空文字を返却する';
         $response = $this->json('GET', route('user'));
 
         $response->assertStatus(200);
