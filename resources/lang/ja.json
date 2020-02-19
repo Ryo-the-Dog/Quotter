@@ -1,0 +1,28 @@
+
+{
+    "Name": "名前",
+    "E-Mail Address": "メールアドレス",
+    "Password": "パスワード",
+    "Remember Me": "ログイン状態を保持",
+    "Forgot Your Password?": "パスワードを忘れた方はこちら",
+    "Confirm Password": "パスワード(再入力)",
+    "Phrase Register": "フレーズ投稿",
+    "Title": "作品タイトル",
+    "Title Image": "作品タイトルの画像",
+    "Phrase": "フレーズ",
+    "Detail": "詳細",
+    "Category1": "カテゴリー1",
+    "Category2": "カテゴリー2",
+    "Problem": "問題",
+    "Register": "投稿",
+    "Drill List": "タイピング問題一覧",
+    "Go Practice": "練習開始！",
+    "Invalid operation was performed.": "不正な操作が行われました",
+    "Edited.": "編集完了しました",
+    "Edit": "編集する",
+    "Deleted.": "削除しました",
+    "Go Delete": "問題削除",
+    "Practice": "タイピング練習",
+    "Login": "ログイン",
+    "Back": "戻る"
+}
