@@ -71,7 +71,7 @@ class PhrasesController extends Controller
     {
         // Imgモデルのデータを全て格納する
         $items = Img::all();
-        // 格納したImgモデルのデータを全て渡す。
+        // phrases/index.blade.phpに格納したImgモデルのデータを全て渡す。
         return view('phrases.index', compact('items'));
     }
     public function upload(Request $request)
@@ -81,7 +81,7 @@ class PhrasesController extends Controller
 
             // TODO オリジナル
             // Imgモデルを生成する
-            $img = new Img; // $img = new Img();
+            $img = new Img; // $img = new Img();でもOK？
             // storeメソッドを使ってファイル名を格納する。引数をpublic/imgとすることでランダムなファイル名になる。
             $path = $request->file('image_file')->store('public/img');
             // createメソッドでDBに保存する

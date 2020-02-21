@@ -8,8 +8,9 @@
                 <div class="card">
                     <div class="card-header">{{__('画像登録画面')}}</div>
                     <div class="card-body">
+                        {{-- routeではなくurlでアクション先を指定 --}}
                         <form action="{{ url('uploader') }}" method="POST" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                            @csrf
                             <input type="file" class="form-control" name="image_file">
                             <hr>
                             <input type="text" class="form-control" name="title">

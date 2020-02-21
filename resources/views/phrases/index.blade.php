@@ -5,6 +5,7 @@
 
 <a href="./uploader">新しい画像を登録する</a>
 
+{{--$itemsはコントローラの方でcompactメソッドでImgモデルのデータ全て使えるにしてある。--}}
 @if (count($items) > 0)
     <table class="table table-striped">
         <thead>
@@ -15,10 +16,12 @@
         </tr>
         </thead>
         <tbody>
+        {{-- Imgモデルのデータを回す --}}
         @foreach ($items as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->title }}</td>
+                {{-- 画像パスをlaravelのassetメソッドを使って補完する。 --}}
                 <td><img src="{{ asset('/storage/img/'.$item->file_name) }}" width="400"></td>
             </tr>
         @endforeach
