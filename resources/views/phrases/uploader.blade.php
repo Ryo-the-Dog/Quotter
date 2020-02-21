@@ -12,6 +12,7 @@
                             {{ csrf_field() }}
                             <input type="file" class="form-control" name="image_file">
                             <hr>
+                            <input type="text" class="form-control" name="title">
                             <button type="submit" class="btn btn-success">登録</button>
                         </form>
                     </div>

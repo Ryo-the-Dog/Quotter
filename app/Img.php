@@ -9,5 +9,5 @@ class Img extends Model
     // テーブル名の設定
     protected $table = 'imgs';
 
-    protected $fillable = ['file_name',];
+    protected $fillable = ['file_name','title',];
 }

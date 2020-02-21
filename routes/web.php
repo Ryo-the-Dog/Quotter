@@ -32,7 +32,9 @@ Route::post('/phrases/new', 'PhrasesController@create');
 //    return view('phrases.uploader');
 //});
 //Route::get('/phrases/uploader', 'PhrasesController@uploader')->name('phrases.uploader');
+// 画像一覧ページ表示のルーティング
 Route::get('/', 'PhrasesController@index');
+// 画像アップロードページを表示するルーティングと画像をPOST送信でアップロードするルーティング
 Route::match(['GET', 'POST'], '/uploader', 'PhrasesController@upload');
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePhraseRequest;
+// Imgクラスをインポートする
 use App\Img;
 use App\Phrase;
 use Illuminate\Http\Request;
@@ -68,17 +69,27 @@ class PhrasesController extends Controller
 
     public function index()
     {
+        // Imgモデルのデータを全て格納する
         $items = Img::all();
-
+        // 格納したImgモデルのデータを全て渡す。
         return view('phrases.index', compact('items'));
     }
     public function upload(Request $request)
     {
+        // POST送信されていた場合
         if ($request->isMethod('POST')) {
 
+            // TODO オリジナル
+            // Imgモデルを生成する
+            $img = new Img; // $img = new Img();
+            // storeメソッドを使ってファイル名を格納する。引数をpublic/imgとすることでランダムなファイル名になる。
             $path = $request->file('image_file')->store('public/img');
-
-            Img::create(['file_name' => basename($path)]);
+            // createメソッドでDBに保存する
+            $img::create([ // $img->createでもいける。
+                // basenameメソッドでファイル名のみを保存する。
+                'file_name' => basename($path),
+                'title' => $request->title,
+            ]);
 
             return redirect('/')->with(['success'=> 'ファイルを保存しました']);
         }

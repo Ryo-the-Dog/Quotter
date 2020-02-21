@@ -10,6 +10,7 @@
         <thead>
         <tr>
             <th>id</th>
+            <th>タイトル</th>
             <th>画像</th>
         </tr>
         </thead>
@@ -17,6 +18,7 @@
         @foreach ($items as $item)
             <tr>
                 <td>{{ $item->id }}</td>
+                <td>{{ $item->title }}</td>
                 <td><img src="{{ asset('/storage/img/'.$item->file_name) }}" width="400"></td>
             </tr>
         @endforeach
