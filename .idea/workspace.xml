@@ -4,8 +4,7 @@
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/phrases/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/phrases/uploader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/uploader.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Phrase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Phrase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

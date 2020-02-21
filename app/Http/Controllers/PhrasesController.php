@@ -28,7 +28,7 @@ class PhrasesController extends Controller
 
 
     // フレーズを投稿するアクション
-    public function create(CreatePhraseRequest $request)
+    public function create(Request $request)
     {
         // モデルを使って、DBに登録する値をセット
         $phrase = new Phrase;
@@ -39,10 +39,20 @@ class PhrasesController extends Controller
 //        // DBにファイル名を保存
 //        $phrase::create(['file_name' => basename(path)]);
 
+        $path = $request->file('title_img')->store('public/img');
 
+        // $phrase->fill($request->all())->save();
 
-        $phrase->fill($request->all())->save();
-
+        // createメソッドでDBに保存する(テーブルのカラム名を指定する)
+        $phrase::create([ // $img->createでもいける。
+            'user_id' => 1, // TODO
+            'title' => $request->title,
+            // basenameメソッドでファイル名のみを保存する。
+            'title_img_path' => basename($path),
+            'phrase' => $request->phrase,
+//            'category' => $request->category,
+            'detail' => $request->detail,
+        ]);
         return redirect('/phrases')->with('flash_message', __('Registered.'));
 
     }
