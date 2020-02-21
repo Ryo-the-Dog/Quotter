@@ -27,6 +27,15 @@ Route::post('/phrases/new', 'PhrasesController@create');
 //Route::post('/image_confirm', 'ImageController@postImageConfirm');
 //
 
+// 画像アップロード練習(https://promidea.co.jp/archives/2377)
+//Route::get('/phrases/uploader', function (){
+//    return view('phrases.uploader');
+//});
+//Route::get('/phrases/uploader', 'PhrasesController@uploader')->name('phrases.uploader');
+Route::get('/', 'PhrasesController@index');
+Route::match(['GET', 'POST'], '/uploader', 'PhrasesController@upload');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
