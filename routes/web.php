@@ -26,6 +26,8 @@ Route::get('/phrases', 'PhrasesController@index')->name('phrases');
 Route::get('/phrases/new', 'PhrasesController@new')->name('phrases.new');
 // フレーズ登録のルーティング
 Route::post('/phrases/new', 'PhrasesController@create');
+// フレーズ削除のルーティング
+Route::post('/phrases/{id}/delete', 'PhrasesController@destroy')->name('phrases.delete');
 
 
 

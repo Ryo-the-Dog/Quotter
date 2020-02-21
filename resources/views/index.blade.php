@@ -15,13 +15,17 @@
                         @else
                             <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}" height="150">
                         @endif
+                        <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
+                            @csrf
+                            <button class="btn btn-danger" onclick="return confirm('このフレーズを削除してよろしいですか？')">
+                                {{__('Delete')}}
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-
-
 
     </div>
 @endsection

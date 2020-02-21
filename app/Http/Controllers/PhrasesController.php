@@ -49,6 +49,16 @@ class PhrasesController extends Controller
         return view('index',['phrases' => $phrases]);
     }
 
+    // フレーズを削除するアクション
+    public function destroy($id) {
+        // GETパラメータが数字かどうかチェック
+        if(!ctype_digit($id)){
+            return redirect('/phrases')->with('flash_message',__('Invalid operation was performed.'));
+        }
+        Phrase::find($id)->delete();
+        return redirect('/phrases')->with('flash_message', __('Deleted.'));
+    }
+
     // 画像アップロード練習
 //    public function uploader()
 //    {
