@@ -23,6 +23,9 @@ Route::get('/phrases', function () {
 Route::get('/phrases/new', 'PhrasesController@new')->name('phrases.new');
 // フレーズ登録のルーティング
 Route::post('/phrases/new', 'PhrasesController@create');
+// 画像をtempディレクトリに仮保存
+//Route::post('/image_confirm', 'ImageController@postImageConfirm');
+//
 
 Auth::routes();
 

@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreatePhraseRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreatePhraseRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +121,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -152,6 +156,11 @@
       <workItem from="1581866498788" duration="221000" />
       <workItem from="1581907141307" duration="7649000" />
       <workItem from="1581988724823" duration="1389000" />
+      <workItem from="1582170602994" duration="121000" />
+      <workItem from="1582170733432" duration="1981000" />
+      <workItem from="1582202371543" duration="267000" />
+      <workItem from="1582205145391" duration="7000" />
+      <workItem from="1582255426612" duration="1273000" />
     </task>
     <servers />
   </component>
@@ -179,9 +188,9 @@
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state width="956" height="120" key="GridCell.Tab.0.right/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1581907268006">
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582255477943">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1581907268006" />
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1582255477943" />
   </component>
 </project>

@@ -27,8 +27,10 @@ class CreatePhraseRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:50',
+            'title_img' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2048',
             'phrase' => 'required|string|max:100',
             'detail' => 'nullable|string|max:200',
+
         ];
     }
 }

@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">{{__('Phrase Register')}}</div>
                     <div class="card-body">
-                        <form action="{{route('phrases.new')}}" method="post">
+                        <form action="{{route('phrases.new')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -16,7 +16,9 @@
                                     {{ __('Title') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <input class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{old('title')}}" autocomplete="title" autofocus type="text">
+                                    <input class="form-control @error('title') is-invalid @enderror" id="title"
+                                           name="title" value="{{old('title')}}"
+                                           autocomplete="title" autofocus type="text">
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -30,7 +32,9 @@
                                     {{ __('Title Image') }}
                                 </label>
                                 <div class="col-md-6">
-
+                                    <input type="file" class="form-control @error('title') is-invalid @enderror" id="title_img"
+                                           name="title_img"
+                                           value="{{old('title_img')}}" >
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('title_img')
                                     <span class="invalid-feedback" role="alert">
