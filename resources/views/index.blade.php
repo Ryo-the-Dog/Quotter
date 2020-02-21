@@ -2,8 +2,24 @@
 
 @section('content')
     <div class="container">
-        <h2>{{ __('Drill List') }}</h2>
-
+        <h2>{{ __('Phrase List') }}</h2>
+        <div class="row">
+            @foreach($phrases as $phrase)
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{$phrase->phrase}}</h3>
+                        <p>{{$phrase->title}}</p>
+                        @if($phrase->title_img_path == null)
+                            <img src="/storage/img/noimg.png" alt="{{$phrase->title}}" height="150">
+                        @else
+                            <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}" height="150">
+                        @endif
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
 
 
 
