@@ -10,4 +10,9 @@ class Phrase extends Model
     protected $table = 'phrases';
     // テーブルのカラム名を指定する
     protected $fillable = ['user_id','title', 'title_img_path', 'phrase', 'category', 'detail',]; // TODO 練習用のuser_idを削除
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

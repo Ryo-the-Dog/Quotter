@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Phraseモデルとのリレーション。これであるユーザーが投稿したフレーズを取得できる。
+    public function phrases() {
+        return $this->hasMany('App\Phrase');
+    }
 }

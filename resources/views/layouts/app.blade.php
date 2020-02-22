@@ -55,6 +55,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    {{-- route内にはweb.phpのnameメソッドで定義したパスを指定する。 --}}
+                                    <a class="dropdown-item" href="{{ route('phrases.mypage') }}">
+                                        {{__('Mypage')}}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -66,6 +70,9 @@
                                     </form>
                                 </div>
                             </li>
+                            <button class="btn btn-primary">
+                                <a href="{{ route('phrases.new') }}" style="color: white;">{{__('Post')}}</a>
+                            </button>
                         @endguest
                     </ul>
                 </div>

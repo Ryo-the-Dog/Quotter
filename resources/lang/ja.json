@@ -14,15 +14,19 @@
     "Category1": "カテゴリー1",
     "Category2": "カテゴリー2",
     "Problem": "問題",
-    "Register": "投稿",
+    "Register": "会員登録",
     "Phrase List": "フレーズ一覧",
     "Go Practice": "練習開始！",
     "Invalid operation was performed.": "不正な操作が行われました",
     "Edited.": "編集完了しました",
     "Edit": "編集する",
-    "Deleted.": "削除しました",
+    "Deleted.": "フレーズを削除しました",
     "Go Delete": "問題削除",
     "Practice": "タイピング練習",
     "Login": "ログイン",
-    "Back": "戻る"
+    "Back": "戻る",
+    "My Phrase List": "投稿したフレーズ一覧",
+    "Mypage": "マイページ",
+    "Post": "投稿",
+    "You can delete only your own phrases.": "自分で投稿したフレーズのみ削除できます"
 }
