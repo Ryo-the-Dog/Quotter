@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // ユーザーコンポーザーを読み込むために読み込む
+        App\Providers\ComposerServiceProvider::class,
+
     ],
 
     /*
