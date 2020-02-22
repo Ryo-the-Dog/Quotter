@@ -9,6 +9,8 @@ use App\Phrase;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// ビューで現在のルートを取得するため
+use Illuminate\Support\Facades\Route;
 
 class PhrasesController extends Controller
 {
@@ -71,6 +73,7 @@ class PhrasesController extends Controller
     }
 
     public function mypage(){
+//        dump(Route::currentRouteName());
         /* サービスプロバイダで$usersで呼び出せるのはビューだけに設定してあるので、
         ここではAuthファサードを使う必要がある。 */
         // Auth::user()で特定のユーザーのフレーズだけを格納する。

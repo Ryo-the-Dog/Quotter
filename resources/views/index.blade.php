@@ -15,6 +15,8 @@
                         @else
                             <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}" height="150">
                         @endif
+
+                        @if(Route::currentRouteName() == 'phrases.mypage' )
                         <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
                             @csrf
 {{--                            <button class="btn btn-danger" onclick="return confirm('このフレーズを削除してよろしいですか？')">--}}
@@ -32,6 +34,7 @@
                             <i class="fas fa-heart"></i>
                             <i class="far fa-heart"></i>
                         </form>
+                        @endif
                     </div>
                 </div>
             </div>
