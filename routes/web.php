@@ -22,16 +22,20 @@
 //});
 // フレーズ一覧表示画面のルーティング(トップページ)
 Route::get('/', 'PhrasesController@index')->name('phrases');
-// フレーズ登録画面表示のルーティング
-Route::get('/phrases/new', 'PhrasesController@new')->name('phrases.new');
-// マイページ画面(自分が投稿したフレーズ一覧)表示のルーティング
-Route::get('/mypage', 'PhrasesController@mypage')->name('phrases.mypage');
 
-// フレーズ登録のルーティング
-Route::post('/phrases/new', 'PhrasesController@create');
-// フレーズ削除のルーティング
-Route::post('/phrases/{id}/delete', 'PhrasesController@destroy')->name('phrases.delete');
+// 会員限定のルーティング
+Route::group(['middleware' => 'auth'], function () {
+    // フレーズ登録画面表示のルーティング
+    Route::get('/phrases/new', 'PhrasesController@new')->name('phrases.new');
+    // マイページ画面(自分が投稿したフレーズ一覧)表示のルーティング
+    Route::get('/mypage', 'PhrasesController@mypage')->name('phrases.mypage');
 
+    // フレーズ登録のルーティング
+    Route::post('/phrases/new', 'PhrasesController@create');
+    // フレーズ削除のルーティング
+    Route::post('/phrases/{id}/delete', 'PhrasesController@destroy')->name('phrases.delete');
+
+});
 
 // 画像をtempディレクトリに仮保存
 //Route::post('/image_confirm', 'ImageController@postImageConfirm');

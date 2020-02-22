@@ -77,6 +77,7 @@ class PhrasesController extends Controller
         /* サービスプロバイダで$usersで呼び出せるのはビューだけに設定してあるので、
         ここではAuthファサードを使う必要がある。 */
         // Auth::user()で特定のユーザーのフレーズだけを格納する。
+        // 未ログイン状態で直接URLを打ち込むと、ここの処理で引っ掛かり意図しないエラーが発生する？ → ミドルウェアでログイン認証したらちゃんとリダイレクトされるようになった。
         $phrases = Auth::user()->phrases()->get();
         // mypageのビューに上記の$phrasesを渡す。ビューの方ではこれをforeachで回して表示させる。
         return view('mypage', compact('phrases'));
