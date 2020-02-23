@@ -48,10 +48,15 @@ class PhrasesController extends Controller
 
     // 利用者全員が投稿したフレーズを一覧表示するビューのアクション
     public function index() {
+        // TODO　いいね
+        $userAuth = Auth::user();
         // Phraseモデルのデータを全て格納する。
         $phrases = Phrase::all();
         // 格納したPhraseモデルのデータをビューに渡す。
-        return view('index',['phrases' => $phrases]);
+        return view('index',[
+            'phrases' => $phrases,
+            'userAuth' => $userAuth
+        ]);
     }
 
     // フレーズを削除するアクション
@@ -81,6 +86,14 @@ class PhrasesController extends Controller
         $phrases = Auth::user()->phrases()->get();
         // mypageのビューに上記の$phrasesを渡す。ビューの方ではこれをforeachで回して表示させる。
         return view('mypage', compact('phrases'));
+    }
+
+    // フレーズの詳細表示アクション
+    public function show(Phrase $phrase) {
+
+        return view('phrases.show',[
+                'phrase' => $phrase
+            ]);
     }
 
     // 画像アップロード練習

@@ -35,10 +35,18 @@
                             <i class="far fa-heart"></i>
                         </form>
                         @endif
+{{--                        TODO--}}
+                        <like
+                            :phrase-id="{{ json_encode($phrase->id) }}"
+                            :user-id="{{json_encode($userAuth->id)}}"
+                        ></like>
+                        <a href="{{route('phrase.show',$phrase->id)}}">詳細</a>
                     </div>
                 </div>
             </div>
             @endforeach
+
+{{--            @dump($phrases)--}}
         </div>
 
     </div>
