@@ -39,6 +39,7 @@
                         <like
                             :phrase-id="{{ json_encode($phrase->id) }}"
                             :user-id="{{json_encode($userAuth->id)}}"
+                            :default-liked="{{json_encode($defaultLiked)}}"
                         ></like>
                         <a href="{{route('phrase.show',$phrase->id)}}">詳細</a>
                     </div>

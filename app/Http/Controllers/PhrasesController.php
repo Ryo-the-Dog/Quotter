@@ -47,15 +47,25 @@ class PhrasesController extends Controller
     }
 
     // 利用者全員が投稿したフレーズを一覧表示するビューのアクション
-    public function index() {
-        // TODO　いいね
+    public function index(Phrase $phrase) {
+        // TODO　いいね用
         $userAuth = Auth::user();
         // Phraseモデルのデータを全て格納する。
         $phrases = Phrase::all();
+        // likes(現在その投稿に付いているいいね数)を読み込む
+        $phrase->load('likes');
+        // そのユーザーがその投稿にいいねを押しているか
+        $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+        if(count($defaultLiked) == 0) {
+            $defaultLiked == false;
+        }else{
+            $defaultLiked == true;
+        }
         // 格納したPhraseモデルのデータをビューに渡す。
         return view('index',[
             'phrases' => $phrases,
-            'userAuth' => $userAuth
+            'userAuth' => $userAuth,
+            '$defaultLike' => $defaultLiked
         ]);
     }
 

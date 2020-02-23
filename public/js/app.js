@@ -1914,9 +1914,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // ビューのVueの箇所からフレーズのidとユーザーのidをpropsで受け取る
-  props: ['phraseId', 'userId'],
+  props: ['phraseId', 'userId', 'defaultLiked'],
+  data: function data() {
+    return {
+      liked: false
+    };
+  },
+  created: function created() {
+    this.liked = this.defaultLiked;
+  },
   methods: {
     submit: function submit(phraseId) {
       var url = "/api/phrases/".concat(phraseId, "/like");
@@ -37302,19 +37311,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
-        attrs: { type: "button" },
-        on: {
-          click: function($event) {
-            return _vm.submit(_vm.phraseId)
-          }
-        }
-      },
-      [_vm._v("いいね")]
-    )
+    !_vm.liked
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.submit(_vm.phraseId)
+              }
+            }
+          },
+          [_vm._v("いいね")]
+        )
+      : _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.submit(_vm.phraseId)
+              }
+            }
+          },
+          [_vm._v("いいね取消")]
+        )
   ])
 }
 var staticRenderFns = []

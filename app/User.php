@@ -41,4 +41,22 @@ class User extends Authenticatable
     public function phrases() {
         return $this->hasMany('App\Phrase');
     }
+    // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
+    // このユーザーが押したいいね
+    public function likes() {
+        return $this->belongsToMany(
+            'App\Phrase', 'likes', 'user_id', 'phrase_id'
+        )->withTimestamps();
+    }
+    public function like($phraseId) {
+        $exist = $this->is_like($phraseId);
+        if($exist){
+            return false;
+        }else{
+            $this->likes()->attach($phraseId);
+            return true;
+        }
+    }
+
+    
 }
