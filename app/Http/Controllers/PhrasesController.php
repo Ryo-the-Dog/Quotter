@@ -48,25 +48,50 @@ class PhrasesController extends Controller
 
     // 利用者全員が投稿したフレーズを一覧表示するビューのアクション
     public function index(Phrase $phrase) {
-        // TODO　いいね用
-        $userAuth = Auth::user();
+
+        // dd(Auth::user()->id); // 1
         // Phraseモデルのデータを全て格納する。
         $phrases = Phrase::all();
+//        dd($phrase);
+//        dd($phrases);
         // likes(現在その投稿に付いているいいね数)を読み込む
-        $phrase->load('likes');
-        // そのユーザーがその投稿にいいねを押しているか
-        $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
-        if(count($defaultLiked) == 0) {
-            $defaultLiked == false;
+//        foreach ($phrases as $phrase) {
+            $phrase->load('likes');
+        //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
+            // そのユーザーがその投稿にいいねを押しているか
+        if(Auth::user()) {
+            // TODO　いいね用
+            $userAuth = Auth::user();
+
+            $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+//            dd($userAuth->id); // 1
+//            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
+            //dd($defaultLiked); // null
+//            if (count($defaultLiked) == 0) {
+//                $defaultLiked == false;
+//            } else {
+//                $defaultLiked == true;
+//            }
+            // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
+            // TODO 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
+            // TODO 非会員だとエラーが出ちゃう
+            if (is_countable($defaultLiked)) {
+                $defaultLiked = false;
+            } else {
+                $defaultLiked = true;
+            }
+            return view('index', [
+                'phrases' => $phrases,
+                'userAuth' => $userAuth,
+                'defaultLiked' => $defaultLiked
+            ]);
         }else{
-            $defaultLiked == true;
+            return view('index', [
+                // 格納したPhraseモデルのデータをビューに渡す。
+                'phrases' => $phrases,
+            ]);
         }
-        // 格納したPhraseモデルのデータをビューに渡す。
-        return view('index',[
-            'phrases' => $phrases,
-            'userAuth' => $userAuth,
-            '$defaultLike' => $defaultLiked
-        ]);
+//        }
     }
 
     // フレーズを削除するアクション

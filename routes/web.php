@@ -37,6 +37,11 @@ Route::group(['middleware' => 'auth'], function () {
     // フレーズ削除のルーティング
     Route::post('/phrases/{id}/delete', 'PhrasesController@destroy')->name('phrases.delete');
 
+    // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
+//    Route::group(['prefix'=>'phrases/{id}'],function(){
+//        Route::post('favorite','FavoriteController@store')->name('favorites.favorite');
+//        Route::delete('unfavorite','FavoriteController@destroy')->name('favorites.unfavorite');
+//    });
 });
 
 // 画像をtempディレクトリに仮保存

@@ -16,8 +16,23 @@ class Phrase extends Model
     {
         return $this->belongsTo('App\User');
     }
+    // YouTube
     // likesテーブルに対してのリレーション(１つのフレーズに対して複数のいいねが付く)
     public  function likes() {
         return $this->hasMany('App\Like');
+//        return $this->belongsToMany('App\Like');
     }
+
+
+    // https://qiita.com/ma7ma7pipipi/items/50a77cd392e9f27915d7
+//    public  function likes() {
+//        return $this->hasMany('App\Like', 'foreign_key')->where('model', 'User');
+//    }
+
+    // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
+//    public function like_users() {
+//        return $this->belongsToMany(
+//            'App/User','likes','phrase_id','user_id'
+//        )->withTimestamps();
+//    }
 }

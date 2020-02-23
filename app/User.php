@@ -41,6 +41,7 @@ class User extends Authenticatable
     public function phrases() {
         return $this->hasMany('App\Phrase');
     }
+
     // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
     // このユーザーが押したいいね
     public function likes() {
@@ -57,6 +58,17 @@ class User extends Authenticatable
             return true;
         }
     }
+    public function dislike($phraseId) {
+        $exist = $this->is_like($phraseId);
 
-    
+        if($exist){
+            $this->likes()->detach($phraseId);
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function is_like($phraseId) {
+        return $this->likes()->where('phrase_id', $phraseId)->exists();
+    }
 }
