@@ -35,11 +35,18 @@
                                     <i class="far fa-heart"></i>
                                 </form>
                             @endif
+                            <like
+                                :phrase-id="{{ json_encode($phrase->id) }}"
+                                :user-id="{{json_encode($userAuth->id)}}"
+                                :default-liked="{{json_encode($defaultLiked)}}"
+                                :default-count="{{json_encode($defaultCount)}}"
+                            ></like>
+{{--                            @dd($phrase->id) // null --}}
                         </div>
                     </div>
                 </div>
 {{--            @endforeach--}}
-            @dump($phrase);
+            @dump($defaultLiked);
         </div>
 
     </div>

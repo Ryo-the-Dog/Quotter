@@ -50,12 +50,16 @@ class PhrasesController extends Controller
     public function index(Phrase $phrase) {
 
         // dd(Auth::user()->id); // 1
+//        dd($phrase);
         // Phraseモデルのデータを全て格納する。
         $phrases = Phrase::all();
+
+
 //        dd($phrase);
-//        dd($phrases);
+        dump($phrases);
         // likes(現在その投稿に付いているいいね数)を読み込む
 //        foreach ($phrases as $phrase) {
+            dump($phrase);
             $phrase->load('likes');
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
             // そのユーザーがその投稿にいいねを押しているか
@@ -64,6 +68,7 @@ class PhrasesController extends Controller
             $userAuth = Auth::user();
 
             $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+//            dd($phrase->likes->where('user_id', $userAuth->id)->first());
 //            dd($userAuth->id); // 1
 //            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
             //dd($defaultLiked); // null
@@ -75,10 +80,10 @@ class PhrasesController extends Controller
             // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
             // TODO 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
             // TODO 非会員だとエラーが出ちゃう
-            if (is_countable($defaultLiked)) {
-                $defaultLiked = false;
-            } else {
+            if (isset($defaultLiked)) {
                 $defaultLiked = true;
+            } else {
+                $defaultLiked = false;
             }
             return view('index', [
                 'phrases' => $phrases,
@@ -124,11 +129,47 @@ class PhrasesController extends Controller
     }
 
     // フレーズの詳細表示アクション
-    public function show(Phrase $phrase) {
+    public function show(Phrase $phrase, $id) {
 
-        return view('phrases.show',[
-                'phrase' => $phrase
-            ]);
+        if(!ctype_digit($id)){
+            return redirect('/')->with('flash_message',__('Invalid operation was performed.'));
+        }
+
+        // クリックされたフレーズのidを格納
+        $phrase = Phrase::find($id);
+        //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
+        // そのユーザーがその投稿にいいねを押しているか
+//        if(Auth::user()) {
+        // TODO　いいね用
+        $userAuth = Auth::user();
+
+        $phrase->load('likes');
+        $defaultCount = count($phrase->likes);
+
+//        dd($userAuth->id); // 1
+
+//            $defaultLiked = $phrase->likes->where('user_id', 3)->first();
+        $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+        dump($userAuth->id);
+        dump($phrase->likes->where('user_id', $userAuth->id)->first());
+//            dd($phrase->likes->where('user_id', $userAuth->id)->first());
+//            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
+        //dump($phrase->likes->where('user_id', 3)); // これでちゃんとフレーズidが4に対してuser_id3の人がいいねを押したのが取得できる。
+            //dump($defaultLiked); // null
+        // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
+        // TODO 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
+        // TODO 非会員だとエラーが出ちゃう
+        if (isset($defaultLiked)) {
+            $defaultLiked = true;
+        } else {
+            $defaultLiked = false;
+        }
+        return view('phrases.show', [
+            'phrase' => $phrase,
+            'userAuth' => $userAuth,
+            'defaultLiked' => $defaultLiked,
+            'defaultCount' => $defaultCount
+        ]);
     }
 
     // 画像アップロード練習

@@ -23,7 +23,7 @@
 // フレーズ一覧表示画面のルーティング(トップページ)
 Route::get('/', 'PhrasesController@index')->name('phrases');
 // フレーズ詳細表示画面のルーティング
-Route::get('{id}/show','PhrasesController@show')->name('phrase.show');
+Route::get('/phrases/{id}','PhrasesController@show')->name('phrases.show');
 
 // 会員限定のルーティング
 Route::group(['middleware' => 'auth'], function () {

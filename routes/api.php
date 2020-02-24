@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // いいね機能
 Route::post('/phrases/{phrase}/like', 'LikeController@like');
+// いいね取消機能
+Route::post('/phrases/{phrase}/unlike', 'LikeController@unlike');
