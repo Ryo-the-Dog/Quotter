@@ -65,15 +65,16 @@
                                     {{ __('Category1') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="tags[]" id="category1">
-                                        <option value="1">ビジネス書</option>
-                                        <option value="2">マネー</option>
-                                        <option value="3">小説</option>
-                                        <option value="4">エッセイ</option>
-                                        <option value="5">映画</option>
+                                    <select name = "tag_ids[]" class = "form-control" id = "category1" multiple>
+                                        @foreach($all_tags_list as  $all_tags)
+                                            @if($loop->index >= 5)
+                                                @break
+                                            @endif
+                                            <option value = "{{$all_tags->id}}" @if($loop->index == 0) selected @endif>{{$all_tags->name}}</option>
+                                        @endforeach
                                     </select>
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
-                                    @error('tags')
+                                    @error('tag_ids[]')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
@@ -85,14 +86,16 @@
                                     {{ __('Category2') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="tags[]" id="category2">
-                                        <option value="6">仕事</option>
-                                        <option value="7">お金</option>
-                                        <option value="8">人生</option>
-                                        <option value="9">恋愛</option>
+                                    <select name = "tag_ids[]" class = "form-control" id = "category2" multiple>
+                                        @foreach($all_tags_list as  $all_tags)
+                                            @if($loop->index == 0 || $loop->index == 1 || $loop->index == 2 || $loop->index == 3 || $loop->index == 4)
+                                                @continue
+                                            @endif
+                                            <option value = "{{$all_tags->id}}" @if($loop->index == 5) selected @endif>{{$all_tags->name}}</option>
+                                        @endforeach
                                     </select>
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
-                                    @error('category')
+                                    @error('tag_ids[]')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>

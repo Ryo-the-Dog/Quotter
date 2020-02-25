@@ -29,8 +29,9 @@ class CreatePhraseRequest extends FormRequest
             'title' => 'required|string|max:50',
             'title_img' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
             'phrase' => 'required|string|max:100',
+//            'tag_ids[]' => 'required',
+            'tag_ids[].*' => 'integer',
             'detail' => 'nullable|string|max:200',
-
         ];
     }
 }

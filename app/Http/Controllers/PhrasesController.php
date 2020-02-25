@@ -16,11 +16,19 @@ use Illuminate\Support\Facades\Route;
 class PhrasesController extends Controller
 {
     // フレーズ登録画面を表示させるアクション
-    public function new() {
-        return view('phrases.new');
+    public function new(Request $request) {
+        // Categoryモデルのインスタンスを生成する
+        $tag = new Tag;
+
+        return view('phrases.new',  [ 'all_tags_list' => $tag->all() ]);
     }
     // フレーズを投稿するアクション
     public function create(CreatePhraseRequest $request) {
+
+        // POSTされたデータを格納する
+        $inputs = $request->all();
+        // 格納したデータの中からcategory_idsだけを抽出して格納
+        $tag_ids = $inputs['tag_ids'];
 
         $phrase = new Phrase;
 
@@ -29,22 +37,10 @@ class PhrasesController extends Controller
 
         // $phrase->fill($request->all())->save();
         //dd($request->input('tags')); // array:2 [▼ 0 => "1", 1 => "6" ]
+//        dd($tag_ids);
         // カテゴリー
-//        dd(is_array($request->tags));
-//        if(is_array($request->tags)){
-
-//            $phrase->tags()->attach($request->tags);
-
-//        $phraseId = Phrase::find(lastIn)
-
-
-
-//        $phrase->phrases()->attach($request->);
-//        }
-        //dd($phrase->tags()); // phrase_tagテーブルとリレーションOK
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
-//        dump($phrase);
-        $phrase::create([ // $img->createでもいける。
+        $id = $phrase::create([ // $img->createでもいける。
             // https://qiita.com/kgkgon/items/c83d52f966020ee3be79#5-%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6db%E4%BD%9C%E6%88%90
             // クイズアプリの記事の書き方
             'user_id' => $request->user()->id, // TODO
@@ -53,37 +49,22 @@ class PhrasesController extends Controller
             'title_img_path' => $path ? basename($path) : '',
             'phrase' => $request->input('phrase'),
             'detail' => $request->input('detail'),
-        ]);
-//        $phrase->save();
+        ])->id;
+//        dd($id);
+        $phrase = $phrase->find($id);
+        $phrase->tags()->sync($tag_ids);
 
-        $phraseId = $phrase->id;
-//        dd($phrase->title);
-
-        // モデルを使って、DBに登録する値をセット
-
-//        dd($request->id);
-//        dd($phrase);
         // ぱるこさん
-        $tags_name = $request->input('tags');
-        $tag_ids = [];
-        foreach ($tags_name as $tag_name){
-            if(!empty($tag_name)){
-                $tag = Tag::firstOrCreate([
-                    'name' => $tag_name,
-                ]);
-                $tag_ids[] = $tag->id;
-            }
-        }
-
-        //dd($request->id); // 投稿されたフレーズのidを取得したいがnull。
-        // 中間テーブル
-//        $phrase->tags()->attach($tag_ids);
-         $phrase->tags()->attach($request->input('tags'));
-//        $phrase->attach($request->id);
-        // https://qiita.com/makies/items/0684dad04a6008891d0d#%E3%83%99%E3%83%BC%E3%82%B9%E3%81%A8%E3%81%AA%E3%82%8B%E7%94%BB%E9%9D%A2%E3%82%92make%E3%81%99%E3%82%8B
-        $user = User::find(auth()->id());
-//        dd($phrase->id);
-
+//        $tags_name = $request->input('tags');
+//        $tag_ids = [];
+//        foreach ($tags_name as $tag_name){
+//            if(!empty($tag_name)){
+//                $tag = Tag::firstOrCreate([
+//                    'name' => $tag_name,
+//                ]);
+//                $tag_ids[] = $tag->id;
+//            }
+//        }
         return redirect('/')->with('flash_message', __('Registered.'));
     }
 
