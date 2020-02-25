@@ -6,6 +6,7 @@ use App\Http\Requests\CreatePhraseRequest;
 // Imgクラスをインポートする
 use App\Img;
 use App\Phrase;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,29 +21,69 @@ class PhrasesController extends Controller
     }
     // フレーズを投稿するアクション
     public function create(CreatePhraseRequest $request) {
-        // モデルを使って、DBに登録する値をセット
+
         $phrase = new Phrase;
 
-        // https://qiita.com/makies/items/0684dad04a6008891d0d#%E3%83%99%E3%83%BC%E3%82%B9%E3%81%A8%E3%81%AA%E3%82%8B%E7%94%BB%E9%9D%A2%E3%82%92make%E3%81%99%E3%82%8B
-        $user = User::find(auth()->id());
         // TODO 画像を空でも登録できるようにしたいが、なぜかバリデーションで引っかかっちゃう。→大丈夫かも
         $path = $request->file('title_img') ? $request->file('title_img')->store('public/img') : '';
 
         // $phrase->fill($request->all())->save();
+        //dd($request->input('tags')); // array:2 [▼ 0 => "1", 1 => "6" ]
+        // カテゴリー
+//        dd(is_array($request->tags));
+//        if(is_array($request->tags)){
 
+//            $phrase->tags()->attach($request->tags);
+
+//        $phraseId = Phrase::find(lastIn)
+
+
+
+//        $phrase->phrases()->attach($request->);
+//        }
+        //dd($phrase->tags()); // phrase_tagテーブルとリレーションOK
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
-        dump($phrase);
+//        dump($phrase);
         $phrase::create([ // $img->createでもいける。
             // https://qiita.com/kgkgon/items/c83d52f966020ee3be79#5-%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6db%E4%BD%9C%E6%88%90
             // クイズアプリの記事の書き方
             'user_id' => $request->user()->id, // TODO
-            'title' => $request->title,
+            'title' => $request->input('title'),
             // basenameメソッドでファイル名のみを保存する。
             'title_img_path' => $path ? basename($path) : '',
-            'phrase' => $request->phrase,
-//            'category' => $request->category,
-            'detail' => $request->detail,
+            'phrase' => $request->input('phrase'),
+            'detail' => $request->input('detail'),
         ]);
+//        $phrase->save();
+
+        $phraseId = $phrase->id;
+//        dd($phrase->title);
+
+        // モデルを使って、DBに登録する値をセット
+
+//        dd($request->id);
+//        dd($phrase);
+        // ぱるこさん
+        $tags_name = $request->input('tags');
+        $tag_ids = [];
+        foreach ($tags_name as $tag_name){
+            if(!empty($tag_name)){
+                $tag = Tag::firstOrCreate([
+                    'name' => $tag_name,
+                ]);
+                $tag_ids[] = $tag->id;
+            }
+        }
+
+        //dd($request->id); // 投稿されたフレーズのidを取得したいがnull。
+        // 中間テーブル
+//        $phrase->tags()->attach($tag_ids);
+         $phrase->tags()->attach($request->input('tags'));
+//        $phrase->attach($request->id);
+        // https://qiita.com/makies/items/0684dad04a6008891d0d#%E3%83%99%E3%83%BC%E3%82%B9%E3%81%A8%E3%81%AA%E3%82%8B%E7%94%BB%E9%9D%A2%E3%82%92make%E3%81%99%E3%82%8B
+        $user = User::find(auth()->id());
+//        dd($phrase->id);
+
         return redirect('/')->with('flash_message', __('Registered.'));
     }
 
@@ -60,7 +101,7 @@ class PhrasesController extends Controller
         // likes(現在その投稿に付いているいいね数)を読み込む
 //        foreach ($phrases as $phrase) {
             dump($phrase);
-            $phrase->load('likes');
+        $phrases->load('likes');
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
             // そのユーザーがその投稿にいいねを押しているか
         if(Auth::user()) {
@@ -78,7 +119,10 @@ class PhrasesController extends Controller
 //                $defaultLiked == true;
 //            }
             // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
-            // TODO 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
+            // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
+            /* 2020.02.24 TODO 一覧ページで最初に表示される時に、全て$defaultLikedが空の状態になってしまう＋いいね数が表示されない。
+            TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
+            TODO　とにかく最初の取得ができない。 */
             // TODO 非会員だとエラーが出ちゃう
             if (isset($defaultLiked)) {
                 $defaultLiked = true;
@@ -156,9 +200,7 @@ class PhrasesController extends Controller
 //            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
         //dump($phrase->likes->where('user_id', 3)); // これでちゃんとフレーズidが4に対してuser_id3の人がいいねを押したのが取得できる。
             //dump($defaultLiked); // null
-        // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
-        // TODO 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
-        // TODO 非会員だとエラーが出ちゃう
+
         if (isset($defaultLiked)) {
             $defaultLiked = true;
         } else {

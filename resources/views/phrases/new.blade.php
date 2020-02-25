@@ -65,7 +65,7 @@
                                     {{ __('Category1') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="category" id="category1">
+                                    <select class="form-control" name="tags[]" id="category1">
                                         <option value="1">ビジネス書</option>
                                         <option value="2">マネー</option>
                                         <option value="3">小説</option>
@@ -73,7 +73,7 @@
                                         <option value="5">映画</option>
                                     </select>
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
-                                    @error('category')
+                                    @error('tags')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
@@ -85,7 +85,7 @@
                                     {{ __('Category2') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="category" id="category2">
+                                    <select class="form-control" name="tags[]" id="category2">
                                         <option value="6">仕事</option>
                                         <option value="7">お金</option>
                                         <option value="8">人生</option>

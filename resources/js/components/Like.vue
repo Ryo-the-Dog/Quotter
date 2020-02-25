@@ -1,5 +1,6 @@
 <template>
     <div >
+        <!-- 未ログインの場合spanタグにする？ -->
         <button v-if="!liked" type="button" class="btn btn-primary" @click="like(phraseId)">いいね{{likeCount}}</button>
         <button v-else type="button" class="btn btn-primary" @click="unlike(phraseId)">いいね取消{{likeCount}}</button>
     </div>

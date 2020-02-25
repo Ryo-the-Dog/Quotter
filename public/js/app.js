@@ -1915,6 +1915,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // ビューのVueの箇所からフレーズのidとユーザーのidをpropsで受け取る
   props: ['phraseId', 'userId', 'defaultLiked', 'defaultCount'],
