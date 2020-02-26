@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 class PhrasesController extends Controller
 {
     // フレーズ登録画面を表示させるアクション
+    /**
+     * @var Phrase
+     */
+    protected $phrase;
+    /**
+     * @var Tag
+     */
+    protected $tag;
+
     public function new(Request $request) {
         // Categoryモデルのインスタンスを生成する
         $tag = new Tag;
@@ -35,15 +44,12 @@ class PhrasesController extends Controller
         // TODO 画像を空でも登録できるようにしたいが、なぜかバリデーションで引っかかっちゃう。→大丈夫かも
         $path = $request->file('title_img') ? $request->file('title_img')->store('public/img') : '';
 
-        // $phrase->fill($request->all())->save();
-        //dd($request->input('tags')); // array:2 [▼ 0 => "1", 1 => "6" ]
-//        dd($tag_ids);
         // カテゴリー
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
         $id = $phrase::create([ // $img->createでもいける。
             // https://qiita.com/kgkgon/items/c83d52f966020ee3be79#5-%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6db%E4%BD%9C%E6%88%90
             // クイズアプリの記事の書き方
-            'user_id' => $request->user()->id, // TODO
+            'user_id' => $request->user()->id,
             'title' => $request->input('title'),
             // basenameメソッドでファイル名のみを保存する。
             'title_img_path' => $path ? basename($path) : '',
@@ -54,28 +60,39 @@ class PhrasesController extends Controller
         $phrase = $phrase->find($id);
         $phrase->tags()->sync($tag_ids);
 
-        // ぱるこさん
-//        $tags_name = $request->input('tags');
-//        $tag_ids = [];
-//        foreach ($tags_name as $tag_name){
-//            if(!empty($tag_name)){
-//                $tag = Tag::firstOrCreate([
-//                    'name' => $tag_name,
-//                ]);
-//                $tag_ids[] = $tag->id;
-//            }
-//        }
         return redirect('/')->with('flash_message', __('Registered.'));
     }
 
+    // 1ページ当たりの表示件数
+    const NUM_PER_PAGE = 2;
+    function __construct(Phrase $phrase, Tag $tag)
+    {
+        $this->phrase = $phrase;
+        $this->tag = $tag;
+    }
     // 利用者全員が投稿したフレーズを一覧表示するビューのアクション
-    public function index(Phrase $phrase) {
-
+    public function index(Phrase $phrase, Request $request) {
         // dd(Auth::user()->id); // 1
 //        dd($phrase);
         // Phraseモデルのデータを全て格納する。
         $phrases = Phrase::all();
 
+        // カテゴリ別表示
+        // パラメータを取得
+        $input = $request->input();
+        //dd($input);//array:2 [▼"tag_id" => "1","page" => "1"]
+        //dd($this); /* #phrase: App\Phrase {#230 ▶}
+                      #tag: App\Tag {#231 ▶} */
+        // ブログ記事一覧を取得
+        $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
+        //dd($list);/*#items: array:2 [▼ 0 => App\Phrase {#284 ▶},1 => App\Phrase {#285 ▶}]
+                    #items: array:1 [▼ 0 => App\Phrase {#282 ▶} ] */
+        // ページネーションリンクにクエリストリングを付け加える
+        $list->appends($input);
+        //dd($list->appends($input));//$listに #query: array:1 [▼"tag_id" => "1"] が付与される。
+        // カテゴリー一覧を取得(TagモデルのgetTagList()を呼び出す)
+        $tag_list = $this->tag->getTagList();
+        //dd($tag_list);// #items: array:9 [▼0 => App\Tag {#308 ▶}1 => App\Tag {#309 ▶}2 => App\Tag {#310 ▶}3 => App\Tag {#311 ▶}4 => App\Tag {#312 ▶}5 => App\Tag {#313 ▶}6 => App\Tag {#314 ▶}7 => App\Tag {#315 ▶}8 => App\Tag {#316 ▶}]
 
 //        dd($phrase);
         dump($phrases);
@@ -90,15 +107,7 @@ class PhrasesController extends Controller
             $userAuth = Auth::user();
 
             $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
-//            dd($phrase->likes->where('user_id', $userAuth->id)->first());
-//            dd($userAuth->id); // 1
-//            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
-            //dd($defaultLiked); // null
-//            if (count($defaultLiked) == 0) {
-//                $defaultLiked == false;
-//            } else {
-//                $defaultLiked == true;
-//            }
+
             // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
             // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
             /* 2020.02.24 TODO 一覧ページで最初に表示される時に、全て$defaultLikedが空の状態になってしまう＋いいね数が表示されない。
@@ -113,7 +122,9 @@ class PhrasesController extends Controller
             return view('index', [
                 'phrases' => $phrases,
                 'userAuth' => $userAuth,
-                'defaultLiked' => $defaultLiked
+                'defaultLiked' => $defaultLiked,
+                'list' => $list,
+                'tag_list' => $tag_list
             ]);
         }else{
             return view('index', [

@@ -4,9 +4,9 @@
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreatePhraseRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreatePhraseRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Phrase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Phrase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +200,7 @@
       <workItem from="1582423837465" duration="18398000" />
       <workItem from="1582507714565" duration="21255000" />
       <workItem from="1582595644837" duration="2697000" />
+      <workItem from="1582680264319" duration="11634000" />
     </task>
     <servers />
   </component>

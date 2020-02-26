@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 class Phrase extends Model
 {
@@ -28,6 +29,43 @@ class Phrase extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
+
+    // 投稿をカテゴリ別表示
+    public function getPhraseList(int $num_per_page = 10, array $condition = [])
+    {
+        //dd($condition);// array:2 [▼ "tag_id" => "5","page" => "1"]
+        // パラメータの取得
+//        $tag_id = array_get($condition, 'tag_id');
+        $tag_id = Arr::get($condition, 'tag_id');
+        //dd($tag_id); // 5
+        //dd($this); // Phraseモデル
+//        dd(Phrase::with(['tags'])->get());
+
+        // Eager ロードの設定を追加
+        $query = $this->with('tags'); // このtagsは多分L28の。それとwithはhasMany用かもしれない。
+//        dd($this->tags);
+        //dd($query);
+//        dd( Phrase::whereHas('tags', function ($query) {
+//            $query->where('id', 5);
+//        })->get() );
+
+        // カテゴリーIDの指定
+//        if ($tag_id) {
+//            $query->where('id', $tag_id);
+//        }
+        // タグが選択された時のみ、phraseをtagのidで検索をかける
+        if ($tag_id) {
+            $query->whereHas('tags', function ($q) use ($tag_id) {
+                $q->where('id', $tag_id);
+            });
+        }
+//        dd($query);
+
+        // paginate メソッドを使うと、ページネーションに必要な全件数やオフセットの指定などは全部やってくれる
+        return $query->paginate($num_per_page);
+
+    }
+
 
 
     // https://qiita.com/ma7ma7pipipi/items/50a77cd392e9f27915d7
