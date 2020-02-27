@@ -36,7 +36,7 @@ class PhrasesController extends Controller
 
         // POSTされたデータを格納する
         $inputs = $request->all();
-        // 格納したデータの中からcategory_idsだけを抽出して格納
+        // 格納したデータの中からtag_idsだけを抽出して格納
         $tag_ids = $inputs['tag_ids'];
 
         $phrase = new Phrase;
@@ -64,9 +64,8 @@ class PhrasesController extends Controller
     }
 
     // 1ページ当たりの表示件数
-    const NUM_PER_PAGE = 2;
-    function __construct(Phrase $phrase, Tag $tag)
-    {
+    const NUM_PER_PAGE = 4;
+    function __construct(Phrase $phrase, Tag $tag) {
         $this->phrase = $phrase;
         $this->tag = $tag;
     }
@@ -95,14 +94,14 @@ class PhrasesController extends Controller
         //dd($tag_list);// #items: array:9 [▼0 => App\Tag {#308 ▶}1 => App\Tag {#309 ▶}2 => App\Tag {#310 ▶}3 => App\Tag {#311 ▶}4 => App\Tag {#312 ▶}5 => App\Tag {#313 ▶}6 => App\Tag {#314 ▶}7 => App\Tag {#315 ▶}8 => App\Tag {#316 ▶}]
 
 //        dd($phrase);
-        dump($phrases);
+//        dump($phrases);
         // likes(現在その投稿に付いているいいね数)を読み込む
 //        foreach ($phrases as $phrase) {
-            dump($phrase);
+//            dump($phrase);
         $phrases->load('likes');
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
             // そのユーザーがその投稿にいいねを押しているか
-        if(Auth::user()) {
+        if(!empty(Auth::user()) ) {
             // TODO　いいね用
             $userAuth = Auth::user();
 
@@ -130,6 +129,8 @@ class PhrasesController extends Controller
             return view('index', [
                 // 格納したPhraseモデルのデータをビューに渡す。
                 'phrases' => $phrases,
+                'list' => $list,
+                'tag_list' => $tag_list,
             ]);
         }
 //        }
@@ -176,34 +177,41 @@ class PhrasesController extends Controller
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
         // そのユーザーがその投稿にいいねを押しているか
 //        if(Auth::user()) {
-        // TODO　いいね用
-        $userAuth = Auth::user();
 
         $phrase->load('likes');
         $defaultCount = count($phrase->likes);
+        if(!empty(Auth::user()) ) {
+            // TODO　いいね用
+            $userAuth = Auth::user();
 
-//        dd($userAuth->id); // 1
+            //        dd($userAuth->id); // 1
 
-//            $defaultLiked = $phrase->likes->where('user_id', 3)->first();
-        $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
-        dump($userAuth->id);
-        dump($phrase->likes->where('user_id', $userAuth->id)->first());
-//            dd($phrase->likes->where('user_id', $userAuth->id)->first());
-//            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
-        //dump($phrase->likes->where('user_id', 3)); // これでちゃんとフレーズidが4に対してuser_id3の人がいいねを押したのが取得できる。
+            //            $defaultLiked = $phrase->likes->where('user_id', 3)->first();
+            $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+            //        dump($userAuth->id);
+            //        dump($phrase->likes->where('user_id', $userAuth->id)->first());
+            //            dd($phrase->likes->where('user_id', $userAuth->id)->first());
+            //            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
+            //dump($phrase->likes->where('user_id', 3)); // これでちゃんとフレーズidが4に対してuser_id3の人がいいねを押したのが取得できる。
             //dump($defaultLiked); // null
 
-        if (isset($defaultLiked)) {
-            $defaultLiked = true;
-        } else {
-            $defaultLiked = false;
+            if (isset($defaultLiked)) {
+                $defaultLiked = true;
+            } else {
+                $defaultLiked = false;
+            }
+            return view('phrases.show', [
+                'phrase' => $phrase,
+                'userAuth' => $userAuth,
+                'defaultLiked' => $defaultLiked,
+                'defaultCount' => $defaultCount
+            ]);
+        }else{
+            return view('phrases.show', [
+                'phrase' => $phrase,
+                'defaultCount' => $defaultCount,
+            ]);
         }
-        return view('phrases.show', [
-            'phrase' => $phrase,
-            'userAuth' => $userAuth,
-            'defaultLiked' => $defaultLiked,
-            'defaultCount' => $defaultCount
-        ]);
     }
 
     // 画像アップロード練習

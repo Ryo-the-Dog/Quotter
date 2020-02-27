@@ -1,10 +1,16 @@
 <template>
-    <div >
+    <span v-if="userId">
         <!-- 未ログインの場合spanタグにする？ -->
-        <button v-if="!liked" type="button" class="btn btn-primary" @click="like(phraseId)">いいね{{likeCount}}</button>
-        <button v-else type="button" class="btn btn-primary" @click="unlike(phraseId)">いいね取消{{likeCount}}</button>
-    </div>
+        <span v-if="!liked" @click="like(phraseId)"><i class="far fa-heart"></i>{{likeCount}}</span>
+        <span v-else @click="unlike(phraseId)"><i class="fas fa-heart"></i>{{likeCount}}</span>
+    </span>
+    <span v-else>
+        <!-- 未ログインの場合spanタグにする？ -->
+        <!-- TODO　URLを本番デプロイした時ように/loginと指定したい -->
+        <a href="https://laravel.app/login"><i class="fas fa-heart"></i>{{likeCount}}</a>
+    </span>
 </template>
+
 
 <script>
     export default {

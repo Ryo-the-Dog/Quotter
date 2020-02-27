@@ -8,6 +8,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
 // Font Awesome
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// 独自SCSS
+@import 'style';

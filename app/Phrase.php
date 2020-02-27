@@ -29,13 +29,12 @@ class Phrase extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
-
     // 投稿をカテゴリ別表示
     public function getPhraseList(int $num_per_page = 10, array $condition = [])
     {
         //dd($condition);// array:2 [▼ "tag_id" => "5","page" => "1"]
-        // パラメータの取得
 //        $tag_id = array_get($condition, 'tag_id');
+        // 引数として渡ってきたtag_idとpage_idからtag_idだけ取り出す
         $tag_id = Arr::get($condition, 'tag_id');
         //dd($tag_id); // 5
         //dd($this); // Phraseモデル

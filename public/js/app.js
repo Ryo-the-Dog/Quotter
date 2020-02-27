@@ -1916,6 +1916,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // ビューのVueの箇所からフレーズのidとユーザーのidをpropsで受け取る
   props: ['phraseId', 'userId', 'defaultLiked', 'defaultCount'],
@@ -37331,35 +37337,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    !_vm.liked
-      ? _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.like(_vm.phraseId)
-              }
-            }
-          },
-          [_vm._v("いいね" + _vm._s(_vm.likeCount))]
-        )
-      : _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                return _vm.unlike(_vm.phraseId)
-              }
-            }
-          },
-          [_vm._v("いいね取消" + _vm._s(_vm.likeCount))]
-        )
-  ])
+  return _vm.userId
+    ? _c("span", [
+        !_vm.liked
+          ? _c(
+              "span",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.like(_vm.phraseId)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "far fa-heart" }),
+                _vm._v(_vm._s(_vm.likeCount))
+              ]
+            )
+          : _c(
+              "span",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.unlike(_vm.phraseId)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fas fa-heart" }),
+                _vm._v(_vm._s(_vm.likeCount))
+              ]
+            )
+      ])
+    : _c("span", [
+        _c("a", { attrs: { href: "https://laravel.app/login" } }, [
+          _c("i", { staticClass: "fas fa-heart" }),
+          _vm._v(_vm._s(_vm.likeCount))
+        ])
+      ])
 }
 var staticRenderFns = []
 render._withStripped = true
