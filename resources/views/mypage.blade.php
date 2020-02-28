@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="container">
+{{--        <a class="dropdown-item" href="{{ route('delete') }}"--}}
+{{--           onclick="event.preventDefault();--}}
+{{--                    document.getElementById('delete-form').submit();--}}
+{{--                    alert('会員登録を解除してよろしいですか？');">--}}
+{{--            {{ __('User Delete') }}--}}
+{{--        </a>--}}
+        <a href="{{ route('user.delete') }}">{{ __('User Delete') }}</a>
+
+{{--        <form id="delete-form" action="{{ route('delete') }}" method="POST" style="display: none;">--}}
+{{--            @csrf--}}
+{{--        </form>--}}
         <h2>{{ __('My Phrase List') }}</h2>
         <div class="row">
             @foreach($phrases as $phrase)
@@ -28,11 +39,11 @@
                                         <i class="far fa-trash-alt"></i>
                                     </button>
                                     {{-- キャッチ、セーブ、クリップ、付箋(=タグ)、ストック、アーカイブ、メモリー、マイリスト、マイフレーズ、 --}}
-                                    <i class="fas fa-download"></i>
-                                    <i class="far fa-save"></i>
-                                    <i class="far fa-clipboard"></i>
-                                    <i class="fas fa-hands"></i>
-                                    <i class="fas fa-hand-holding"></i>
+{{--                                    <i class="fas fa-download"></i>--}}
+{{--                                    <i class="far fa-save"></i>--}}
+{{--                                    <i class="far fa-clipboard"></i>--}}
+{{--                                    <i class="fas fa-hands"></i>--}}
+{{--                                    <i class="fas fa-hand-holding"></i>--}}
                                     <i class="fas fa-heart"></i>
                                     <i class="far fa-heart"></i>
                                 </form>

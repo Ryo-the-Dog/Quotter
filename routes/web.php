@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth'], function () {
     // マイページ画面(自分が投稿したフレーズ一覧)表示のルーティング
     Route::get('/mypage', 'PhrasesController@mypage')->name('phrases.mypage');
 
+    // 会員削除のルーティング
+    Route::get('/delete','UserController@delete')->name('user.delete');
+    Route::post('/delete', 'UserController@destroy')->name('delete');
+
     // フレーズ登録のルーティング
     Route::post('/new', 'PhrasesController@create');
     // フレーズ削除のルーティング

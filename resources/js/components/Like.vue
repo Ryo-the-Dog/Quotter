@@ -11,7 +11,6 @@
     </span>
 </template>
 
-
 <script>
     export default {
         // ビューのVueの箇所からフレーズのidとユーザーのidをpropsで受け取る

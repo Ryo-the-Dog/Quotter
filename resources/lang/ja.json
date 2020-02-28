@@ -29,5 +29,8 @@
     "Mypage": "マイページ",
     "Post": "投稿",
     "You can delete only your own phrases.": "自分で投稿したフレーズのみ削除できます",
-    "Phrase Detail": "詳細"
+    "Phrase Detail": "詳細",
+    "User Delete": "アカウントを削除する",
+    "Delete": "削除する",
+    "Account Delete": "アカウント削除"
 }

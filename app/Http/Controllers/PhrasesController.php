@@ -154,15 +154,69 @@ class PhrasesController extends Controller
         return redirect('mypage')->with('flash_message', __('Deleted.'));
     }
 
-    public function mypage(){
+    public function mypage(Phrase $phrase, Request $request){
 //        dump(Route::currentRouteName());
         /* サービスプロバイダで$usersで呼び出せるのはビューだけに設定してあるので、
         ここではAuthファサードを使う必要がある。 */
         // Auth::user()で特定のユーザーのフレーズだけを格納する。
         // 未ログイン状態で直接URLを打ち込むと、ここの処理で引っ掛かり意図しないエラーが発生する？ → ミドルウェアでログイン認証したらちゃんとリダイレクトされるようになった。
         $phrases = Auth::user()->phrases()->get();
+
+        // Phraseモデルのデータを全て格納する。
+//        $phrases = Phrase::all();
+
+        // カテゴリ別表示
+        // パラメータを取得
+        $input = $request->input();
+
+        // ブログ記事一覧を取得
+        $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
+        // ページネーションリンクにクエリストリングを付け加える
+        $list->appends($input);
+        // カテゴリー一覧を取得(TagモデルのgetTagList()を呼び出す)
+        $tag_list = $this->tag->getTagList();
+
+        // likes(現在その投稿に付いているいいね数)を読み込む
+//        foreach ($phrases as $phrase) {
+//            dump($phrase);
+        $phrases->load('likes');
+        //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
+        // そのユーザーがその投稿にいいねを押しているか
+        if(!empty(Auth::user()) ) {
+            // TODO　いいね用
+            $userAuth = Auth::user();
+
+            $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+
+            // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
+            // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
+            /* 2020.02.24 TODO 一覧ページで最初に表示される時に、全て$defaultLikedが空の状態になってしまう＋いいね数が表示されない。
+            TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
+            TODO　とにかく最初の取得ができない。 */
+            // TODO 非会員だとエラーが出ちゃう
+            if (isset($defaultLiked)) {
+                $defaultLiked = true;
+            } else {
+                $defaultLiked = false;
+            }
+            return view('mypage', [
+                'phrases' => $phrases,
+                'userAuth' => $userAuth,
+                'defaultLiked' => $defaultLiked,
+                'list' => $list,
+                'tag_list' => $tag_list
+            ]);
+        }else{
+            return view('mypage', [
+                // 格納したPhraseモデルのデータをビューに渡す。
+                'phrases' => $phrases,
+                'list' => $list,
+                'tag_list' => $tag_list,
+            ]);
+        }
+
         // mypageのビューに上記の$phrasesを渡す。ビューの方ではこれをforeachで回して表示させる。
-        return view('mypage', compact('phrases'));
+//        return view('mypage', compact('phrases'));
     }
 
     // フレーズの詳細表示アクション
