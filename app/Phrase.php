@@ -59,12 +59,28 @@ class Phrase extends Model
             });
         }
 //        dd($query);
-
         // paginate メソッドを使うと、ページネーションに必要な全件数やオフセットの指定などは全部やってくれる
         return $query->paginate($num_per_page);
 
     }
+    public function getLikePhraseList(int $num_per_page = 10, array $condition = [])
+    {
+        // 引数として渡ってきたtag_idとpage_idからtag_idだけ取り出す
+        $tag_id = Arr::get($condition, 'tag_id');
+        // Eager ロードの設定を追加
+        $query = $this->with('tags'); // このtagsは多分L28の。それとwithはhasMany用かもしれない。
 
+        // カテゴリーIDの指定
+        // タグが選択された時のみ、phraseをtagのidで検索をかける
+        if ($tag_id) {
+            $query->whereHas('tags', function ($q) use ($tag_id) {
+                $q->where('id', $tag_id);
+            });
+        }
+        // paginate メソッドを使うと、ページネーションに必要な全件数やオフセットの指定などは全部やってくれる
+        return $query->paginate($num_per_page);
+
+    }
 
 
     // https://qiita.com/ma7ma7pipipi/items/50a77cd392e9f27915d7

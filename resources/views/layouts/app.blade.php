@@ -83,7 +83,7 @@
 
             </nav>
             {{-- TODO ヘッダーのカテゴリ制御 --}}
-            @if(Route::currentRouteName() == 'phrases' || Route::currentRouteName() == 'phrases.mypage' )
+            @if(Route::currentRouteName() == 'phrases'  )
             <div class="navbar-expand-md navbar-light">
                 <div class="container">
                     <ul class="navbar-nav mr-auto ">

@@ -38,14 +38,12 @@
                         </form>
                         @endif
                         <a href="{{route('phrases.show',$phrase->id)}}">詳細</a>
-                        &nbsp;&nbsp;
-                        {{--                        @dd($phrase->id) // 4 --}}
+                        &nbsp;&nbsp;&nbsp;
                         @forelse($phrase->tags as $tag)
-{{--                        @dd($phrase->tags->id)--}}
                         <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                             {{ $tag->name }}
                         </a>
-                            &nbsp;&nbsp;
+                            &nbsp;
                         @empty
                             <p>カテゴリーがありません</p>
                         @endforelse
@@ -55,13 +53,16 @@
                         @guest
                         <like
                             :phrase-id="{{ json_encode($phrase->id) }}"
+                            :default-count="{{json_encode(count($phrase->likes))}}"
                         >
                         </like>
                         @else
+
                         <like
                             :phrase-id="{{ json_encode($phrase->id) }}"
                             :user-id="{{json_encode($userAuth->id)}}"
-                            :default-liked="{{json_encode($defaultLiked)}}"
+                            :default-liked="{{json_encode($phrase->likes->where('user_id', $userAuth->id)->first())}}"
+                            :default-count="{{json_encode(count($phrase->likes))}}"
                         >
                         </like>
                         @endguest

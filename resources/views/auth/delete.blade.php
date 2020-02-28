@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('phrases.mypage') }}">{{ __('My Phrase List') }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('phrases.like') }}">{{ __('Favorite Phrases') }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.delete') }}">{{ __('User Delete') }}</a>
+            </li>
+        </ul>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -24,7 +35,8 @@
 {{--                                    @enderror--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-                            <p>アカウントを削除してよろしいですか？</p>
+                            <p>あなたが投稿したフレーズやいいねした履歴がすべて削除されます。<br>
+                                アカウントを削除してよろしいですか？</p>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">

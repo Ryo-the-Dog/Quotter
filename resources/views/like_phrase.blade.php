@@ -13,13 +13,13 @@
                 <a class="nav-link" href="{{ route('user.delete') }}">{{ __('User Delete') }}</a>
             </li>
         </ul>
-        <h2>{{ __('My Phrase List') }}</h2>
+        <h2>{{ __('Favorite Phrase List') }}</h2>
         <div class="row">
             @forelse($phrases as $phrase)
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                        <div class="row">
+                            <div class="row">
                                 <div class="col-9">
                                     <i class="fas fa-quote-left"></i>
                                     <p class="card-title">{{$phrase->phrase}}</p>
@@ -35,7 +35,14 @@
                             </div>
                             <p>「{{$phrase->title}}」</p>
 
-                            {{-- TODO ゴミ箱ボタン --}}
+                            @if(Route::currentRouteName() == 'phrases.mypage' )
+                                <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button class="btn" onclick="return confirm('このフレーズを削除してよろしいですか？')">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            @endif
                             <a href="{{route('phrases.show',$phrase->id)}}">詳細</a>
                             &nbsp;&nbsp;&nbsp;
                             @forelse($phrase->tags as $tag)
@@ -46,7 +53,6 @@
                             @empty
                                 <p>カテゴリーがありません</p>
                             @endforelse
-
                             <a href="http://twitter.com/intent/tweet?url=https://ryonexta.com/portfolio/&text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Phrase">
                                 <i class="fab fa-twitter"></i>
                             </a>
@@ -57,21 +63,13 @@
                                 :default-count="{{json_encode(count($phrase->likes))}}"
                             >
                             </like>
-                            @if(Route::currentRouteName() == 'phrases.mypage' )
-                                <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <button class="btn" onclick="return confirm('このフレーズを削除してよろしいですか？')">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                </form>
-                            @endif
                         </div>
                     </div>
                 </div>
             @empty
-                <p>あなたが投稿したフレーズはありません。</p>
+                <p>あなたがいいねしたフレーズはありません。</p>
             @endforelse
         </div>
-
+        {{ $phrases->links() }}
     </div>
 @endsection

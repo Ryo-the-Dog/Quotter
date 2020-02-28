@@ -31,6 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/new', 'PhrasesController@new')->name('phrases.new');
     // マイページ画面(自分が投稿したフレーズ一覧)表示のルーティング
     Route::get('/mypage', 'PhrasesController@mypage')->name('phrases.mypage');
+    // いいねしたフレーズ一覧
+    Route::get('/like_phrase', 'PhrasesController@like')->name('phrases.like');
 
     // 会員削除のルーティング
     Route::get('/delete','UserController@delete')->name('user.delete');

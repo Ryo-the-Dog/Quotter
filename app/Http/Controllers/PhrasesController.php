@@ -89,23 +89,53 @@ class PhrasesController extends Controller
         // ページネーションリンクにクエリストリングを付け加える
         $list->appends($input);
         //dd($list->appends($input));//$listに #query: array:1 [▼"tag_id" => "1"] が付与される。
+        //dd($list);
         // カテゴリー一覧を取得(TagモデルのgetTagList()を呼び出す)
         $tag_list = $this->tag->getTagList();
         //dd($tag_list);// #items: array:9 [▼0 => App\Tag {#308 ▶}1 => App\Tag {#309 ▶}2 => App\Tag {#310 ▶}3 => App\Tag {#311 ▶}4 => App\Tag {#312 ▶}5 => App\Tag {#313 ▶}6 => App\Tag {#314 ▶}7 => App\Tag {#315 ▶}8 => App\Tag {#316 ▶}]
 
+        // いいね機能
 //        dd($phrase);
 //        dump($phrases);
         // likes(現在その投稿に付いているいいね数)を読み込む
-//        foreach ($phrases as $phrase) {
-//            dump($phrase);
-        $phrases->load('likes');
+
+//        $defaultCount = [];
+//        foreach ($list as $phrase) {
+//            //dd($phrase);
+////        $phrase = $this->phrase->load('likes');
+////            $phrase->load('likes');
+//            $defaultCount[] = count($phrase->likes);
+//        }
+        //dd($defaultCount); // array:4 [ ▼ 0 => 0, 1 => 1, 2 => 1, 3 => 0 ]
+        //dd($list[1]); /* キーでいいねが付いてるフレーズを指定するとちゃんと取得できる。
+        //                   #relations: array:2 [▼ "tags" => Illuminate\Database\Eloquent\Collection {#287 ▶}
+        //              "likes" => Illuminate\Database\Eloquent\Collection {#339 ▼
+        //                      #items: array:1 [▼
+        //                      0 => App\Like {#336 ▶}
+        //      ]
+        //    }
+        //  ]*/
+        // dd($list[2]->likes); // #items: array:1 [▶] で取得できる。中身はlikesテーブルのuser_idとphrase_id
+        //dd(count($list[2]->likes)); // 1
+//        dd($defaultCount);
+
+
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
             // そのユーザーがその投稿にいいねを押しているか
         if(!empty(Auth::user()) ) {
             // TODO　いいね用
             $userAuth = Auth::user();
+//            $defaultLiked = [];
+//            foreach($list as $phrase){
+//                $defaultLiked[] = $phrase->likes->where('phrase_id', $phrase->id)->where('user_id', $userAuth->id)->first();
+//            }
+//            dd($defaultLiked);
 
-            $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+//                $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
+
+            //dd($userAuth->id); // 3
+
+//                dd($defaultLiked);
 
             // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
             // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
@@ -113,15 +143,16 @@ class PhrasesController extends Controller
             TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
             TODO　とにかく最初の取得ができない。 */
             // TODO 非会員だとエラーが出ちゃう
-            if (isset($defaultLiked)) {
-                $defaultLiked = true;
-            } else {
-                $defaultLiked = false;
-            }
+//            if (isset($defaultLiked)) {
+//                $defaultLiked = true;
+//            } else {
+//                $defaultLiked = false;
+//            }
             return view('index', [
                 'phrases' => $phrases,
                 'userAuth' => $userAuth,
-                'defaultLiked' => $defaultLiked,
+//                'defaultLiked' => $defaultLiked,
+//                'defaultCount' => $defaultCount,
                 'list' => $list,
                 'tag_list' => $tag_list
             ]);
@@ -133,7 +164,7 @@ class PhrasesController extends Controller
                 'tag_list' => $tag_list,
             ]);
         }
-//        }
+
     }
 
     // フレーズを削除するアクション
@@ -217,6 +248,62 @@ class PhrasesController extends Controller
 
         // mypageのビューに上記の$phrasesを渡す。ビューの方ではこれをforeachで回して表示させる。
 //        return view('mypage', compact('phrases'));
+    }
+
+    public function like(Phrase $phrase, Request $request) {
+        // Phraseモデルのデータを全て格納する。
+        $phrases = Auth::user()->likes();
+//        dd(Auth::user()->likes()->get());
+        $phrases = $phrases->paginate(2);
+        // カテゴリ別表示
+        // パラメータを取得
+        $input = $request->input();
+        // ブログ記事一覧を取得
+        $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
+        // ページネーションリンクにクエリストリングを付け加える
+        $list->appends($input);
+        // カテゴリー一覧を取得(TagモデルのgetTagList()を呼び出す)
+        $tag_list = $this->tag->getTagList();
+        // いいね機能
+//        dd($phrase);
+//        dump($phrases);
+        // likes(現在その投稿に付いているいいね数)を読み込む
+
+//        $defaultCount = [];
+//        foreach ($list as $phrase) {
+//            //dd($phrase);
+////        $phrase = $this->phrase->load('likes');
+////            $phrase->load('likes');
+//            $defaultCount[] = count($phrase->likes);
+//        }
+        // そのユーザーがその投稿にいいねを押しているか
+        // TODO　いいね用
+        $userAuth = Auth::user();
+        $defaultLiked = [];
+        foreach($list as $phrase){
+            $defaultLiked[] = $phrase->likes->where('phrase_id', $phrase->id)->where('user_id', $userAuth->id)->first();
+        }
+        // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
+        // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
+        /* 2020.02.24 TODO 一覧ページで最初に表示される時に、全て$defaultLikedが空の状態になってしまう＋いいね数が表示されない。
+        TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
+        TODO　とにかく最初の取得ができない。 */
+        // TODO 非会員だとエラーが出ちゃう
+        if (isset($defaultLiked)) {
+            $defaultLiked = true;
+        } else {
+            $defaultLiked = false;
+        }
+        return view('like_phrase', [
+            'phrases' => $phrases,
+            'userAuth' => $userAuth,
+//            'defaultLiked' => $defaultLiked,
+//                'defaultCount' => $defaultCount,
+            'list' => $list,
+            'tag_list' => $tag_list
+        ]);
+
+
     }
 
     // フレーズの詳細表示アクション
