@@ -7,7 +7,7 @@
     <span v-else>
         <!-- 未ログインの場合spanタグにする？ -->
         <!-- TODO　URLを本番デプロイした時ように/loginと指定したい -->
-        <a href="https://laravel.app/login"><i class="fas fa-heart"></i>{{likeCount}}</a>
+        <a href="https://laravel.app/login" class="like__btn--disabled"><i class="far fa-heart"></i>{{likeCount}}</a>
     </span>
 </template>
 

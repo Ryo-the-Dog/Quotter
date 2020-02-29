@@ -37369,10 +37369,17 @@ var render = function() {
             )
       ])
     : _c("span", [
-        _c("a", { attrs: { href: "https://laravel.app/login" } }, [
-          _c("i", { staticClass: "fas fa-heart" }),
-          _vm._v(_vm._s(_vm.likeCount))
-        ])
+        _c(
+          "a",
+          {
+            staticClass: "like__btn--disabled",
+            attrs: { href: "https://laravel.app/login" }
+          },
+          [
+            _c("i", { staticClass: "far fa-heart" }),
+            _vm._v(_vm._s(_vm.likeCount))
+          ]
+        )
       ])
 }
 var staticRenderFns = []

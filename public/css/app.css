@@ -16821,3 +16821,157 @@ readers do not read off random characters that represent icons */
   width: auto;
 }
 
+/* Foundation
+------------------------------------ */
+
+/* ====================================
+Foundation
+==================================== */
+
+/* ブレイクポイントを定義しています。
+------------------------------------ */
+
+/*!defaultはすでに変数に値が入っていた場合(変数が競合していた場合)
+は何もせず、変数に値が入っていない時に割り当てられるもの*/
+
+/* ====================================
+Foundation
+==================================== */
+
+/* 共通のスタイルを定義しています。
+------------------------------------ */
+
+.btn {
+  outline: 0 !important;
+}
+
+.btn:focus {
+  outline: 0 !important;
+}
+
+/* Layout
+------------------------------------ */
+
+/* Component
+------------------------------------ */
+
+/* ====================================
+component
+==================================== */
+
+/* ボタンを定義しています
+------------------------------------ */
+
+/* アイコン
+==================================== */
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.far.fa-heart {
+  color: #6c757d;
+}
+
+.fas.fa-heart {
+  color: #ff667c;
+}
+
+.like__btn--disabled {
+  color: inherit;
+}
+
+.like__btn--disabled:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.delete__btn {
+  border: none;
+  background-color: inherit;
+  padding: 0;
+}
+
+.delete__btn:focus {
+  outline: 0;
+}
+
+/* ====================================
+component
+==================================== */
+
+/* フレーズカードを定義しています
+------------------------------------ */
+
+/* アイコン
+==================================== */
+
+.fa-quote-left {
+  color: #a6a6a6;
+}
+
+/* 画像
+==================================== */
+
+.phrase {
+  height: 230px;
+}
+
+.phrase__img {
+  height: 130px;
+  max-width: 100px;
+}
+
+@media screen and (max-width: 479px) {
+  .phrase__img {
+    line-height: 130px;
+    width: 100%;
+  }
+}
+
+.phrase__img img {
+  width: 100%;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+/* Project
+------------------------------------ */
+
+/* ====================================
+project
+==================================== */
+
+/* ヘッダーを定義しています
+------------------------------------ */
+
+/* カテゴリーメニュー
+==================================== */
+
+.navbar-expand-md .navbar-nav {
+  flex-direction: row !important;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+}
+
+.category-nav {
+  height: 40px !important;
+  overflow-x: scroll !important;
+}
+
+.category-nav__link {
+  white-space: nowrap !important;
+}
+
+/* Utility
+------------------------------------ */
+
+.flex {
+  display: flex;
+}
+

@@ -1,0 +1,73 @@
+
+<div class="row">
+    @forelse($list as $phrase)
+
+        <div class="col-lg-6 pr-0 pl-0">
+            <div class="card rounded-0 phrase">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <i class="fas fa-quote-left"></i>
+                            <p class="card-title">{{$phrase->phrase}}</p>
+                        </div>
+                        <div class="col-3 pl-0">
+                            <div class="phrase__img">
+                                @if($phrase->title_img_path == null)
+                                    <img src="/storage/img/noimg.png" alt="{{$phrase->title}}">
+                                @else
+                                    <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <p>「{{$phrase->title}}」</p>
+
+                    <a href="{{route('phrases.show',$phrase->id)}}">詳細</a>
+                    &nbsp;&nbsp;&nbsp;
+                    @forelse($phrase->tags as $tag)
+                        <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
+                            {{ $tag->name }}
+                        </a>
+                        &nbsp;
+                    @empty
+                        <p>カテゴリーがありません</p>
+                    @endforelse
+                    <a href="http://twitter.com/intent/tweet?url=https://ryonexta.com/portfolio/&text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Phrase">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    @guest
+                        <like
+                            :phrase-id="{{ json_encode($phrase->id) }}"
+                            :default-count="{{json_encode(count($phrase->likes))}}"
+                        >
+                        </like>
+                    @else
+
+                        <like
+                            :phrase-id="{{ json_encode($phrase->id) }}"
+                            :user-id="{{json_encode($userAuth->id)}}"
+                            :default-liked="{{json_encode($phrase->likes->where('user_id', $userAuth->id)->first())}}"
+                            :default-count="{{json_encode(count($phrase->likes))}}"
+                        >
+                        </like>
+                    @endguest
+                    @if(Route::currentRouteName() == 'phrases.mypage' )
+                        <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
+                            @csrf
+                            {{--                            <button class="btn btn-danger" onclick="return confirm('このフレーズを削除してよろしいですか？')">--}}
+                            {{--                                {{__('Delete')}}--}}
+                            {{--                            </button>--}}
+                            <button class="btn" onclick="return confirm('このフレーズを削除してよろしいですか？')">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            {{--  キャッチ、セーブ、クリップ、付箋、 --}}
+                        </form>
+                    @endif
+                </div>
+            </div>
+        </div>
+    @empty
+        <p>投稿がありません</p>
+    @endforelse
+</div>
+{{ $list->links() }}

@@ -86,9 +86,9 @@
             @if(Route::currentRouteName() == 'phrases'  )
             <div class="navbar-expand-md navbar-light">
                 <div class="container">
-                    <ul class="navbar-nav mr-auto ">
+                    <ul class="navbar-nav mr-auto category-nav">
                         <li class="nav-item">
-                            <a class="nav-link active text-black-50"
+                            <a class="nav-link active text-black-50 category-nav__link"
                                href="{{ route('phrases') }}">
                                 ALL
                             </a>
@@ -98,7 +98,7 @@
                                 {{--                    @dd($tag->id)--}}
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link active text-black-50"
+                                <a class="nav-link active text-black-50 category-nav__link"
                                    href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>

@@ -1,0 +1,22 @@
+/* ====================================
+project
+==================================== */
+/* ヘッダーを定義しています
+------------------------------------ */
+
+/* カテゴリーメニュー
+==================================== */
+.navbar-expand-md .navbar-nav {
+    flex-direction: row !important;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+}
+.category-nav {
+    height: 40px !important;
+    overflow-x: scroll !important;
+    &__link {
+        white-space: nowrap !important;
+    }
+}

@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Phrase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Phrase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ja.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/delete.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Like.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/style.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/like_phrase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/like_phrase.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/mypage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mypage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,19 +152,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/partials" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/partials" />
+      <recent name="$PROJECT_DIR$/app/Http" />
+      <recent name="$PROJECT_DIR$/resources/views/phrases" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/sass/foundation" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
       <recent name="$PROJECT_DIR$/storage/app/public/img" />
-      <recent name="$PROJECT_DIR$/resources/views/phrases" />
-      <recent name="$PROJECT_DIR$/app" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http" />
       <recent name="$PROJECT_DIR$/resources/views/phrases" />
     </key>
   </component>
@@ -209,7 +211,8 @@
       <workItem from="1582595644837" duration="2697000" />
       <workItem from="1582680264319" duration="18754000" />
       <workItem from="1582754364303" duration="9749000" />
-      <workItem from="1582853664409" duration="20616000" />
+      <workItem from="1582853664409" duration="23115000" />
+      <workItem from="1582938708765" duration="9885000" />
     </task>
     <servers />
   </component>
@@ -221,10 +224,10 @@
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state x="861" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.999@0.23.1680.999" timestamp="1582857937381" />
-    <state x="872" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582003151685">
+    <state x="872" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582946749858">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="872" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.999@0.23.1680.999" timestamp="1582003151685" />
+    <state x="872" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.999@0.23.1680.999" timestamp="1582946749858" />
     <state x="785" y="284" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582813030036">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
@@ -257,10 +260,10 @@
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state width="956" height="120" key="GridCell.Tab.0.right/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582754380312">
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582939558904">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1582754380312" />
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1582939558904" />
     <state x="750" y="279" width="756" height="486" key="find.popup" timestamp="1582757955180">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
