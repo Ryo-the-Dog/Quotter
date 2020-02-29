@@ -1,4 +1,4 @@
-<div class="pr-lg-0 pl-lg-0 phrase-card
+<div class="phrase-card
 @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8
 @else col-lg-6 @endif">
     <div class="card rounded-0 ">

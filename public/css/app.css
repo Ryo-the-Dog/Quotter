@@ -16923,6 +16923,15 @@ component
   text-decoration: underline;
 }
 
+.userDelete {
+  margin-top: 20px;
+}
+
+.userDelete-btn-area {
+  margin-left: auto;
+  text-align: right;
+}
+
 /* ====================================
 component
 ==================================== */
@@ -16945,6 +16954,18 @@ component
 
 /* 画像
 ==================================== */
+
+@media screen and (min-width: 990px) {
+  .phrase-card:nth-child(odd) {
+    padding-right: 0 !important;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .phrase-card:nth-child(even) {
+    padding-left: 0 !important;
+  }
+}
 
 @media screen and (max-width: 479px) {
   .phrase-card {
@@ -17028,6 +17049,14 @@ project
   white-space: nowrap !important;
 }
 
+.category-nav .nav-item.active {
+  border-bottom: solid 1px #212529;
+}
+
+.category-nav .nav-link.active {
+  color: #212529 !important;
+}
+
 .navbar-toggler {
   display: none !important;
 }
@@ -17045,8 +17074,21 @@ project
 
 .mypage-tabs {
   flex-wrap: nowrap !important;
+  margin-bottom: 30px;
   white-space: nowrap;
   overflow-x: scroll;
+}
+
+.mypage-tabs .active {
+  background-color: #fff !important;
+}
+
+.mypage-tabs .nav-link {
+  color: #6c757d;
+}
+
+.mypage-tabs .nav-link.active {
+  color: #495057;
 }
 
 /* ====================================
@@ -17057,6 +17099,11 @@ project
 ------------------------------------ */
 
 .phrase-detail-page {
+  margin: 0 auto;
+}
+
+.delete-form {
+  width: 50%;
   margin: 0 auto;
 }
 

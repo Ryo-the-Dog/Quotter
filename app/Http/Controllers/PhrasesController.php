@@ -294,7 +294,7 @@ class PhrasesController extends Controller
         } else {
             $defaultLiked = false;
         }
-        return view('like_phrase', [
+        return view('phrases.like_phrase', [
             'phrases' => $phrases,
             'userAuth' => $userAuth,
 //            'defaultLiked' => $defaultLiked,

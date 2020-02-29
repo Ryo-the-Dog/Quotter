@@ -14,7 +14,18 @@ component
 /* 画像
 ==================================== */
 .phrase-card {
+    &:nth-child(odd) {
 
+        @include mq(lg) {
+            padding-right: 0 !important;
+        }
+    }
+    &:nth-child(even) {
+
+        @include mq(lg) {
+            padding-left: 0 !important;
+        }
+    }
     @include mq(sm) {
         padding-right: 0;
         padding-left: 0;

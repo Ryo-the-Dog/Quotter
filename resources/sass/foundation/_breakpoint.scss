@@ -7,7 +7,7 @@ Foundation
 $breakpoints: (
     'sm': 'screen and (max-width: 479px)',
     'md': 'screen and (max-width: 767px)',
-    'lg': 'screen and (max-width: 991px)',
+    'lg': 'screen and (min-width: 990px)',
     'xl': 'screen and (max-width: 1200px)',
 ) !default;/*!defaultはすでに変数に値が入っていた場合(変数が競合していた場合)
 は何もせず、変数に値が入っていない時に割り当てられるもの*/

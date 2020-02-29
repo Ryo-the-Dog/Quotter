@@ -35,7 +35,7 @@ component
         }
     }
 }
-// 削除ボタン
+// フレーズ削除ボタン
 .delete-btn {
     border: none;
     background-color: inherit;
@@ -53,4 +53,12 @@ component
         text-decoration: underline;
     }
 
+}
+// アカウント削除
+.userDelete {
+    margin-top: 20px;
+    &-btn-area {
+        margin-left: auto;
+        text-align: right;
+    }
 }

@@ -80,8 +80,9 @@
             <div class="navbar navbar-expand-md navbar-light">
                 <div class="container pr-lg-0 pl-lg-0">
                     <ul class="navbar-nav mr-auto category-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active text-black-50 category-nav__link"
+                        <li class="nav-item @if(Route::currentRouteName() == 'phrases') active @endif">
+                            <a class="nav-link text-black-50 category-nav__link
+                               @if(Route::currentRouteName() == 'phrases') active @endif"
                                href="{{ route('phrases') }}">
                                 ALL
                             </a>
@@ -91,7 +92,7 @@
                                 {{--                    @dd($tag->id)--}}
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link active text-black-50 category-nav__link"
+                                <a class="nav-link text-black-50 category-nav__link"
                                    href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>
