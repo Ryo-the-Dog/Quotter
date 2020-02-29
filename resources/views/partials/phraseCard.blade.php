@@ -1,13 +1,15 @@
-<div class="col-lg-6 pr-0 pl-0">
-    <div class="card rounded-0 phrase">
-        <div class="card-body">
+<div class="pr-lg-0 pl-lg-0 phrase-card
+@if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8
+@else col-lg-6 @endif">
+    <div class="card rounded-0 ">
+        <div class="card-body phrase-card__body">
             <div class="row">
                 <div class="col-9 pr-0">
                     <i class="fas fa-quote-left"></i>
-                    <p class="card-title">{{$phrase->phrase}}</p>
+                    <p class="card-title phrase-card__phrase">{{$phrase->phrase}}</p>
                 </div>
                 <div class="col-3 pl-0">
-                    <div class="phrase__img ml-auto">
+                    <div class="phrase-card__img ml-auto">
                         @if($phrase->title_img_path == null)
                             <img src="/storage/img/noimg.png" alt="{{$phrase->title}}">
                         @else
@@ -19,7 +21,7 @@
             <p>「{{$phrase->title}}」</p>
             <div class="container">
                 <div class="row">
-                    <div class="card__menu--left mr-auto">
+                    <div class="card-menu-left mr-auto">
                         <a href="{{route('phrases.show',$phrase->id)}}">詳細</a>
                         &nbsp;&nbsp;&nbsp;
                         @forelse($phrase->tags as $tag)
@@ -31,8 +33,11 @@
                             <p>カテゴリーがありません</p>
                         @endforelse
                     </div>
-                    <div class="card__menu--right">
-                        <a href="http://twitter.com/intent/tweet?url=https://ryonexta.com/portfolio/&text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Phrase">
+                    <div class="card-menu-right">
+                        <a href="http://twitter.com/intent/tweet?
+                        url=https://ryonexta.com/portfolio/
+                        &text={{$phrase->phrase}}「{{$phrase->title}}」
+                        &related=ryonextStandard&hashtags=Phrase" class="twitter-btn card-menu-right__btn">
                             <i class="fab fa-twitter"></i>
                         </a>
                         @guest
@@ -54,7 +59,7 @@
                         @if(Route::currentRouteName() == 'phrases.mypage' )
                             <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
                                 @csrf
-                                <button class="delete__btn" onclick="return confirm('このフレーズを削除してよろしいですか？')">
+                                <button class="delete-btn card-menu-right__btn" onclick="return confirm('このフレーズを削除してよろしいですか？')">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                             </form>

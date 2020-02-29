@@ -6,13 +6,15 @@
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Like.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/component/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/component/_btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/component/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/component/_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/project/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/project/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/like_phrase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/like_phrase.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/mypage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mypage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phrases/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +214,7 @@
       <workItem from="1582680264319" duration="18754000" />
       <workItem from="1582754364303" duration="9749000" />
       <workItem from="1582853664409" duration="23115000" />
-      <workItem from="1582938708765" duration="9885000" />
+      <workItem from="1582938708765" duration="16013000" />
     </task>
     <servers />
   </component>

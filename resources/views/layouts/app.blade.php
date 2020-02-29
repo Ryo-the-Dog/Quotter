@@ -23,7 +23,7 @@
     <div id="app">
         <header class="bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
-                <div class="container">
+                <div class="container pr-lg-0 pl-lg-0">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
@@ -31,61 +31,54 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto">
+                    </ul>
 
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
-                            <!-- Authentication Links -->
-                            @guest
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <button class="btn btn-primary nav-link"><a class="text-white" href="{{ route('register') }}">{{ __('Register') }}</a></button>
                                 </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <button class="btn btn-primary nav-link"><a class="text-white" href="{{ route('register') }}">{{ __('Register') }}</a></button>
-                                    </li>
-                                @endif
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ $user->name }} <span class="caret"></span>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ $user->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    {{-- route内にはweb.phpのnameメソッドで定義したパスを指定する。 --}}
+                                    <a class="dropdown-item" href="{{ route('phrases.mypage') }}">
+                                        {{__('Mypage')}}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        {{-- route内にはweb.phpのnameメソッドで定義したパスを指定する。 --}}
-                                        <a class="dropdown-item" href="{{ route('phrases.mypage') }}">
-                                            {{__('Mypage')}}
-                                        </a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                                <button class="btn btn-primary">
-                                    <a href="{{ route('phrases.new') }}" style="color: white;">{{__('Post')}}</a>
-                                </button>
-                            @endguest
-                        </ul>
-
-                    </div>
-
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            <button class="btn btn-primary">
+                                <a href="{{ route('phrases.new') }}" style="color: white;">{{__('Post')}}</a>
+                            </button>
+                        @endguest
+                    </ul>
                 </div>
-
             </nav>
             {{-- TODO ヘッダーのカテゴリ制御 --}}
             @if(Route::currentRouteName() == 'phrases'  )
-            <div class="navbar-expand-md navbar-light">
-                <div class="container">
+            <div class="navbar navbar-expand-md navbar-light">
+                <div class="container pr-lg-0 pl-lg-0">
                     <ul class="navbar-nav mr-auto category-nav">
                         <li class="nav-item">
                             <a class="nav-link active text-black-50 category-nav__link"

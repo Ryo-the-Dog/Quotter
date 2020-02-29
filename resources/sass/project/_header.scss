@@ -14,9 +14,14 @@ project
     padding-left: 0.5rem !important;
 }
 .category-nav {
-    height: 40px !important;
     overflow-x: scroll !important;
     &__link {
         white-space: nowrap !important;
     }
+}
+.navbar-toggler {
+    display: none !important;
+}
+.navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute !important;
 }

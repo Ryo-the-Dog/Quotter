@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs mypage-tabs">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('phrases.mypage') }}">{{ __('My Phrase List') }}</a>
             </li>

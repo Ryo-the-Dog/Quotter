@@ -5,33 +5,52 @@ component
 ------------------------------------ */
 /* アイコン
 ==================================== */
+// Twitterボタン
+.twitter-btn {
+    font-size: 18px;
+}
 // いいねボタン
 .fa-heart{
     cursor: pointer;
+    margin-right: 3px;
 }
 .far.fa-heart{
     color: #6c757d;
+    &:hover {
+        color: #525961;
+    }
 }
 .fas.fa-heart{
     color: #ff667c;
 }
-.like {
-    &__btn--disabled{
+.like-btn {
+    cursor: pointer;
+    font-size: 18px;
+    &--disabled{
+        color: inherit;
+        font-size: 18px;
         &:hover{
             color: inherit;
             text-decoration: none;
         }
-        color: inherit;
     }
 }
 // 削除ボタン
-.delete {
-    &__btn {
-        border: none;
-        background-color: inherit;
-        padding: 0;
-        &:focus {
-            outline: 0;
-        }
+.delete-btn {
+    border: none;
+    background-color: inherit;
+    color: #6c757d;
+    font-size: 17px;
+    padding: 0;
+    &:focus {
+        outline: 0;
     }
+}
+// 戻るボタン
+.back-btn-area {
+    margin: 0 auto;
+    button:hover {
+        text-decoration: underline;
+    }
+
 }

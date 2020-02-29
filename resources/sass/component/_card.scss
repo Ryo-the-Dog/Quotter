@@ -7,11 +7,32 @@ component
 ==================================== */
 .fa-quote-left {
     color: #a6a6a6;
+    @include mq(sm) {
+        font-size: 12px;
+    }
 }
 /* 画像
 ==================================== */
-.phrase {
-    height: 230px;
+.phrase-card {
+
+    @include mq(sm) {
+        padding-right: 0;
+        padding-left: 0;
+
+    }
+    &__body {
+
+        height: 230px;
+        @include mq(sm) {
+            padding: 10px !important;
+        }
+    }
+    &__phrase {
+        @include mq(sm) {
+            margin-right: 5px;
+        }
+
+    }
     &__img{
         height: 130px;
         max-width: 100px;
@@ -30,5 +51,14 @@ component
             //height: auto;
 
         }
+    }
+}
+.card-menu-left {
+    height: 28px;
+    line-height: 28px;
+}
+.card-menu-right {
+    &__btn:not(:last-child) {
+        margin-right: 10px;
     }
 }

@@ -37337,11 +37337,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.userId
-    ? _c("span", [
+    ? _c("span", { staticClass: "card-menu-right__btn" }, [
         !_vm.liked
           ? _c(
               "span",
               {
+                staticClass: "like-btn",
                 on: {
                   click: function($event) {
                     return _vm.like(_vm.phraseId)
@@ -37356,6 +37357,7 @@ var render = function() {
           : _c(
               "span",
               {
+                staticClass: "like-btn",
                 on: {
                   click: function($event) {
                     return _vm.unlike(_vm.phraseId)
@@ -37368,11 +37370,11 @@ var render = function() {
               ]
             )
       ])
-    : _c("span", [
+    : _c("span", { staticClass: "card-menu-right__btn" }, [
         _c(
           "a",
           {
-            staticClass: "like__btn--disabled",
+            staticClass: "like-btn--disabled",
             attrs: { href: "https://laravel.app/login" }
           },
           [

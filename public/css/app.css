@@ -16841,10 +16841,12 @@ Foundation
 /* 共通のスタイルを定義しています。
 ------------------------------------ */
 
+button,
 .btn {
   outline: 0 !important;
 }
 
+button:focus,
 .btn:focus {
   outline: 0 !important;
 }
@@ -16865,35 +16867,60 @@ component
 /* アイコン
 ==================================== */
 
+.twitter-btn {
+  font-size: 18px;
+}
+
 .fa-heart {
   cursor: pointer;
+  margin-right: 3px;
 }
 
 .far.fa-heart {
   color: #6c757d;
 }
 
+.far.fa-heart:hover {
+  color: #525961;
+}
+
 .fas.fa-heart {
   color: #ff667c;
 }
 
-.like__btn--disabled {
-  color: inherit;
+.like-btn {
+  cursor: pointer;
+  font-size: 18px;
 }
 
-.like__btn--disabled:hover {
+.like-btn--disabled {
+  color: inherit;
+  font-size: 18px;
+}
+
+.like-btn--disabled:hover {
   color: inherit;
   text-decoration: none;
 }
 
-.delete__btn {
+.delete-btn {
   border: none;
   background-color: inherit;
+  color: #6c757d;
+  font-size: 17px;
   padding: 0;
 }
 
-.delete__btn:focus {
+.delete-btn:focus {
   outline: 0;
+}
+
+.back-btn-area {
+  margin: 0 auto;
+}
+
+.back-btn-area button:hover {
+  text-decoration: underline;
 }
 
 /* ====================================
@@ -16910,27 +16937,61 @@ component
   color: #a6a6a6;
 }
 
+@media screen and (max-width: 479px) {
+  .fa-quote-left {
+    font-size: 12px;
+  }
+}
+
 /* 画像
 ==================================== */
 
-.phrase {
+@media screen and (max-width: 479px) {
+  .phrase-card {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.phrase-card__body {
   height: 230px;
 }
 
-.phrase__img {
+@media screen and (max-width: 479px) {
+  .phrase-card__body {
+    padding: 10px !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .phrase-card__phrase {
+    margin-right: 5px;
+  }
+}
+
+.phrase-card__img {
   height: 130px;
   max-width: 100px;
 }
 
 @media screen and (max-width: 479px) {
-  .phrase__img {
+  .phrase-card__img {
     line-height: 130px;
     width: 100%;
   }
 }
 
-.phrase__img img {
+.phrase-card__img img {
   width: 100%;
+}
+
+.card-menu-left {
+  height: 28px;
+  line-height: 28px;
+}
+
+.card-menu-right__btn:not(:last-child) {
+  margin-right: 10px;
 }
 
 .pagination {
@@ -16960,12 +17021,43 @@ project
 }
 
 .category-nav {
-  height: 40px !important;
   overflow-x: scroll !important;
 }
 
 .category-nav__link {
   white-space: nowrap !important;
+}
+
+.navbar-toggler {
+  display: none !important;
+}
+
+.navbar-expand-md .navbar-nav .dropdown-menu {
+  position: absolute !important;
+}
+
+/* ====================================
+project
+==================================== */
+
+/* マイページのタブを定義しています
+------------------------------------ */
+
+.mypage-tabs {
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+/* ====================================
+project
+==================================== */
+
+/* フレーズ詳細ページを定義しています
+------------------------------------ */
+
+.phrase-detail-page {
+  margin: 0 auto;
 }
 
 /* Utility

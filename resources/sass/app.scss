@@ -31,7 +31,12 @@
 @import 'component/pagination';
 /* Project
 ------------------------------------ */
+// ヘッダー
 @import 'project/header';
+// マイページのタブ
+@import 'project/tabs';
+// フレーズ詳細ページ
+@import 'project/phrase-detail';
 /* Utility
 ------------------------------------ */
 // flexbox
