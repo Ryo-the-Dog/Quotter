@@ -80,19 +80,26 @@
             <div class="navbar navbar-expand-md navbar-light">
                 <div class="container pr-lg-0 pl-lg-0">
                     <ul class="navbar-nav mr-auto category-nav">
-                        <li class="nav-item @if(Route::currentRouteName() == 'phrases') active @endif">
+                        <li class="nav-item @if(url()->full() == 'https://laravel.app') active @endif">
                             <a class="nav-link text-black-50 category-nav__link
-                               @if(Route::currentRouteName() == 'phrases') active @endif"
+{{--                               @if(Route::currentRouteName() == 'phrases') active @endif"--}}
+                                @if(url()->full() == 'https://laravel.app') active @endif"
                                href="{{ route('phrases') }}">
                                 ALL
                             </a>
                         </li>
+{{--                        @php echo url()->full(); @endphp--}}
+{{--                        @dd(Request::is('?tag_id='.$tag->id));--}}
+{{--                        @php echo Route::get(); @endphp--}}
+{{--                        @php echo Request::route(); @endphp--}}
                         @forelse($tag_list as $tag)
                             @if($loop->index == 3)
                                 {{--                    @dd($tag->id)--}}
                             @endif
-                            <li class="nav-item">
-                                <a class="nav-link text-black-50 category-nav__link"
+{{--                        @dd( Request::is('/?tag_id=1') );--}}
+                            <li class="nav-item @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif">
+                                <a class="nav-link text-black-50 category-nav__link
+                                   @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>

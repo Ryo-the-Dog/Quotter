@@ -3,19 +3,17 @@
 @else col-lg-6 @endif">
     <div class="card rounded-0 ">
         <div class="card-body phrase-card__body">
-            <div class="row">
-                <div class="col-9 pr-0">
+            <div class="flex phrase-card__main">
+                <div class="phrase-card__phraseArea">
                     <i class="fas fa-quote-left"></i>
                     <p class="card-title phrase-card__phrase">{{$phrase->phrase}}</p>
                 </div>
-                <div class="col-3 pl-0">
-                    <div class="phrase-card__img ml-auto">
-                        @if($phrase->title_img_path == null)
-                            <img src="/storage/img/noimg.png" alt="{{$phrase->title}}">
-                        @else
-                            <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}">
-                        @endif
-                    </div>
+                <div class="phrase-card__img ml-auto">
+                    @if($phrase->title_img_path == null)
+                        <img src="/storage/img/noimg.png" alt="{{$phrase->title}}">
+                    @else
+                        <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}">
+                    @endif
                 </div>
             </div>
             <p>「{{$phrase->title}}」</p>

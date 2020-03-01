@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container pl-sm-0 pr-sm-0">
         <h2>{{ __('Phrase List') }}</h2>
 
         <div class="row">

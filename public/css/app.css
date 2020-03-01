@@ -16974,6 +16974,10 @@ component
   }
 }
 
+.phrase-card__main {
+  justify-content: space-between;
+}
+
 .phrase-card__body {
   height: 230px;
 }
@@ -16984,6 +16988,10 @@ component
   }
 }
 
+.phrase-card__phraseArea {
+  width: 78%;
+}
+
 @media screen and (max-width: 479px) {
   .phrase-card__phrase {
     margin-right: 5px;
@@ -16992,13 +17000,13 @@ component
 
 .phrase-card__img {
   height: 130px;
+  width: 22%;
   max-width: 100px;
 }
 
 @media screen and (max-width: 479px) {
   .phrase-card__img {
     line-height: 130px;
-    width: 100%;
   }
 }
 
