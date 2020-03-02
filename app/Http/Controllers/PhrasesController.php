@@ -34,6 +34,10 @@ class PhrasesController extends Controller
     // フレーズを投稿するアクション
     public function create(CreatePhraseRequest $request) {
 
+        if (! $this->exists) {
+            return false;
+        }
+
         // POSTされたデータを格納する
         $inputs = $request->all();
         // 格納したデータの中からtag_idsだけを抽出して格納
@@ -42,7 +46,7 @@ class PhrasesController extends Controller
         $phrase = new Phrase;
 
         // TODO 画像を空でも登録できるようにしたいが、なぜかバリデーションで引っかかっちゃう。→大丈夫かも
-        $path = $request->file('title_img') ? $request->file('title_img')->store('public/img') : '';
+        $path = $request->file('title_img_path') ? $request->file('title_img_path')->store('public/img') : '';
 
         // カテゴリー
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
@@ -95,30 +99,6 @@ class PhrasesController extends Controller
         //dd($tag_list);// #items: array:9 [▼0 => App\Tag {#308 ▶}1 => App\Tag {#309 ▶}2 => App\Tag {#310 ▶}3 => App\Tag {#311 ▶}4 => App\Tag {#312 ▶}5 => App\Tag {#313 ▶}6 => App\Tag {#314 ▶}7 => App\Tag {#315 ▶}8 => App\Tag {#316 ▶}]
 
         // いいね機能
-//        dd($phrase);
-//        dump($phrases);
-        // likes(現在その投稿に付いているいいね数)を読み込む
-
-//        $defaultCount = [];
-//        foreach ($list as $phrase) {
-//            //dd($phrase);
-////        $phrase = $this->phrase->load('likes');
-////            $phrase->load('likes');
-//            $defaultCount[] = count($phrase->likes);
-//        }
-        //dd($defaultCount); // array:4 [ ▼ 0 => 0, 1 => 1, 2 => 1, 3 => 0 ]
-        //dd($list[1]); /* キーでいいねが付いてるフレーズを指定するとちゃんと取得できる。
-        //                   #relations: array:2 [▼ "tags" => Illuminate\Database\Eloquent\Collection {#287 ▶}
-        //              "likes" => Illuminate\Database\Eloquent\Collection {#339 ▼
-        //                      #items: array:1 [▼
-        //                      0 => App\Like {#336 ▶}
-        //      ]
-        //    }
-        //  ]*/
-        // dd($list[2]->likes); // #items: array:1 [▶] で取得できる。中身はlikesテーブルのuser_idとphrase_id
-        //dd(count($list[2]->likes)); // 1
-//        dd($defaultCount);
-
 
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
             // そのユーザーがその投稿にいいねを押しているか
@@ -265,17 +245,7 @@ class PhrasesController extends Controller
         // カテゴリー一覧を取得(TagモデルのgetTagList()を呼び出す)
         $tag_list = $this->tag->getTagList();
         // いいね機能
-//        dd($phrase);
-//        dump($phrases);
-        // likes(現在その投稿に付いているいいね数)を読み込む
 
-//        $defaultCount = [];
-//        foreach ($list as $phrase) {
-//            //dd($phrase);
-////        $phrase = $this->phrase->load('likes');
-////            $phrase->load('likes');
-//            $defaultCount[] = count($phrase->likes);
-//        }
         // そのユーザーがその投稿にいいねを押しているか
         // TODO　いいね用
         $userAuth = Auth::user();
@@ -329,12 +299,6 @@ class PhrasesController extends Controller
 
             //            $defaultLiked = $phrase->likes->where('user_id', 3)->first();
             $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
-            //        dump($userAuth->id);
-            //        dump($phrase->likes->where('user_id', $userAuth->id)->first());
-            //            dd($phrase->likes->where('user_id', $userAuth->id)->first());
-            //            dd($phrase->likes->where('user_id', Auth::user()->id)); // items[]
-            //dump($phrase->likes->where('user_id', 3)); // これでちゃんとフレーズidが4に対してuser_id3の人がいいねを押したのが取得できる。
-            //dump($defaultLiked); // null
 
             if (isset($defaultLiked)) {
                 $defaultLiked = true;
@@ -355,53 +319,5 @@ class PhrasesController extends Controller
         }
     }
 
-    // 画像アップロード練習
-//    public function uploader()
-//    {
-//        return view('phrases.uploader');
-//    }
-//
-//    public function upload(Request $request)
-//    {
-//        if ($request->isMethod('POST')) {
-//
-//            $path = $request->file('image_file')->store('public/img');
-//
-//            Item::create(['file_name' => basename($path)]);
-//
-//            return redirect('/')->with(['success'=> 'ファイルを保存しました']);
-//        }
-//        // GET
-////        return view('upload');
-//    }
 
-//    public function index()
-//    {
-//        // Imgモデルのデータを全て格納する
-//        $items = Img::all();
-//        // phrases/index.blade.phpに格納したImgモデルのデータを全て渡す。
-//        return view('phrases.index', compact('items'));
-//    }
-//    public function upload(Request $request)
-//    {
-//        // POST送信されていた場合
-//        if ($request->isMethod('POST')) {
-//
-//            // TODO オリジナル
-//            // Imgモデルを生成する
-//            $img = new Img; // $img = new Img();でもOK？
-//            // storeメソッドを使ってファイル名を格納する。引数をpublic/imgとすることでランダムなファイル名になる。
-//            $path = $request->file('image_file')->store('public/img');
-//            // createメソッドでDBに保存する
-//            $img::create([ // $img->createでもいける。
-//                // basenameメソッドでファイル名のみを保存する。
-//                'file_name' => basename($path),
-//                'title' => $request->title,
-//            ]);
-//
-//            return redirect('/')->with(['success'=> 'ファイルを保存しました']);
-//        }
-//        // GET
-//        return view('phrases.uploader');
-//    }
 }

@@ -19,7 +19,6 @@
     "Go Practice": "練習開始！",
     "Invalid operation was performed.": "不正な操作が行われました",
     "Edited.": "編集完了しました",
-    "Edit": "編集する",
     "Deleted.": "フレーズを削除しました",
     "Go Delete": "問題削除",
     "Practice": "タイピング練習",
@@ -35,5 +34,13 @@
     "Account Delete": "アカウント削除",
     "Favorite Phrases": "いいねしたフレーズ",
     "Favorite Phrase List": "いいねしたフレーズ一覧",
-    "Post": "投稿する"
+    "Edit Profile": "プロフィール編集",
+    "Profile Image": "プロフィール画像",
+    "Profile Edited.": "プロフィールを編集しました",
+    "Edit": "編集",
+    "Edit Password": "パスワード変更",
+    "Old Password": "現在のパスワード",
+    "New Password": "新しいパスワード",
+    "Confirm New Password": "新しいパスワード(再入力)",
+    "Change": "変更"
 }

@@ -33,7 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/mypage', 'PhrasesController@mypage')->name('phrases.mypage');
     // いいねしたフレーズ一覧
     Route::get('/like_phrase', 'PhrasesController@like')->name('phrases.like');
-
+    // 会員編集のルーティング
+    Route::get('/profile_edit','UserController@edit')->name('profile.edit');
+    Route::post('/profile_edit', 'UserController@update')->name('profile.update');
+    // パスワード変更
+    Route::get('/password_edit','UserController@passEdit')->name('pass.edit');
+    Route::post('/password_edit', 'UserController@passUpdate')->name('pass.update');
     // 会員削除のルーティング
     Route::get('/delete','UserController@delete')->name('user.delete');
     Route::post('/delete', 'UserController@destroy')->name('delete');

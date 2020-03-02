@@ -3,11 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ja.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/component/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/component/_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/mypage_tabs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/mypage_tabs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +215,8 @@
       <workItem from="1582754364303" duration="9749000" />
       <workItem from="1582853664409" duration="23115000" />
       <workItem from="1582938708765" duration="20812000" />
-      <workItem from="1583026739777" duration="3645000" />
+      <workItem from="1583026739777" duration="3910000" />
+      <workItem from="1583117039441" duration="12406000" />
     </task>
     <servers />
   </component>
@@ -257,17 +264,21 @@
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state width="956" height="120" key="GridCell.Tab.0.right/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582939558904">
+    <state x="730" y="453" key="NewPhpFileDialog" timestamp="1583155363874">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1582939558904" />
+    <state x="730" y="453" key="NewPhpFileDialog/0.23.1680.999@0.23.1680.999" timestamp="1583155363874" />
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1583117064184">
+      <screen x="0" y="23" width="1680" height="999" />
+    </state>
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1583117064184" />
     <state x="750" y="279" width="756" height="486" key="find.popup" timestamp="1582983757198">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state x="750" y="279" width="756" height="486" key="find.popup/0.23.1680.999@0.23.1680.999" timestamp="1582983757198" />
-    <state x="726" y="243" width="670" height="676" key="search.everywhere.popup" timestamp="1582884105901">
+    <state x="726" y="243" width="670" height="676" key="search.everywhere.popup" timestamp="1583126546824">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="726" y="243" width="670" height="676" key="search.everywhere.popup/0.23.1680.999@0.23.1680.999" timestamp="1582884105901" />
+    <state x="726" y="243" width="670" height="676" key="search.everywhere.popup/0.23.1680.999@0.23.1680.999" timestamp="1583126546824" />
   </component>
 </project>

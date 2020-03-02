@@ -18,7 +18,7 @@
                                 <div class="col-md-6">
                                     <input class="form-control @error('title') is-invalid @enderror" id="title"
                                            name="title" value="{{old('title')}}"
-                                           autocomplete="title" autofocus type="text">
+                                           required autocomplete="title" autofocus type="text">
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -29,15 +29,15 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="title_img" class="col-md-4 col-form-label text-md-right">
+                                <label for="title_img_path" class="col-md-4 col-form-label text-md-right">
                                     {{ __('Title Image') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <input type="file" class="form-control @error('title') is-invalid @enderror" id="title_img"
-                                           name="title_img"
-                                           value="{{old('title_img')}}" >
+                                    <input type="file" class="form-control @error('title_img_path') is-invalid @enderror" id="title_img_path"
+                                           name="title_img_path"
+                                           value="{{old('title_img_path')}}" >
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
-                                    @error('title_img')
+                                    @error('title_img_path')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
@@ -51,7 +51,8 @@
                                 <div class="col-md-6">
                                     <textarea class="form-control @error('phrase') is-invalid @enderror"
                                               id="phrase" name="phrase"
-                                              value="{{old('phrase')}}" autocomplete="phrase" autofocus type="text">
+                                              value="{{old('phrase')}}"
+                                              required autocomplete="phrase" autofocus type="text">
                                     </textarea>
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('phrase')
@@ -103,23 +104,23 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="detail" class="col-md-4 col-form-label text-md-right">
-                                    {{ __('Detail') }}
-                                </label>
-                                <div class="col-md-6">
-                                    <textarea class="form-control @error('detail') is-invalid @enderror"
-                                              id="detail" name="detail"
-                                              value="{{old('detail')}}" autocomplete="detail" autofocus type="text">
-                                    </textarea>
-                                    {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
-                                    @error('detail')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="detail" class="col-md-4 col-form-label text-md-right">--}}
+{{--                                    {{ __('Detail') }}--}}
+{{--                                </label>--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <textarea class="form-control @error('detail') is-invalid @enderror"--}}
+{{--                                              id="detail" name="detail"--}}
+{{--                                              value="{{old('detail')}}" autocomplete="detail" autofocus type="text">--}}
+{{--                                    </textarea>--}}
+{{--                                    --}}{{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
+{{--                                    @error('detail')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{$message}}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
