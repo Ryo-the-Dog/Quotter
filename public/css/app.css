@@ -17086,6 +17086,18 @@ project
   position: absolute !important;
 }
 
+.sort-nav__link {
+  white-space: nowrap !important;
+}
+
+.sort-nav .nav-item.active {
+  border-bottom: solid 1px #212529;
+}
+
+.sort-nav .nav-link.active {
+  color: #212529 !important;
+}
+
 /* ====================================
 project
 ==================================== */

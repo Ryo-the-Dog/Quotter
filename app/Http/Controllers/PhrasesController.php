@@ -79,14 +79,19 @@ class PhrasesController extends Controller
         // dd(Auth::user()->id); // 1
 //        dd($phrase);
         // Phraseモデルのデータを全て格納する。
-        $phrases = Phrase::all();
+//        $phrases = Phrase::all();
+
+//        $phrases = Phrase::withCount('likes')->orderBy('likes_count','desc')->paginate(2);
 
         // カテゴリ別表示
         // パラメータを取得
         $input = $request->input();
 //        dd($input);
         // フレーズ一覧を取得
+//        $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
+//        dd($this->phrase->withCount('likes')->orderBy('likes_count','desc')->paginate(4)); // これだとちゃんと取れる
         $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
+//        dd($list->withCount('likes')->orderBy('likes_count','desc')->paginate(4));
 //        dd($list);
         //dd($list);/*#items: array:2 [▼ 0 => App\Phrase {#284 ▶},1 => App\Phrase {#285 ▶}]
                     #items: array:1 [▼ 0 => App\Phrase {#282 ▶} ] */
@@ -113,7 +118,7 @@ class PhrasesController extends Controller
             // TODO 非会員だとエラーが出ちゃう
 
             return view('index', [
-                'phrases' => $phrases,
+//                'phrases' => $phrases,
                 'userAuth' => $userAuth,
 //                'defaultLiked' => $defaultLiked,
 //                'defaultCount' => $defaultCount,
@@ -124,7 +129,7 @@ class PhrasesController extends Controller
         }else{
             return view('index', [
                 // 格納したPhraseモデルのデータをビューに渡す。
-                'phrases' => $phrases,
+//                'phrases' => $phrases,
                 'list' => $list,
                 'tag_list' => $tag_list,
             ]);

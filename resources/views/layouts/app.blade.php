@@ -112,17 +112,22 @@
                             <p>カテゴリーがありません</p>
                         @endforelse
                     </ul>
-                    <ul class="navbar-nav m-auto sort-nav">
-                        <li>
-                            <a class="nav-link text-black-50 sort-nav__link"
+                    <ul class="navbar-nav ml-auto sort-nav">
+{{--                        <li class="nav-item @if(url()->full() == 'https://laravel.app') active @endif">--}}
+{{--                            <a class="nav-link text-black-50 sort-nav__link--}}
+{{--                               @if(url()->full() == 'https://laravel.app') active @endif "--}}
+{{--                               href="{{ route('phrases') }}">--}}
+{{--                                投稿順--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+                        <li class="nav-item @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif">
+                            <a class="nav-link text-black-50 sort-nav__link
+                               @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif "
                                 href="{{ route('phrases', ['sort_id' => 'desc']) }}">
                                 いいね順
                             </a>
                         </li>
-                        <select name="narabi">
-                            <option value="asc">昇順</option>
-                            <option value="desc">降順</option>
-                        </select>
+
                     </ul>
                 </div>
             </div>
