@@ -36,6 +36,7 @@ class Phrase extends Model
 //        $tag_id = array_get($condition, 'tag_id');
         // 引数として渡ってきたtag_idとpage_idからtag_idだけ取り出す
         $tag_id = Arr::get($condition, 'tag_id');
+        $sort_id = Arr::get($condition, 'sort_id');
         //dd($tag_id); // 5
         //dd($this); // Phraseモデル
 //        dd(Phrase::with(['tags'])->get());
@@ -58,11 +59,34 @@ class Phrase extends Model
                 $q->where('id', $tag_id);
             });
         }
+//        dd($sort_id); // desc
+//        dd($sort_id == 'desc');
+//        dd($query);
+        if($sort_id == 'asc'){
+            $query->orderBy('created_at', 'asc');
+        } elseif($sort_id == 'desc') {
+            $query->orderBy('created_at', 'desc');
+        } 
 //        dd($query);
         // paginate メソッドを使うと、ページネーションに必要な全件数やオフセットの指定などは全部やってくれる
         return $query->paginate($num_per_page);
 
     }
+    // 順番表示
+    public function order($select)
+    {
+//        dd($this->orderBy('created_at', 'desc')->get());
+        if($select == 'asc'){
+            return $this->orderBy('created_at', 'asc')->get();
+        } elseif($select == 'desc') {
+            return $this->orderBy('created_at', 'desc')->get();
+        } else {
+            return $this->all();
+        }
+    }
+
+
+
     public function getLikePhraseList(int $num_per_page = 10, array $condition = [])
     {
         // 引数として渡ってきたtag_idとpage_idからtag_idだけ取り出す

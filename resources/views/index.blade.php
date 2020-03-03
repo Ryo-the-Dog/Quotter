@@ -17,6 +17,6 @@
                 <p>投稿がありません</p>
             @endforelse
         </div>
-        {{ $list->links() }}
+{{--        {{ $list->links() }}--}}
     </div>
 @endsection

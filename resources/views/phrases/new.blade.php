@@ -51,13 +51,13 @@
                             <div class="form-group row">
                                 <label for="phrase" class="col-md-4 col-form-label text-md-right">
                                     {{ __('Quote Phrase') }}
-{{--                                    <Counter--}}
+                                    <Counter
 
-{{--                                    ></Counter>--}}
+                                    ></Counter>
                                 </label>
 
                                 <div class="col-md-6">
-                                    <div id="app2">
+{{--                                    <div id="app2">--}}
                                     <textarea class="form-control @error('phrase') is-invalid @enderror
                                               new-quote__phrase"
                                               id="phrase" name="phrase"
@@ -66,8 +66,8 @@
                                               autocomplete="phrase" autofocus type="text"
                                               placeholder="80文字以内" v-model="strLength">
                                     </textarea>
-                                        <p>{{strCount}}/80</p>    
-                                    </div>
+{{--                                        <p>{{strLength}}/80</p>--}}
+{{--                                    </div>--}}
 
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('phrase')

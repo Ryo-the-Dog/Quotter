@@ -84,8 +84,10 @@ class PhrasesController extends Controller
         // カテゴリ別表示
         // パラメータを取得
         $input = $request->input();
+//        dd($input);
         // フレーズ一覧を取得
         $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
+//        dd($list);
         //dd($list);/*#items: array:2 [▼ 0 => App\Phrase {#284 ▶},1 => App\Phrase {#285 ▶}]
                     #items: array:1 [▼ 0 => App\Phrase {#282 ▶} ] */
         // ページネーションリンクにクエリストリングを付け加える
@@ -116,6 +118,7 @@ class PhrasesController extends Controller
 //                'defaultLiked' => $defaultLiked,
 //                'defaultCount' => $defaultCount,
                 'list' => $list,
+//                'list' => $this->phrase->order($request->narabi),
                 'tag_list' => $tag_list
             ]);
         }else{

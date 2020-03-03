@@ -50,7 +50,11 @@ const app = new Vue({
     // components: { App }, // ルートコンポーネントの使用を宣言する
     // template: '<App />' // ルートコンポーネントを描画する
 });
+// const app2 = new Vue({
+//     el: '#app2',
+// });
 
+//
 new Vue({
     el: '#app2',
     data: {
