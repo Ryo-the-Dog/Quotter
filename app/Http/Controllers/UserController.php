@@ -27,11 +27,17 @@ class UserController extends Controller
 
         // プロフィール画像
         $path = $request->file('profile_img_path') ? $request->file('profile_img_path')->store('public/img') : '';
-        $path = $path ? basename($path) : '';
-
-        $request[] = $path;
-
-        $auth->fill($request->all())->save();
+        // 画像が選択されていなければ更新しない
+//        if(!empty($path)) {
+//            $auth->fill([
+//                'profile_img_path' => $path ? basename($path) : '',
+//            ])->save();
+//        }
+        $auth->fill([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'profile_img_path' => $path ? basename($path) : '',
+        ])->save();
 
         return redirect('profile_edit')->with('flash_message', __('Profile Edited.'));
 

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title',__('User Delete'))
+
 @section('content')
     <div class="container">
 

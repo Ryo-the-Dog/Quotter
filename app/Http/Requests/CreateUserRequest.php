@@ -1,12 +1,10 @@
 <?php
 
-// フレーズ登録のバリデーション定義
-
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePhraseRequest extends FormRequest
+class CreateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +13,7 @@ class CreatePhraseRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -26,7 +24,7 @@ class CreatePhraseRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:30',
+            'title' => 'required|string|max:50',
             'title_img' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
             'phrase' => 'required|string|max:100',
 //            'tag_ids[]' => 'required',

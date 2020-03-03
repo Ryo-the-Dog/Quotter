@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    @hasSection('title')
+        <title>@yield('title') | {{ config('app.name', 'Quotter') }}</title>
+    @else
+        <title>{{ config('app.name', 'Quotter') }}</title>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,7 +29,7 @@
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container pr-lg-0 pl-lg-0">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Quotter') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -43,7 +47,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <button class="btn btn-primary nav-link"><a class="text-white" href="{{ route('register') }}">{{ __('Register') }}</a></button>
+                                    <button class="btn btn-primary nav-link"><a class="text-white" href="{{ route('register') }}">{{ __('User Register') }}</a></button>
                                 </li>
                             @endif
                         @else

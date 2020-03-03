@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Favorite Quotes'))
+
 @section('content')
     <div class="container">
 

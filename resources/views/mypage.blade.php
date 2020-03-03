@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('My Quote List'))
+
 @section('content')
     <div class="container">
 

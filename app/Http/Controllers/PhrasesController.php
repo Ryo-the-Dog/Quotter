@@ -34,9 +34,9 @@ class PhrasesController extends Controller
     // フレーズを投稿するアクション
     public function create(CreatePhraseRequest $request) {
 
-        if (! $this->exists) {
-            return false;
-        }
+//        if (! $this->exists) {
+//            return false;
+//        }
 
         // POSTされたデータを格納する
         $inputs = $request->all();
@@ -44,9 +44,10 @@ class PhrasesController extends Controller
         $tag_ids = $inputs['tag_ids'];
 
         $phrase = new Phrase;
-
+        dd($request);
         // TODO 画像を空でも登録できるようにしたいが、なぜかバリデーションで引っかかっちゃう。→大丈夫かも
         $path = $request->file('title_img_path') ? $request->file('title_img_path')->store('public/img') : '';
+//        dd($path);
 
         // カテゴリー
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
@@ -83,17 +84,12 @@ class PhrasesController extends Controller
         // カテゴリ別表示
         // パラメータを取得
         $input = $request->input();
-        //dd($input);//array:2 [▼"tag_id" => "1","page" => "1"]
-        //dd($this); /* #phrase: App\Phrase {#230 ▶}
-                      #tag: App\Tag {#231 ▶} */
-        // ブログ記事一覧を取得
+        // フレーズ一覧を取得
         $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
         //dd($list);/*#items: array:2 [▼ 0 => App\Phrase {#284 ▶},1 => App\Phrase {#285 ▶}]
                     #items: array:1 [▼ 0 => App\Phrase {#282 ▶} ] */
         // ページネーションリンクにクエリストリングを付け加える
         $list->appends($input);
-        //dd($list->appends($input));//$listに #query: array:1 [▼"tag_id" => "1"] が付与される。
-        //dd($list);
         // カテゴリー一覧を取得(TagモデルのgetTagList()を呼び出す)
         $tag_list = $this->tag->getTagList();
         //dd($tag_list);// #items: array:9 [▼0 => App\Tag {#308 ▶}1 => App\Tag {#309 ▶}2 => App\Tag {#310 ▶}3 => App\Tag {#311 ▶}4 => App\Tag {#312 ▶}5 => App\Tag {#313 ▶}6 => App\Tag {#314 ▶}7 => App\Tag {#315 ▶}8 => App\Tag {#316 ▶}]
@@ -105,17 +101,7 @@ class PhrasesController extends Controller
         if(!empty(Auth::user()) ) {
             // TODO　いいね用
             $userAuth = Auth::user();
-//            $defaultLiked = [];
-//            foreach($list as $phrase){
-//                $defaultLiked[] = $phrase->likes->where('phrase_id', $phrase->id)->where('user_id', $userAuth->id)->first();
-//            }
-//            dd($defaultLiked);
 
-//                $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
-
-            //dd($userAuth->id); // 3
-
-//                dd($defaultLiked);
 
             // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
             // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
@@ -123,11 +109,7 @@ class PhrasesController extends Controller
             TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
             TODO　とにかく最初の取得ができない。 */
             // TODO 非会員だとエラーが出ちゃう
-//            if (isset($defaultLiked)) {
-//                $defaultLiked = true;
-//            } else {
-//                $defaultLiked = false;
-//            }
+
             return view('index', [
                 'phrases' => $phrases,
                 'userAuth' => $userAuth,

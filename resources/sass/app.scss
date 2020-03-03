@@ -21,6 +21,7 @@
 @import 'foundation/base';
 /* Layout
 ------------------------------------ */
+
 /* Component
 ------------------------------------ */
 // ボタン
@@ -29,6 +30,8 @@
 @import 'component/card';
 // ページネーション
 @import 'component/pagination';
+// 入力フォーム
+@import 'component/input';
 /* Project
 ------------------------------------ */
 // ヘッダー
@@ -37,6 +40,8 @@
 @import 'project/tabs';
 // フレーズ詳細ページ
 @import 'project/phrase-detail';
+// プロフィール編集ページ
+@import 'project/profile-edit';
 // アカウント削除ページ
 @import 'project/user_delete';
 

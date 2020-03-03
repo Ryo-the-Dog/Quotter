@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs mypage-tabs">
     <li class="nav-item @if(Route::currentRouteName() == 'phrases.mypage') active @endif">
-        <a class="nav-link @if(Route::currentRouteName() == 'phrases.mypage') active @endif" href="{{ route('phrases.mypage') }}">{{ __('My Phrase List') }}</a>
+        <a class="nav-link @if(Route::currentRouteName() == 'phrases.mypage') active @endif" href="{{ route('phrases.mypage') }}">{{ __('My Quote List') }}</a>
     </li>
     <li class="nav-item @if(Route::currentRouteName() == 'phrases.like') active @endif">
-        <a class="nav-link @if(Route::currentRouteName() == 'phrases.like') active @endif" href="{{ route('phrases.like') }}">{{ __('Favorite Phrases') }}</a>
+        <a class="nav-link @if(Route::currentRouteName() == 'phrases.like') active @endif" href="{{ route('phrases.like') }}">{{ __('Favorite Quotes') }}</a>
     </li>
     <li class="nav-item @if(Route::currentRouteName() == 'profile.edit') active @endif">
         <a class="nav-link @if(Route::currentRouteName() == 'profile.edit') active @endif" href="{{ route('profile.edit') }}">{{ __('Edit Profile') }}</a>

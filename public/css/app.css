@@ -17026,6 +17026,18 @@ component
 
 .pagination {
   justify-content: center;
+  margin-top: 40px;
+}
+
+/* ====================================
+component
+==================================== */
+
+/* 入力フォームを定義しています
+------------------------------------ */
+
+.new-quote__phrase {
+  height: 140px !important;
 }
 
 /* Project
@@ -17109,6 +17121,53 @@ project
 
 .phrase-detail-page {
   margin: 0 auto;
+}
+
+.phrase-detail-page .phrase-card__body {
+  height: auto;
+}
+
+.phrase-profile {
+  display: flex;
+  align-items: center;
+  border-top: solid 1px #e4e4e4;
+  padding-top: 10px;
+}
+
+.phrase-profile__img {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.phrase-profile__img img {
+  width: 100%;
+}
+
+.phrase-profile__name {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.phrase-profile__date {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+/* ====================================
+project
+==================================== */
+
+/* プロフィール編集ページを定義しています
+------------------------------------ */
+
+.profile-img {
+  margin: 0 auto 15px;
+  width: 40%;
+  text-align: center;
+}
+
+.profile-img img {
+  width: 100%;
 }
 
 .delete-form {

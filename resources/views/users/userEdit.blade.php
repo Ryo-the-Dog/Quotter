@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Edit Profile'))
+
 @section('content')
     <div class="container">
 
@@ -11,8 +13,15 @@
                     <div class="card-header">{{ __('Edit Profile') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('profile.edit') }}">
-                            @csrf
+                        <form method="POST" action="{{ route('profile.edit') }}"  enctype="multipart/form-data">
+                            <div class="profile-img">
+                                @csrf
+                                @if($auth->profile_img_path == null)
+                                    <img src="/storage/img/noimg.png" alt="{{$auth->name}}">
+                                @else
+                                    <img src="{{ asset('/storage/img/'.$auth->profile_img_path) }}" alt="{{$auth->name}}">
+                                @endif
+                            </div>
                             <div class="form-group row">
                                 <label for="profile_img_path" class="col-md-4 col-form-label text-md-right">
                                     {{ __('Profile Image') }}

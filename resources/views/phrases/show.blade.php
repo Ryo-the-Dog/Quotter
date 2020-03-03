@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', '詳細')
+
+
 @section('content')
     <div class="container">
 {{--        <h2>{{ __('Phrase Detail') }}</h2>--}}

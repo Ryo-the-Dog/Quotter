@@ -1,12 +1,14 @@
 {{--フレーズの新規登録画面--}}
 @extends('layouts.app')
 
+@section('title', __('Quote Register'))
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{__('Phrase Register')}}</div>
+                    <div class="card-header">{{__('Quote Register')}}</div>
                     <div class="card-body">
                         <form action="{{route('phrases.new')}}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -18,7 +20,8 @@
                                 <div class="col-md-6">
                                     <input class="form-control @error('title') is-invalid @enderror" id="title"
                                            name="title" value="{{old('title')}}"
-                                           required autocomplete="title" autofocus type="text">
+                                           required autocomplete="title" autofocus type="text"
+                                           placeholder="30文字以内" maxlength="30">
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -44,16 +47,28 @@
                                     @enderror
                                 </div>
                             </div>
+{{--                            <div id="app2">--}}
                             <div class="form-group row">
                                 <label for="phrase" class="col-md-4 col-form-label text-md-right">
-                                    {{ __('Phrase') }}
+                                    {{ __('Quote Phrase') }}
+{{--                                    <Counter--}}
+
+{{--                                    ></Counter>--}}
                                 </label>
+
                                 <div class="col-md-6">
-                                    <textarea class="form-control @error('phrase') is-invalid @enderror"
+                                    <div id="app2">
+                                    <textarea class="form-control @error('phrase') is-invalid @enderror
+                                              new-quote__phrase"
                                               id="phrase" name="phrase"
                                               value="{{old('phrase')}}"
-                                              required autocomplete="phrase" autofocus type="text">
+                                              required maxlength="80"
+                                              autocomplete="phrase" autofocus type="text"
+                                              placeholder="80文字以内" v-model="strLength">
                                     </textarea>
+                                        <p>{{strCount}}/80</p>    
+                                    </div>
+
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('phrase')
                                     <span class="invalid-feedback" role="alert">
@@ -61,6 +76,7 @@
                                     </span>
                                     @enderror
                                 </div>
+{{--                            </div>--}}
                             </div>
                             <div class="form-group row">
                                 <label for="category1" class="col-md-4 col-form-label text-md-right">

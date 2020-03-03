@@ -65,6 +65,20 @@
                     </div>
                 </div>
             </div>
+            @if(Route::currentRouteName() == 'phrases.show' )
+            <div class="phrase-profile" >
+                <div class="phrase-profile__img">
+                    @if($userAuth->profile_img_path == null)
+                        <img src="/storage/img/noimg.png" alt="{{$userAuth->name}}">
+                    @else
+                        <img src="{{ asset('/storage/img/'.$userAuth->profile_img_path) }}" alt="{{$userAuth->name}}">
+                    @endif
+                </div>
+                <p class="phrase-profile__name">{{$userAuth->name}}</p>
+                <p class="phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
+                <span>の投稿</span>
+            </div>
+            @endif
         </div>
     </div>
 </div>

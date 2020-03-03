@@ -36,6 +36,7 @@ if(token) {
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('like',require('./components/Like.vue').default);
+Vue.component('counter', require('./components/Counter.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -49,3 +50,15 @@ const app = new Vue({
     // components: { App }, // ルートコンポーネントの使用を宣言する
     // template: '<App />' // ルートコンポーネントを描画する
 });
+
+new Vue({
+    el: '#app2',
+    data: {
+        strLength: ""
+    },
+    computed: {
+        strCount: function() {
+            return this.strLength.length;
+        }
+    }
+})
