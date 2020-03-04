@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Phrase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Phrase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/project/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Like.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/component/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/component/_btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/component/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/component/_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/foundation/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/mypage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mypage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phrases/like_phrase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/like_phrase.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +216,8 @@
       <workItem from="1582938708765" duration="20812000" />
       <workItem from="1583026739777" duration="3910000" />
       <workItem from="1583117039441" duration="12566000" />
-      <workItem from="1583200111492" duration="24226000" />
+      <workItem from="1583200111492" duration="24876000" />
+      <workItem from="1583285287971" duration="3911000" />
     </task>
     <servers />
   </component>
@@ -263,10 +269,10 @@
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state x="730" y="453" key="NewPhpFileDialog/0.23.1680.999@0.23.1680.999" timestamp="1583155363874" />
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1583117064184">
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1583285372488">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1583117064184" />
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1583285372488" />
     <state x="750" y="279" width="756" height="486" key="find.popup" timestamp="1582983757198">
       <screen x="0" y="23" width="1680" height="999" />
     </state>

@@ -45,9 +45,24 @@ component
         margin-right: 1%;
     }
     &__phrase {
-
+        color: $black_light;
+        font-weight: bold;
         @include mq(sm) {
+            font-size: 13px;
             margin-right: 5px;
+        }
+    }
+    &__title {
+        @include mq(sm) {
+            font-size: 13px;
+        }
+    }
+    &__link {
+        color: $color_main;
+        &:hover {
+            color: $color_main_hover;
+            text-decoration: none;
+            transition: all $transition_speed;
         }
     }
     &__img{

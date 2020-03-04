@@ -1,8 +1,8 @@
 <template>
     <span v-if="userId" class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->
-        <span v-if="!liked" @click="like(phraseId)" class="like-btn"><i class="far fa-heart"></i>{{likeCount}}</span>
-        <span v-else @click="unlike(phraseId)" class="like-btn"><i class="fas fa-heart"></i>{{likeCount}}</span>
+        <span v-if="!liked" @click="like(phraseId)" class="like-btn off"><i class="far fa-heart"></i>{{likeCount}}</span>
+        <span v-else @click="unlike(phraseId)" class="like-btn on"><i class="fas fa-heart"></i>{{likeCount}}</span>
     </span>
     <span v-else class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->

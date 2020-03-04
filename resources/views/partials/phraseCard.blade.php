@@ -16,14 +16,14 @@
                     @endif
                 </div>
             </div>
-            <p>「{{$phrase->title}}」</p>
+            <p class="phrase-card__title">「{{$phrase->title}}」</p>
             <div class="container">
                 <div class="row">
                     <div class="card-menu-left mr-auto">
-                        <a href="{{route('phrases.show',$phrase->id)}}">詳細</a>
+                        <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link">詳細</a>
                         &nbsp;&nbsp;&nbsp;
                         @forelse($phrase->tags as $tag)
-                            <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
+                            <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}" class="phrase-card__link">
                                 {{ $tag->name }}
                             </a>
                             &nbsp;

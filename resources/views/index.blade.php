@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container pl-sm-0 pr-sm-0">
+    <div class="container">
 {{--        <h2>{{ __('Phrase List') }}</h2>--}}
 
         <div class="row">
@@ -14,7 +14,7 @@
             @include('partials.phraseCard')
 
             @empty
-                <p>投稿がありません</p>
+                <p class="col-lg-6">投稿がありません</p>
             @endforelse
         </div>
 {{--        {{ $list->links() }}--}}

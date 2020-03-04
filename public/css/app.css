@@ -16864,8 +16864,20 @@ component
 /* ボタンを定義しています
 ------------------------------------ */
 
-/* アイコン
-==================================== */
+.btn-primary {
+  background-color: #6CD6C7 !important;
+  border-color: #6CD6C7 !important;
+}
+
+.btn-primary:hover {
+  background-color: #59b3a6 !important;
+  border-color: #59b3a6 !important;
+  transition: all 0.3s;
+}
+
+.btn-primary a {
+  text-decoration: none;
+}
 
 .twitter-btn {
   font-size: 18px;
@@ -16877,15 +16889,19 @@ component
 }
 
 .far.fa-heart {
-  color: #6c757d;
+  color: #919aa2;
 }
 
 .far.fa-heart:hover {
   color: #525961;
 }
 
+.far.fa-heart:hover .like-btn.off {
+  color: #525961;
+}
+
 .fas.fa-heart {
-  color: #ff667c;
+  color: #f66d9b;
 }
 
 .like-btn {
@@ -16893,22 +16909,65 @@ component
   font-size: 18px;
 }
 
+.like-btn.on {
+  color: #f66d9b;
+}
+
+.like-btn.on:hover {
+  color: #dc628b;
+  transition: all 0.3s;
+}
+
+.like-btn.on:hover .fas.fa-heart {
+  color: #dc628b;
+  transition: all 0.3s;
+}
+
+.like-btn.off {
+  color: #919aa2;
+}
+
+.like-btn.off:hover {
+  color: #525961;
+}
+
+.like-btn.off:hover .far.fa-heart {
+  color: #525961;
+}
+
 .like-btn--disabled {
-  color: inherit;
+  color: #919aa2;
   font-size: 18px;
 }
 
 .like-btn--disabled:hover {
-  color: inherit;
+  color: #525961;
   text-decoration: none;
+}
+
+.like-btn--disabled:hover .far.fa-heart {
+  color: #525961;
+}
+
+.like-btn--disabled .far.fa-heart:hover {
+  color: #525961;
+}
+
+.like-btn--disabled .far.fa-heart:hover .like-btn--disabled {
+  color: #525961;
 }
 
 .delete-btn {
   border: none;
   background-color: inherit;
-  color: #6c757d;
+  color: #919aa2;
   font-size: 17px;
   padding: 0;
+}
+
+.delete-btn:hover {
+  color: #525961;
+  transition: all 0.3s;
 }
 
 .delete-btn:focus {
@@ -16993,10 +17052,32 @@ component
   margin-right: 1%;
 }
 
+.phrase-card__phrase {
+  color: #46494c;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 479px) {
   .phrase-card__phrase {
+    font-size: 13px;
     margin-right: 5px;
   }
+}
+
+@media screen and (max-width: 479px) {
+  .phrase-card__title {
+    font-size: 13px;
+  }
+}
+
+.phrase-card__link {
+  color: #6CD6C7;
+}
+
+.phrase-card__link:hover {
+  color: #59b3a6;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
 .phrase-card__img {
@@ -17117,7 +17198,7 @@ project
 }
 
 .mypage-tabs .nav-link {
-  color: #6c757d;
+  color: #919aa2;
 }
 
 .mypage-tabs .nav-link.active {

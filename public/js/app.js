@@ -37396,7 +37396,7 @@ var render = function() {
           ? _c(
               "span",
               {
-                staticClass: "like-btn",
+                staticClass: "like-btn off",
                 on: {
                   click: function($event) {
                     return _vm.like(_vm.phraseId)
@@ -37411,7 +37411,7 @@ var render = function() {
           : _c(
               "span",
               {
-                staticClass: "like-btn",
+                staticClass: "like-btn on",
                 on: {
                   click: function($event) {
                     return _vm.unlike(_vm.phraseId)

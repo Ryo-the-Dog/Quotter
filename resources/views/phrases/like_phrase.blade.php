@@ -14,7 +14,7 @@
             @include('partials.phraseCard')
 
             @empty
-                <p>あなたがいいねしたフレーズはありません。</p>
+                <p class="col-lg-6">いいねしたクオートはありません。</p>
             @endforelse
         </div>
         {{ $phrases->links() }}

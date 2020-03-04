@@ -27,7 +27,7 @@
     <div id="app">
         <header class="bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
-                <div class="container pr-lg-0 pl-lg-0">
+                <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Quotter') }}
                     </a>
@@ -82,27 +82,24 @@
             {{-- TODO ヘッダーのカテゴリ制御 --}}
             @if(Route::currentRouteName() == 'phrases'  )
             <div class="navbar navbar-expand-md navbar-light">
-                <div class="container pr-lg-0 pl-lg-0">
+                <div class="container">
                     <ul class="navbar-nav mr-auto category-nav">
                         <li class="nav-item @if(url()->full() == 'https://laravel.app') active @endif">
-                            <a class="nav-link text-black-50 category-nav__link
+                            <a class="nav-link category-nav__link
 {{--                               @if(Route::currentRouteName() == 'phrases') active @endif"--}}
                                 @if(url()->full() == 'https://laravel.app') active @endif"
                                href="{{ route('phrases') }}">
                                 ALL
                             </a>
                         </li>
-{{--                        @php echo url()->full(); @endphp--}}
-{{--                        @dd(Request::is('?tag_id='.$tag->id));--}}
-{{--                        @php echo Route::get(); @endphp--}}
-{{--                        @php echo Request::route(); @endphp--}}
+
                         @forelse($tag_list as $tag)
                             @if($loop->index == 3)
                                 {{--                    @dd($tag->id)--}}
                             @endif
 {{--                        @dd( Request::is('/?tag_id=1') );--}}
                             <li class="nav-item @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif">
-                                <a class="nav-link text-black-50 category-nav__link
+                                <a class="nav-link category-nav__link
                                    @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
@@ -121,10 +118,10 @@
 {{--                            </a>--}}
 {{--                        </li>--}}
                         <li class="nav-item @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif">
-                            <a class="nav-link text-black-50 sort-nav__link
+                            <a class="nav-link sort-nav__link
                                @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif "
                                 href="{{ route('phrases', ['sort_id' => 'desc']) }}">
-                                いいね順
+                                人気のクオート
                             </a>
                         </li>
 
