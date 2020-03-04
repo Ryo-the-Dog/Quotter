@@ -5,7 +5,17 @@
 @section('content')
     <div class="container">
 
+{{--        <ImageTest></ImageTest>--}}
+
         @include('partials.mypage_tabs')
+
+{{--        <div id="file-preview">--}}
+{{--            　　<div class="form-group">--}}
+{{--                　　　　<label class="form-label" for="photo_id">プロフィール画像</label><br/>--}}
+{{--                　　　　<input class="form-input" type="file" name="photo_id" accept="image/*" v-on:change="onFileChange">--}}
+{{--                　　</div>--}}
+{{--            　　<img class="userInfo__icon" v-bind:src="imageData" v-if="imageData" alt="">--}}
+{{--        </div>--}}
 
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -32,6 +42,31 @@
                                            value="@if(!empty(old('profile_img_path') ) ){{old('profile_img_path')}}
                                            @elseif(!empty($auth) ){{ $auth->profile_img_path }}@endif" >
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
+                                    @error('profile_img_path')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="profile_img_path" class="col-md-4 col-form-label text-md-right">
+                                    {{ __('Profile Image') }}
+                                </label>
+                                <div class="col-md-6">
+{{--                                    <div id="img-prev">--}}
+{{--                                    <input type="file" class="form-control @error('profile_img_path') is-invalid @enderror" id="profile_img_path"--}}
+{{--                                           name="profile_img_path"--}}
+{{--                                           v-on:change="onFileChange"--}}
+{{--                                           v-preview-input="imageData"--}}
+{{--                                           value="@if(!empty(old('profile_img_path') ) ){{old('profile_img_path')}}--}}
+{{--                                           @elseif(!empty($auth) ){{ $auth->profile_img_path }}@endif" >--}}
+{{--                                    <img class="img" id="file-preview" v-show="uploadedImage" v-bind:src="uploadedImage" alt="">--}}
+{{--                                        <input class="form-input" type="file" name="photo_id" accept="image/*" v-on:change="onFileChange">--}}
+{{--                                        <img class="userInfo__icon" v-bind:src="imageData" v-show="imageData" alt="">--}}
+
+                                    {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
+{{--                                    </div>--}}
                                     @error('profile_img_path')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>

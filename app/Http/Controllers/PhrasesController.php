@@ -310,4 +310,10 @@ class PhrasesController extends Controller
     }
 
 
+    // 画像練習
+    public function uploader(){
+        return view('phrases/uploader');
+    }
+
+
 }
