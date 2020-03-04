@@ -44,7 +44,7 @@ class PhrasesController extends Controller
         $tag_ids = $inputs['tag_ids'];
 
         $phrase = new Phrase;
-        dd($request);
+//        dd($request);
         // TODO 画像を空でも登録できるようにしたいが、なぜかバリデーションで引っかかっちゃう。→大丈夫かも
         $path = $request->file('title_img_path') ? $request->file('title_img_path')->store('public/img') : '';
 //        dd($path);
@@ -69,7 +69,7 @@ class PhrasesController extends Controller
     }
 
     // 1ページ当たりの表示件数
-    const NUM_PER_PAGE = 4;
+    const NUM_PER_PAGE = 20;
     function __construct(Phrase $phrase, Tag $tag) {
         $this->phrase = $phrase;
         $this->tag = $tag;
@@ -224,7 +224,7 @@ class PhrasesController extends Controller
         // Phraseモデルのデータを全て格納する。
         $phrases = Auth::user()->likes();
 //        dd(Auth::user()->likes()->get());
-        $phrases = $phrases->paginate(2);
+        $phrases = $phrases->paginate(20);
         // カテゴリ別表示
         // パラメータを取得
         $input = $request->input();

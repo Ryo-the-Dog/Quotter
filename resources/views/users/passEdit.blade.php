@@ -13,6 +13,7 @@
                     <div class="card-header">{{ __('Edit Password') }}</div>
 
                     <div class="card-body">
+
                         <form method="POST" action="{{ route('pass.edit') }}">
                             @csrf
 
@@ -50,6 +51,7 @@
                                     <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
+
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
@@ -57,7 +59,9 @@
                                     </button>
                                 </div>
                             </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>

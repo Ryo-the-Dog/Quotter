@@ -57,7 +57,7 @@
                         @if(Route::currentRouteName() == 'phrases.mypage' )
                             <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
                                 @csrf
-                                <button class="delete-btn card-menu-right__btn" onclick="return confirm('このフレーズを削除してよろしいですか？')">
+                                <button class="delete-btn card-menu-right__btn" onclick="return confirm('このクオートを削除してよろしいですか？')">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                             </form>

@@ -13,7 +13,7 @@ class CreateUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,12 +24,11 @@ class CreateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:50',
-            'title_img' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'phrase' => 'required|string|max:100',
-//            'tag_ids[]' => 'required',
-            'tag_ids[].*' => 'integer',
-            'detail' => 'nullable|string|max:200',
+            'name' => 'required|string|max:20',
+            'email' => 'required | string | email | max:255 | unique:users',
+            'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+
+//            're_email' => 'required | string | email | max:255 | unique:users',
         ];
     }
 }

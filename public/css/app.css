@@ -17110,6 +17110,15 @@ component
   margin-top: 40px;
 }
 
+.pagination .page-item.active .page-link {
+  background-color: #6CD6C7 !important;
+  border-color: #6CD6C7 !important;
+}
+
+.pagination a {
+  color: #6CD6C7 !important;
+}
+
 /* ====================================
 component
 ==================================== */

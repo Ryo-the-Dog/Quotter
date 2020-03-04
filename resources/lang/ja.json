@@ -19,7 +19,7 @@
     "Go Practice": "練習開始！",
     "Invalid operation was performed.": "不正な操作が行われました",
     "Edited.": "編集完了しました",
-    "Deleted.": "フレーズを削除しました",
+    "Deleted.": "クオートを削除しました",
     "Go Delete": "問題削除",
     "Practice": "タイピング練習",
     "Login": "ログイン",
@@ -43,5 +43,8 @@
     "New Password": "新しいパスワード",
     "Confirm New Password": "新しいパスワード(再入力)",
     "Change": "変更",
-    "Quote Phrase": "引用フレーズ"
+    "Quote Phrase": "引用フレーズ",
+    "Registered.": "投稿しました!!",
+    "password": "パスワード",
+    "These credentials do not match our records.": "登録されていないアドレスです。"
 }

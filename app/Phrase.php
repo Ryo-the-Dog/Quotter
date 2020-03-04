@@ -30,7 +30,7 @@ class Phrase extends Model
         return $this->belongsToMany('App\Tag');
     }
     // 投稿をカテゴリ別表示
-    public function getPhraseList(int $num_per_page = 10, array $condition = [])
+    public function getPhraseList(int $num_per_page = 20, array $condition = [])
     {
         //dd($condition);// array:2 [▼ "tag_id" => "5","page" => "1"]
 //        $tag_id = array_get($condition, 'tag_id');
@@ -92,7 +92,7 @@ class Phrase extends Model
         }
     }
 
-    public function getLikePhraseList(int $num_per_page = 10, array $condition = [])
+    public function getLikePhraseList(int $num_per_page = 20, array $condition = [])
     {
         // 引数として渡ってきたtag_idとpage_idからtag_idだけ取り出す
         $tag_id = Arr::get($condition, 'tag_id');

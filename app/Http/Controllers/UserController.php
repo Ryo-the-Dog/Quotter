@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\PassEditRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +35,24 @@ class UserController extends Controller
 //                'profile_img_path' => $path ? basename($path) : '',
 //            ])->save();
 //        }
+        if(strcmp($request->get('email'), Auth::user()->email) == 0) {
+            $validated_data = $request->validate([
+                'name' => 'required|string|max:20',
+                'email' => 'required | string | email | max:255 ',
+                'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+        }else{
+            $validated_data = $request->validate([
+                'name' => 'required|string|max:20',
+                'email' => 'required | string | email | max:255 | unique:users',
+                'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+        }
+//        if(!strcmp($request->get('email'), Auth::user()->email) == 0) {
+//            $auth->fill([
+//                'email' => $request->input('email')
+//            ])->save();
+//        }
         $auth->fill([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -57,10 +77,11 @@ class UserController extends Controller
     // パスワード変更
     public function passEdit() {
         $auth = Auth::user();
+//        dd($auth);
         return view('users.passEdit',['auth' => $auth]);
     }
-    public function passUpdate(Request $request) {
-//        dd($request);
+    public function passUpdate(PassEditRequest $request) {
+//        dd($afef);
 //        if (!$request) {
 //            return false;
 //        }
@@ -68,25 +89,25 @@ class UserController extends Controller
 //        dd(Auth::user()->password);
         //現在のパスワードが正しいかを調べる
         if(!(Hash::check($request->get('old-password'), Auth::user()->password))) {
-            return redirect('/')->with('flash_message', '現在のパスワードが間違っています。');
+            return redirect('password_edit')->with('flash_message', '現在のパスワードが間違っています。');
         }
 //        dd(strcmp($request->get('old-password'), $request->get('new-password')));
         //現在のパスワードと新しいパスワードが違っているかを調べる
         if(strcmp($request->get('old-password'), $request->get('new-password')) == 0) {
-            return redirect('/')->with('flash_message', '新しいパスワードが現在のパスワードと同じです。違うパスワードを設定してください。');
+            return redirect('password_edit')->with('flash_message', '新しいパスワードが現在のパスワードと同じです。違うパスワードを設定してください。');
         }
 
         //パスワードのバリデーション。新しいパスワードは6文字以上、new-password_confirmationフィールドの値と一致しているかどうか。
-        $validated_data = $request->validate([
-            'old-password' => 'required',
-            'new-password' => 'required|string|min:8|confirmed',
-        ]);
+//        $validated_data = $request->validate([
+////            'old-password' => 'required',
+//            'new-password' => 'required|string|min:8|confirmed',
+//        ]);
 
         //パスワードを変更
         $user = Auth::user();
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
 
-        return redirect('/')->with('flash_message', 'パスワードを変更しました。');
+        return redirect('password_edit')->with('flash_message', 'パスワードを変更しました。');
     }
 }
