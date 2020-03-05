@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import './main';
+// import './main';
 import axios from 'axios';
 // ルーティングの定義をインポートする
 // import router from './router'

@@ -1,27 +1,33 @@
 <template>
 <!--  2  -->
-<!--    <label for="file-sample">-->
-<!--        <div class="drop">-->
-<!--            <input class="input" id="file-sample" type="file" name="user_img" @change="onFileChange">-->
+
+        <div class="col-md-6">
+
+            <input class="form-control" id="file-sample" type="file" name="profile_img_path"
+                   v-preview-input="uploadedImage"
+
+                   @change="onFileChange">
+<!--            <input v-if="this.auth.profile_img_path" class="form-control" id="file-sample" type="file" name="profile_img_path"-->
+<!--                   v-preview-input="uploadedImage"-->
+<!--                   :value="uploadedImage"-->
+<!--                   @change="onFileChange">-->
 <!--            <i aria-hidden="true" class="fas fa-plus fa-7x"></i>-->
-<!--            <img class="img" id="file-preview" v-show="uploadedImage" :src="uploadedImage">-->
-<!--        </div>-->
-<!--    </label>-->
-    <input type="file" class="form-control @error('profile_img_path') is-invalid @enderror" id="profile_img_path"
-           name="profile_img_path"
-           {{--                                           v-on:change="onFileChange"--}}
-           {{--                                           v-preview-input="imageData"--}}
-           value="@if(!empty(old('profile_img_path') ) ){{old('profile_img_path')}}
-                                           @elseif(!empty($auth) ){{ $auth->profile_img_path }}@endif" >
+            <img class="img" id="file-preview"
+                 v-show="uploadedImage"
+                 v-bind:src="uploadedImage"
+                 style="width:100%;">
+        </div>
+
+
 </template>
 
 <script>
     export default {
-
+        props: ['auth'],
         // 2
         data() {
             return {
-                uploadedImage: "",
+                uploadedImage: this.auth.profile_img_path?'/storage/img/'+this.auth.profile_img_path:'/storage/img/noimg.png',
             };
         },
         methods: {

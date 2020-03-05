@@ -53,11 +53,27 @@ class UserController extends Controller
 //                'email' => $request->input('email')
 //            ])->save();
 //        }
-        $auth->fill([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'profile_img_path' => $path ? basename($path) : '',
-        ])->save();
+//        if(!empty(Auth::user()->profile_img_path)){
+//            if(strcmp($request->get('profile_img_path'), Auth::user()->profile_img_path) == 0) {
+//                $auth->fill([
+//                    'name' => $request->input('name'),
+//                    'email' => $request->input('email'),
+//                    'profile_img_path' => $path ? basename($path) : '',
+//                ])->save();
+//            }
+//        }
+        if(empty($path)){
+            $auth->fill([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+            ])->save();
+        }else{
+            $auth->fill([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'profile_img_path' => $path ? basename($path) : '',
+            ])->save();
+        }
 
         return redirect('profile_edit')->with('flash_message', __('Profile Edited.'));
 
