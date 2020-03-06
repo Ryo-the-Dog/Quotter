@@ -36,7 +36,7 @@
                                     {{ __('Title Image') }}
                                 </label>
                                 <div class="col-md-6">
-                                    <input type="file" class="form-control @error('title_img_path') is-invalid @enderror" id="title_img_path"
+                                    <input type="file" class="form-control file-input @error('title_img_path') is-invalid @enderror" id="title_img_path"
                                            name="title_img_path"
                                            value="{{old('title_img_path')}}" >
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}

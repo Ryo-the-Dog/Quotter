@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/ImageTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ImageTest.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ja.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ja/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ja/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/component/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/component/_input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/project/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/project/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/userEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/userEdit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,21 +162,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/partials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/ja" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/partials" />
-      <recent name="$PROJECT_DIR$/app/Http" />
-      <recent name="$PROJECT_DIR$/resources/views/phrases" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/phrases" />
       <recent name="$PROJECT_DIR$/resources/sass/foundation" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
       <recent name="$PROJECT_DIR$/storage/app/public/img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/lang/ja" />
+      <recent name="$PROJECT_DIR$/resources/views/partials" />
+      <recent name="$PROJECT_DIR$/app/Http" />
+      <recent name="$PROJECT_DIR$/resources/views/phrases" />
     </key>
   </component>
   <component name="RunManager">
@@ -221,7 +228,8 @@
       <workItem from="1583117039441" duration="12566000" />
       <workItem from="1583200111492" duration="24876000" />
       <workItem from="1583285287971" duration="21536000" />
-      <workItem from="1583375475049" duration="7815000" />
+      <workItem from="1583375475049" duration="7971000" />
+      <workItem from="1583459101195" duration="6796000" />
     </task>
     <servers />
   </component>
@@ -273,14 +281,14 @@
       <screen x="0" y="23" width="1680" height="999" />
     </state>
     <state x="730" y="453" key="NewPhpFileDialog/0.23.1680.999@0.23.1680.999" timestamp="1583155363874" />
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1583285372488">
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1583459172239">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1583285372488" />
-    <state x="750" y="279" width="756" height="486" key="find.popup" timestamp="1583378665919">
+    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1583459172239" />
+    <state x="750" y="279" width="756" height="486" key="find.popup" timestamp="1583482278782">
       <screen x="0" y="23" width="1680" height="999" />
     </state>
-    <state x="750" y="279" width="756" height="486" key="find.popup/0.23.1680.999@0.23.1680.999" timestamp="1583378665919" />
+    <state x="750" y="279" width="756" height="486" key="find.popup/0.23.1680.999@0.23.1680.999" timestamp="1583482278782" />
     <state x="726" y="243" width="670" height="676" key="search.everywhere.popup" timestamp="1583295855134">
       <screen x="0" y="23" width="1680" height="999" />
     </state>

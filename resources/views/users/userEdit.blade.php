@@ -5,17 +5,7 @@
 @section('content')
     <div class="container">
 
-{{--        <ImageTest></ImageTest>--}}
-
         @include('partials.mypage_tabs')
-
-{{--        <div id="file-preview">--}}
-{{--            　　<div class="form-group">--}}
-{{--                　　　　<label class="form-label" for="photo_id">プロフィール画像</label><br/>--}}
-{{--                　　　　<input class="form-input" type="file" name="photo_id" accept="image/*" v-on:change="onFileChange">--}}
-{{--                　　</div>--}}
-{{--            　　<img class="userInfo__icon" v-bind:src="imageData" v-if="imageData" alt="">--}}
-{{--        </div>--}}
 
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -57,16 +47,6 @@
                                 </div>
                             </div>
 
-{{--                            <div class="form-group row mb-0">--}}
-{{--                                <div class="col-md-6 offset-md-4">--}}
-{{--                                    <button type="submit" class="btn btn-primary">--}}
-{{--                                        {{ __('Edit') }}--}}
-{{--                                    </button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-{{--                        <form method="POST" action="{{ route('profile.edit') }}"  enctype="multipart/form-data">--}}
-{{--                            @csrf--}}
                             <div class="form-group row">
                                 <label for="profile_img_path"  class="col-md-4 col-form-label text-md-right">{{ __('Profile Image') }}</label>
                                 {{-- ⭕️一応最低限登録は行える。

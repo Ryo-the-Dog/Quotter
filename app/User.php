@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// メール送信用
+use App\Notifications\CustomPasswordReset;
 
 class User extends Authenticatable
 {
@@ -70,5 +72,16 @@ class User extends Authenticatable
     }
     public function is_like($phraseId) {
         return $this->likes()->where('phrase_id', $phraseId)->exists();
+    }
+
+    /**
+     * パスワードリセット通知の送信
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomPasswordReset($token));
     }
 }

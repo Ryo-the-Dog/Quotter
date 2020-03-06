@@ -5,6 +5,12 @@ component
 ------------------------------------ */
 .new-quote {
     &__phrase {
-        height: 140px !important;
+        height: 130px !important;
     }
+}
+.file-input {
+    line-height: 20px;
+}
+.profile-img-input {
+    margin-bottom: 5px;
 }

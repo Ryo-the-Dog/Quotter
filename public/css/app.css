@@ -17127,7 +17127,15 @@ component
 ------------------------------------ */
 
 .new-quote__phrase {
-  height: 140px !important;
+  height: 130px !important;
+}
+
+.file-input {
+  line-height: 20px;
+}
+
+.profile-img-input {
+  margin-bottom: 5px;
 }
 
 /* Project
@@ -17142,6 +17150,20 @@ project
 
 /* カテゴリーメニュー
 ==================================== */
+
+.navbar-logo {
+  width: 160px;
+}
+
+@media screen and (max-width: 479px) {
+  .navbar-logo {
+    width: 140px;
+  }
+}
+
+.navbar-logo-img {
+  width: 100%;
+}
 
 .navbar-expand-md .navbar-nav {
   flex-direction: row !important;

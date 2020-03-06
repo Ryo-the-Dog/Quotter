@@ -28,7 +28,7 @@ return [
         'array'   => ':attributeは:min〜:max個までにしてください。',
     ],
     'boolean'              => ':attributeはtrueかfalseにしてください。',
-    'confirmed'            => ':attributeは確認用項目と一致していません。',
+    'confirmed'            => ':attributeが再入力と一致していません。',
     'date'                 => ':attributeは正しい日付ではありません。',
     'date_format'          => ':attributeは":format"書式と一致していません。',
     'different'            => ':attributeは:otherと違うものにしてください。',
@@ -72,7 +72,8 @@ return [
     ],
     'string'               => ':attributeは文字列にしてください。',
     'timezone'             => ':attributeは正しいタイムゾーンをしていしてください。',
-    'unique'               => ':attributeは既に存在します。',
+    // 二重チェック
+    'unique'               => '既に存在する:attributeです。',
     'url'                  => ':attributeを正しい書式にしてください。',
     'failed' => '登録されていないアドレスです。',
 
@@ -108,7 +109,7 @@ return [
         'title' => 'タイトル',
         'category_name' => 'カテゴリー名',
         'password' => 'パスワード',
-        'email' => 'そのアドレス',
+        'email' => 'アドレス',
         'new-password' => 'パスワード',
     ],
 

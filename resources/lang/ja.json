@@ -46,5 +46,12 @@
     "Quote Phrase": "引用フレーズ",
     "Registered.": "投稿しました!!",
     "password": "パスワード",
-    "These credentials do not match our records.": "登録されていないアドレスです。"
+    "These credentials do not match our records.": "登録されていないアドレスです。",
+    "Reset Password": "パスワード再登録",
+    "Send Password Reset Link": "パスワード再設定用のリンクを送信",
+    "Register": "登録",
+    "We have e-mailed your password reset link!": "入力されたアドレスにパスワード再設定用のリンクを送信しました。",
+    "Click link below and reset password.": "下記のURLにアクセスして、パスワードを再設定してください。",
+    "If you did not request a password reset, no further action is required.": "このメールに心当たりがない場合は、このメールを削除してください。"
+
 }

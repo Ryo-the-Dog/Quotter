@@ -6,6 +6,16 @@ project
 
 /* カテゴリーメニュー
 ==================================== */
+// サイトロゴ
+.navbar-logo {
+    width: 160px;
+    @include mq(sm){
+        width: 140px;
+    }
+    &-img {
+        width: 100%;
+    }
+}
 .navbar-expand-md .navbar-nav {
     flex-direction: row !important;
 }

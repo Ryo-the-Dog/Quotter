@@ -1955,15 +1955,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['auth'],
-  // 2
   data: function data() {
     return {
       uploadedImage: this.auth.profile_img_path ? '/storage/img/' + this.auth.profile_img_path : '/storage/img/noimg.png'
@@ -37462,7 +37455,7 @@ var render = function() {
           expression: "uploadedImage"
         }
       ],
-      staticClass: "form-control",
+      staticClass: "form-control file-input profile-img-input",
       attrs: { id: "file-sample", type: "file", name: "profile_img_path" },
       on: { change: _vm.onFileChange }
     }),
