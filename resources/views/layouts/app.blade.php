@@ -19,6 +19,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- フッター -->
+    <link href="sticky-footer.css" rel="stylesheet">
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}">
 
@@ -27,6 +29,13 @@
 </head>
 <body>
     <div id="app">
+        @if (session('flash_message'))
+            <div class="alert alert-primary text-center flash-message" role="alert">
+                {{--        <div class="flash-message">--}}
+                {{ session('flash_message') }}
+            </div>
+            {{--            <toast message="{{ session('flash_message') }}" type="success"></toast>--}}
+        @endif
         <header class="bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
@@ -57,7 +66,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ $user->name }} <span class="caret"></span>
+                                    アカウント <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -114,13 +123,7 @@
                         @endforelse
                     </ul>
                     <ul class="navbar-nav ml-auto sort-nav">
-{{--                        <li class="nav-item @if(url()->full() == 'https://laravel.app') active @endif">--}}
-{{--                            <a class="nav-link text-black-50 sort-nav__link--}}
-{{--                               @if(url()->full() == 'https://laravel.app') active @endif "--}}
-{{--                               href="{{ route('phrases') }}">--}}
-{{--                                投稿順--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+
                         <li class="nav-item @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif">
                             <a class="nav-link sort-nav__link
                                @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif "
@@ -135,14 +138,16 @@
             @else
             @endif
         </header>
-        @if (session('flash_message'))
-            <div class="alert alert-primary text-center" role="alert">
-                {{ session('flash_message') }}
-            </div>
-        @endif
+
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
+            </div>
+        </footer>
     </div>
 
 </body>

@@ -32,10 +32,8 @@
                         @endforelse
                     </div>
                     <div class="card-menu-right">
-                        <a href="http://twitter.com/intent/tweet?
-                        url=https://ryonexta.com/portfolio/
-                        &text={{$phrase->phrase}}「{{$phrase->title}}」
-                        &related=ryonextStandard&hashtags=Phrase" class="twitter-btn card-menu-right__btn">
+                        <a href="http://twitter.com/intent/tweet?url=https://ryonexta.com/portfolio/
+                        &text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Quotter" class="twitter-btn card-menu-right__btn">
                             <i class="fab fa-twitter"></i>
                         </a>
                         @guest

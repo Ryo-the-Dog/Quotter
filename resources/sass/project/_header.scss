@@ -8,12 +8,15 @@ project
 ==================================== */
 // サイトロゴ
 .navbar-logo {
-    width: 160px;
+    width: 150px;
     @include mq(sm){
-        width: 140px;
+        width: 110px;
     }
     &-img {
         width: 100%;
+    }
+    .navbar-brand{
+        margin-right: 0;
     }
 }
 .navbar-expand-md .navbar-nav {
@@ -53,4 +56,12 @@ project
     .nav-link.active {
         color: $black_normal !important;
     }
+}
+// フラッシュメッセージ
+.flash-message {
+    background-color: rgba(108,214,199,0.9);
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+
 }

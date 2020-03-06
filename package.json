@@ -25,6 +25,9 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "vue-router": "^3.1.5"
+        "toastr": "^2.1.4",
+        "vue-property-decorator": "^8.4.0",
+        "vue-router": "^3.1.5",
+        "vue-toasted": "^1.1.27"
     }
 }

@@ -1,5 +1,7 @@
 import Vue from 'vue';
-// import './main';
+import jquery from 'jquery';
+// import Toasted from 'vue-toasted';
+import './main';
 import axios from 'axios';
 // ルーティングの定義をインポートする
 // import router from './router'
@@ -39,6 +41,7 @@ if(token) {
 Vue.component('like',require('./components/Like.vue').default);
 Vue.component('counter', require('./components/Counter.vue').default);
 Vue.component('imagetest', require('./components/ImageTest.vue').default);
+// Vue.use(Toasted)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -52,63 +55,5 @@ const app = new Vue({
     // components: { App }, // ルートコンポーネントの使用を宣言する
     // template: '<App />' // ルートコンポーネントを描画する
 });
-// const app2 = new Vue({
-//     el: '#app2',
-// });
-// new Vue({
-//     el: '#file-preview',
-//     data: {
-//         imageData: '' //画像格納用変数
-//     },
-//     methods: {
-//         onFileChange(e) {
-//             // cosole.log('File');
-//             const files = e.target.files;
-//
-//             if(files.length > 0) {
-//
-//                 const file = files[0];
-//                 const reader = new FileReader();
-//
-//                 reader.onload = (e) => {
-//                     this.imageData = e.target.result;
-//
-//                 };
-//                 reader.readAsDataURL(file);
-//             }
-//         }
-//     }
-// });
-//
-// new Vue({
-//     el: '#app2',
-//     data: {
-//         strLength: ""
-//     },
-//     computed: {
-//         strCount: function() {
-//             return this.strLength.length;
-//         }
-//     }
-// })
-// new Vue ({
-//     el: '#img-prev',
-//     data: {
-//         uploadedImage: "",
-//     },
-//     methods: {
-//         onFileChange(e) {
-//             let files = e.target.files;
-//             this.createImage(files[0]); //File情報格納
-//         },
-//         //アップロードした画像を表示
-//         createImage(file) {
-//             let reader = new FileReader(); //File API生成
-//             reader.onload = (e) => {
-//                 this.uploadedImage = e.target.result;
-//             };
-//
-//             reader.readAsDataURL(file);
-//         },
-//     },
-// });
+
+

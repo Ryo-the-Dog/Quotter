@@ -22,7 +22,7 @@
                                        name="name" value="{{ old('name') }}"
                                        required maxlength="20"
                                        autocomplete="name" autofocus
-                                       placeholder="20文字以内" >
+                                       placeholder="10文字以内" >
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">

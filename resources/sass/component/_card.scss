@@ -6,7 +6,7 @@ component
 /* アイコン
 ==================================== */
 .fa-quote-left {
-    color: #a6a6a6;
+    color: #6CD6C7;
     @include mq(sm) {
         font-size: 12px;
     }
@@ -58,9 +58,9 @@ component
         }
     }
     &__link {
-        color: $color_main;
+        color: $gray_light;
         &:hover {
-            color: $color_main_hover;
+            color: $black_light;
             text-decoration: none;
             transition: all $transition_speed;
         }

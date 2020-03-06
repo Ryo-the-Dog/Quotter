@@ -49720,9 +49720,15 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
- // import './main';
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main */ "./resources/js/main.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_main__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
+ // import Toasted from 'vue-toasted';
+
 
  // ルーティングの定義をインポートする
 // import router from './router'
@@ -49760,7 +49766,8 @@ if (token) {
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('like', __webpack_require__(/*! ./components/Like.vue */ "./resources/js/components/Like.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('counter', __webpack_require__(/*! ./components/Counter.vue */ "./resources/js/components/Counter.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('imagetest', __webpack_require__(/*! ./components/ImageTest.vue */ "./resources/js/components/ImageTest.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('imagetest', __webpack_require__(/*! ./components/ImageTest.vue */ "./resources/js/components/ImageTest.vue")["default"]); // Vue.use(Toasted)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49772,66 +49779,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   // components: { App }, // ルートコンポーネントの使用を宣言する
   // template: '<App />' // ルートコンポーネントを描画する
 
-}); // const app2 = new Vue({
-//     el: '#app2',
-// });
-// new Vue({
-//     el: '#file-preview',
-//     data: {
-//         imageData: '' //画像格納用変数
-//     },
-//     methods: {
-//         onFileChange(e) {
-//             // cosole.log('File');
-//             const files = e.target.files;
-//
-//             if(files.length > 0) {
-//
-//                 const file = files[0];
-//                 const reader = new FileReader();
-//
-//                 reader.onload = (e) => {
-//                     this.imageData = e.target.result;
-//
-//                 };
-//                 reader.readAsDataURL(file);
-//             }
-//         }
-//     }
-// });
-//
-// new Vue({
-//     el: '#app2',
-//     data: {
-//         strLength: ""
-//     },
-//     computed: {
-//         strCount: function() {
-//             return this.strLength.length;
-//         }
-//     }
-// })
-// new Vue ({
-//     el: '#img-prev',
-//     data: {
-//         uploadedImage: "",
-//     },
-//     methods: {
-//         onFileChange(e) {
-//             let files = e.target.files;
-//             this.createImage(files[0]); //File情報格納
-//         },
-//         //アップロードした画像を表示
-//         createImage(file) {
-//             let reader = new FileReader(); //File API生成
-//             reader.onload = (e) => {
-//                 this.uploadedImage = e.target.result;
-//             };
-//
-//             reader.readAsDataURL(file);
-//         },
-//     },
-// });
+});
 
 /***/ }),
 
@@ -50084,6 +50032,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Like_vue_vue_type_template_id_354af9fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// (function() {
+//     'use strict';
+// フラッシュメッセージのfadeout
+window.onload = function () {
+  setTimeout(function () {
+    $('.flash-message').slideUp(1000);
+  }, 2500); // $('.flash-message').slideUp(3000);
+};
 
 /***/ }),
 
