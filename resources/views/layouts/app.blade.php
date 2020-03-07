@@ -3,6 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quotter(クオッター)は本や映画の好きなフレーズを「引用」してシェアできるサービスです。">
+    <!-- Twitter -->
+    {{--  TODO  --}}
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="Quotter" >
+    <meta property="og:description" content="Quotter(クオッター)は本や映画の好きなフレーズを「引用」してシェアできるサービスです。" >
+    <meta property="og:image" content="{{ asset('/img/twitter_card.png') }}" >
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ryonextStandard">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
