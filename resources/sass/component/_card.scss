@@ -59,11 +59,15 @@ component
     }
     &__link {
         color: $gray_light;
+        margin-right: 10px;
         &:hover {
             color: $black_light;
             text-decoration: none;
             transition: all $transition_speed;
         }
+    }
+    &__link.detail{
+        margin-right: 20px;
     }
     &__img{
         height: 130px;

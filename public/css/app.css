@@ -17083,12 +17083,17 @@ component
 
 .phrase-card__link {
   color: #919aa2;
+  margin-right: 10px;
 }
 
 .phrase-card__link:hover {
   color: #46494c;
   text-decoration: none;
   transition: all 0.3s;
+}
+
+.phrase-card__link.detail {
+  margin-right: 20px;
 }
 
 .phrase-card__img {
@@ -17310,6 +17315,7 @@ project
   display: flex;
   align-items: center;
   border-top: solid 1px #e4e4e4;
+  margin-top: 10px;
   padding-top: 10px;
 }
 

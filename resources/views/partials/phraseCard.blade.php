@@ -20,13 +20,14 @@
             <div class="container">
                 <div class="row">
                     <div class="card-menu-left mr-auto">
-                        <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link">詳細</a>
-                        &nbsp;&nbsp;&nbsp;
+                        @if(Route::currentRouteName() == 'phrases.show' )
+                        @else
+                            <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>
+                        @endif
                         @forelse($phrase->tags as $tag)
-                            <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}" class="phrase-card__link">
+                            <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}" class="phrase-card__link category">
                                 {{ $tag->name }}
                             </a>
-                            &nbsp;
                         @empty
                             <p>カテゴリーがありません</p>
                         @endforelse
@@ -66,13 +67,13 @@
             @if(Route::currentRouteName() == 'phrases.show' )
             <div class="phrase-profile" >
                 <div class="phrase-profile__img">
-                    @if($userAuth->profile_img_path == null)
-                        <img src="/storage/img/noimg.png" alt="{{$userAuth->name}}">
+                    @if($phrase->user->profile_img_path == null)
+                        <img src="/storage/img/noimg.png" alt="{{$phrase->user->name}}">
                     @else
-                        <img src="{{ asset('/storage/img/'.$userAuth->profile_img_path) }}" alt="{{$userAuth->name}}">
+                        <img src="{{ asset('/storage/img/'.$phrase->user->profile_img_path) }}" alt="{{$phrase->user->name}}">
                     @endif
                 </div>
-                <p class="phrase-profile__name">{{$userAuth->name}}</p>
+                <p class="phrase-profile__name">{{$phrase->user->name}}</p>
                 <p class="phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
                 <span>の投稿</span>
             </div>

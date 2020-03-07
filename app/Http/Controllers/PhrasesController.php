@@ -280,12 +280,12 @@ class PhrasesController extends Controller
 //        if(Auth::user()) {
 
         $phrase->load('likes');
+        $phrase->load('user');
+//        dd($phrase->user->name);
         $defaultCount = count($phrase->likes);
         if(!empty(Auth::user()) ) {
             // TODO　いいね用
             $userAuth = Auth::user();
-
-            //        dd($userAuth->id); // 1
 
             //            $defaultLiked = $phrase->likes->where('user_id', 3)->first();
             $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
@@ -307,12 +307,6 @@ class PhrasesController extends Controller
                 'defaultCount' => $defaultCount,
             ]);
         }
-    }
-
-
-    // 画像練習
-    public function uploader(){
-        return view('phrases/uploader');
     }
 
 
