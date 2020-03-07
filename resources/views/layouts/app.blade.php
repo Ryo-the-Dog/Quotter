@@ -148,13 +148,16 @@
             @endif
         </header>
 
-        <main class="py-4">
+        <main class="main">
             @yield('content')
         </main>
 
         <footer class="footer">
-            <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
+            <div class="container footer-container">
+                <p class="text-muted">Copyright &copy;Quotter All Rights Reserved.</p>
+                <a href="https://twitter.com/ryonextStandard" target="_blank" class="twitter-btn">
+                    <i class="fab fa-twitter text-muted"></i>
+                </a>
             </div>
         </footer>
     </div>

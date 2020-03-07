@@ -20,7 +20,7 @@
                                 アカウントを削除してよろしいですか？</p>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 userDelete-btn-area">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary"  onclick="return confirm('本当にアカウントを削除してよろしいですか？')">
                                         {{ __('Delete') }}
                                     </button>
                                 </div>
