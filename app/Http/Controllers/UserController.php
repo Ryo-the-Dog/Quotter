@@ -29,6 +29,7 @@ class UserController extends Controller
 
         // プロフィール画像
         $path = $request->file('profile_img_path') ? $request->file('profile_img_path')->store('public/img') : '';
+        dd($path);
         // 画像が選択されていなければ更新しない
 //        if(!empty($path)) {
 //            $auth->fill([

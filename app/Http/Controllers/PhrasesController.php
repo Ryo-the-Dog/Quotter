@@ -69,7 +69,7 @@ class PhrasesController extends Controller
     }
 
     // 1ページ当たりの表示件数
-    const NUM_PER_PAGE = 20;
+    const NUM_PER_PAGE = 6;
     function __construct(Phrase $phrase, Tag $tag) {
         $this->phrase = $phrase;
         $this->tag = $tag;
