@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// メール送信用
+use App\Notifications\CustomPasswordReset;
 
 class User extends Authenticatable
 {
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'profile_img_path'
     ];
 
     /**
@@ -36,4 +38,50 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Phraseモデルとのリレーション。これであるユーザーが投稿したフレーズを取得できる。
+    public function phrases() {
+        return $this->hasMany('App\Phrase');
+    }
+
+    // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
+    // このユーザーが押したいいね
+    public function likes() {
+        return $this->belongsToMany(
+            'App\Phrase', 'likes', 'user_id', 'phrase_id'
+        )->withTimestamps();
+    }
+    public function like($phraseId) {
+        $exist = $this->is_like($phraseId);
+        if($exist){
+            return false;
+        }else{
+            $this->likes()->attach($phraseId);
+            return true;
+        }
+    }
+    public function dislike($phraseId) {
+        $exist = $this->is_like($phraseId);
+
+        if($exist){
+            $this->likes()->detach($phraseId);
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function is_like($phraseId) {
+        return $this->likes()->where('phrase_id', $phraseId)->exists();
+    }
+
+    /**
+     * パスワードリセット通知の送信
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomPasswordReset($token));
+    }
 }

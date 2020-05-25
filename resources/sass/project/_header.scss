@@ -1,0 +1,67 @@
+/* ====================================
+project
+==================================== */
+/* ヘッダーを定義しています
+------------------------------------ */
+
+/* カテゴリーメニュー
+==================================== */
+// サイトロゴ
+.navbar-logo {
+    width: 150px;
+    @include mq(sm){
+        width: 110px;
+    }
+    &-img {
+        width: 100%;
+    }
+    .navbar-brand{
+        margin-right: 0;
+    }
+}
+.navbar-expand-md .navbar-nav {
+    flex-direction: row !important;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+}
+.category-nav {
+    overflow-x: scroll !important;
+    &__link {
+        white-space: nowrap !important;
+    }
+    .nav-item.active {
+        border-bottom: solid 1px $black_normal;
+    }
+    .nav-link.active {
+        color: $black_normal !important;
+    }
+}
+.navbar-toggler {
+    display: none !important;
+}
+.navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute !important;
+}
+// 並び替え
+.sort-nav {
+    //overflow-x: scroll !important;
+    &__link {
+        white-space: nowrap !important;
+    }
+    .nav-item.active {
+        border-bottom: solid 1px $black_normal;
+    }
+    .nav-link.active {
+        color: $black_normal !important;
+    }
+}
+// フラッシュメッセージ
+.flash-message {
+    background-color: rgba(108,214,199,0.9);
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+
+}

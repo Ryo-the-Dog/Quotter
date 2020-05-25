@@ -1,0 +1,33 @@
+/* ====================================
+project
+==================================== */
+/* フレーズ詳細ページを定義しています
+------------------------------------ */
+.phrase-detail-page {
+    margin: 0 auto;
+    .phrase-card__body {
+        height: auto;
+    }
+}
+.phrase-profile {
+    display: flex;
+    align-items: center;
+    border-top: solid 1px $gray_lighter;
+    margin-top: 10px;
+    padding-top: 10px;
+    &__img {
+        width: 60px;
+        margin-right: 20px;
+        img {
+            width: 100%;
+        }
+    }
+    &__name {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+    &__date {
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+}

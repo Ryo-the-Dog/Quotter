@@ -2,7 +2,55 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import 'foundation/variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// 独自SCSS
+/* Foundation
+------------------------------------ */
+// ブレイクポイント
+@import 'foundation/breakpoint';
+@import 'foundation/base';
+
+/* Layout
+------------------------------------ */
+@import 'layout/main';
+
+/* Component
+------------------------------------ */
+// ボタン
+@import 'component/btn';
+// カード
+@import 'component/card';
+// ページネーション
+@import 'component/pagination';
+// 入力フォーム
+@import 'component/input';
+
+/* Project
+------------------------------------ */
+// ヘッダー
+@import 'project/header';
+// フッター
+@import 'project/footer';
+// マイページのタブ
+@import 'project/tabs';
+// フレーズ詳細ページ
+@import 'project/phrase-detail';
+// プロフィール編集ページ
+@import 'project/profile-edit';
+// アカウント削除ページ
+@import 'project/user_delete';
+
+/* Utility
+------------------------------------ */
+// flexbox
+@import 'utility/flexbox';

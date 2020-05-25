@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Quotter'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    //'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +81,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +162,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // Twitterログイン
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -174,6 +178,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // ユーザーコンポーザーを読み込むために読み込む
+        App\Providers\ComposerServiceProvider::class,
 
     ],
 
@@ -225,7 +232,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        // Twitterログイン
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

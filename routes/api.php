@@ -29,3 +29,8 @@ Route::get('/user', fn() => Auth::user())->name('user');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// いいね機能
+Route::post('/phrases/{phrase}/like', 'LikeController@like');
+// いいね取消機能
+Route::post('/phrases/{phrase}/unlike', 'LikeController@unlike');

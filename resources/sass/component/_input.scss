@@ -1,0 +1,16 @@
+/* ====================================
+component
+==================================== */
+/* 入力フォームを定義しています
+------------------------------------ */
+.new-quote {
+    &__phrase {
+        height: 130px !important;
+    }
+}
+.file-input {
+    line-height: 20px;
+}
+.profile-img-input {
+    margin-bottom: 5px;
+}

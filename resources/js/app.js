@@ -1,12 +1,24 @@
+<<<<<<< HEAD
 // ストアをインポートする
 import store from './store' // ★　追加
 import './bootstrap' // CSRF対策用
 import Vue from 'vue'
+=======
+import Vue from 'vue';
+import jquery from 'jquery';
+// import Toasted from 'vue-toasted';
+import './main';
+import axios from 'axios';
+>>>>>>> blade.phpでテンプレート
 // ルーティングの定義をインポートする
-import router from './router'
+// import router from './router'
 // ルートコンポーネントをインポートする
+<<<<<<< HEAD
 import App from './App.vue'
 
+=======
+// import App from './App.vue'
+>>>>>>> blade.phpでテンプレート
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -16,6 +28,15 @@ import App from './App.vue'
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+// いいね機能
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
+const token = document.head.querySelector('meta[name="csrf-token"]')
+if(token) {
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
+}
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,6 +50,10 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('like',require('./components/Like.vue').default);
+Vue.component('counter', require('./components/Counter.vue').default);
+Vue.component('imagetest', require('./components/ImageTest.vue').default);
+// Vue.use(Toasted)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,6 +61,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+<<<<<<< HEAD
 // const app = new Vue({
 //     el: '#app',
 //     router, // ルーティングの定義を読み込む
@@ -57,3 +83,13 @@ const createApp = async () => {
 }
 
 createApp()
+=======
+const app = new Vue({
+    el: '#app',
+    // router, // ルーティングの定義を読み込む
+    // components: { App }, // ルートコンポーネントの使用を宣言する
+    // template: '<App />' // ルートコンポーネントを描画する
+});
+
+
+>>>>>>> blade.phpでテンプレート

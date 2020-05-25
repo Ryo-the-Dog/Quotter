@@ -1,0 +1,113 @@
+/* ====================================
+component
+==================================== */
+/* ボタンを定義しています
+------------------------------------ */
+// 共通ボタン
+.btn-primary {
+    background-color: $color_main !important;
+    border-color: $color_main !important;
+    &:hover {
+        background-color: $color_main_hover !important;
+        border-color: $color_main_hover !important;
+        transition: all .3s;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+// Twitterボタン
+.twitter-btn {
+    font-size: 18px;
+}
+// いいねボタン
+.fa-heart{
+    cursor: pointer;
+    margin-right: 3px;
+}
+.far.fa-heart{
+    color: $gray_light;
+    &:hover {
+        color: #525961;
+        .like-btn.off {
+            color: #525961;
+        }
+    }
+}
+.fas.fa-heart{
+    color: $pink;
+}
+.like-btn {
+    cursor: pointer;
+    font-size: 18px;
+    &.on {
+        color: $pink;
+        &:hover {
+            color: $pink_hover;
+            transition: all $transition_speed;
+            .fas.fa-heart {
+                color: $pink_hover;
+                transition: all $transition_speed;
+            }
+        }
+    }
+    &.off {
+        color: $gray_light;
+        &:hover {
+            color: #525961;
+            .far.fa-heart {
+                color: #525961;
+            }
+        }
+    }
+    &--disabled{
+        color: $gray_light;
+        font-size: 18px;
+        &:hover{
+            color: #525961;
+            text-decoration: none;
+            .far.fa-heart {
+                color: #525961;
+            }
+        }
+        .far.fa-heart {
+            &:hover {
+                .like-btn--disabled {
+                    color: #525961;
+                }
+                color: #525961;
+            }
+        }
+    }
+}
+// フレーズ削除ボタン
+.delete-btn {
+    border: none;
+    background-color: inherit;
+    color: $gray_light;
+    font-size: 17px;
+    padding: 0;
+    &:hover {
+        color: #525961;
+        transition: all $transition_speed;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+// 戻るボタン
+.back-btn-area {
+    margin: 0 auto;
+    button:hover {
+        text-decoration: underline;
+    }
+
+}
+// アカウント削除
+.userDelete {
+    margin-top: 20px;
+    &-btn-area {
+        margin-left: auto;
+        text-align: right;
+    }
+}

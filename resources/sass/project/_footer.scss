@@ -1,0 +1,33 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 90px;
+}
+.footer {
+    background-color: #fff;
+    box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    height: 90px;
+    width: 100%;
+    //padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    &-container{
+        //height: 90px;
+        //padding: 20px 0;
+        //position: absolute;
+        //bottom: 0;
+        width: auto;
+        max-width: 680px;
+        padding: 20px 0;
+    }
+    .text-muted{
+        //margin: 20px 0;
+        margin-bottom: 0;
+    }
+}
