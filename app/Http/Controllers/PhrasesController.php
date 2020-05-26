@@ -31,23 +31,19 @@ class PhrasesController extends Controller
 
         return view('phrases.new',  [ 'all_tags_list' => $tag->all() ]);
     }
+
     // フレーズを投稿するアクション
     public function create(CreatePhraseRequest $request) {
 
-//        if (! $this->exists) {
-//            return false;
-//        }
-
         // POSTされたデータを格納する
         $inputs = $request->all();
+
         // 格納したデータの中からtag_idsだけを抽出して格納
         $tag_ids = $inputs['tag_ids'];
 
         $phrase = new Phrase;
-//        dd($request);
-        // TODO 画像を空でも登録できるようにしたいが、なぜかバリデーションで引っかかっちゃう。→大丈夫かも
+
         $path = $request->file('title_img_path') ? $request->file('title_img_path')->store('public/img') : '';
-//        dd($path);
 
         // カテゴリー
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
@@ -61,7 +57,7 @@ class PhrasesController extends Controller
             'phrase' => $request->input('phrase'),
             'detail' => $request->input('detail'),
         ])->id;
-//        dd($id);
+
         $phrase = $phrase->find($id);
         $phrase->tags()->sync($tag_ids);
 
