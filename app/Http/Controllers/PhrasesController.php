@@ -86,6 +86,10 @@ class PhrasesController extends Controller
         // カテゴリ別表示
         // パラメータを取得
         $input = $request->input();
+
+        // タグのidを取得
+        $tagId = $request->tag_id;
+
 //        dd($input);
         // フレーズ一覧を取得
 //        $list = $this->phrase->getPhraseList(self::NUM_PER_PAGE, $input);
@@ -124,7 +128,8 @@ class PhrasesController extends Controller
 //                'defaultCount' => $defaultCount,
                 'list' => $list,
 //                'list' => $this->phrase->order($request->narabi),
-                'tag_list' => $tag_list
+                'tag_list' => $tag_list,
+                'tagId' => $tagId,
             ]);
         }else{
             return view('index', [
@@ -132,6 +137,7 @@ class PhrasesController extends Controller
 //                'phrases' => $phrases,
                 'list' => $list,
                 'tag_list' => $tag_list,
+                'tagId' => $tagId,
             ]);
         }
 

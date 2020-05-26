@@ -60,7 +60,6 @@
                     <ul class="navbar-nav mr-auto">
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -101,15 +100,13 @@
                     </ul>
                 </div>
             </nav>
-            {{-- TODO ヘッダーのカテゴリ制御 --}}
+
             @if(Route::currentRouteName() == 'phrases'  )
             <div class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul class="navbar-nav mr-auto category-nav">
-                        <li class="nav-item @if(url()->full() == 'https://laravel.app') active @endif">
-                            <a class="nav-link category-nav__link
-{{--                               @if(Route::currentRouteName() == 'phrases') active @endif"--}}
-                                @if(url()->full() == 'https://laravel.app') active @endif"
+                        <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tagId)) active @endif">
+                            <a class="nav-link category-nav__link @if(url()->full() == 'https://laravel.app') active @endif"
                                href="{{ route('phrases') }}">
                                 ALL
                             </a>
@@ -117,12 +114,11 @@
 
                         @forelse($tag_list as $tag)
                             @if($loop->index == 3)
-                                {{--                    @dd($tag->id)--}}
+
                             @endif
-{{--                        @dd( Request::is('/?tag_id=1') );--}}
+
                             <li class="nav-item @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif">
-                                <a class="nav-link category-nav__link
-                                   @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif"
+                                <a class="nav-link category-nav__link @if($tagId === $tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>
