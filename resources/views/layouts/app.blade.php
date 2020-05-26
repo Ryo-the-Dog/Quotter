@@ -117,9 +117,9 @@
 
                             @endif
 
-                            <li class="nav-item @if(url()->full() == 'https://laravel.app/?tag_id='.$tag->id) active @endif">
+                            <li class="nav-item @if($tagId === $tag->id) active @endif">
                                 <a class="nav-link category-nav__link @if($tagId === $tag->id) active @endif"
-                                   href="{{ route('phrases', ['tagId' => $tag->id]) }}">
+                                   href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>
                             </li>
