@@ -27,7 +27,7 @@ class ForeignUserIdToPhrases extends Migration
     public function down()
     {
         Schema::table('phrases', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
+//            $table->dropForeign(['user_id']);
         });
     }
 }

@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="40cdd401-38db-4df8-b812-9248347e4ce5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/quotter-share.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/quotter-share.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/LogoutApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/LogoutApiTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/RegisterApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/RegisterApiTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/UserApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/UserApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_044933_foreign_user_id_to_phrases.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_044933_foreign_user_id_to_phrases.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
     </list>
-=======
-    <list default="true" id="f062a854-8dd9-403b-bfd8-5eee5a5b0119" name="Default Changelist" comment="" />
->>>>>>> blade.phpでテンプレート
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +84,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1cOOXFa3W11q0wnXT3TsL763XI7" />
+  <component name="ProjectId" id="1cQiv8FAF6IJZLXHqkhvXy8bsuK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -104,8 +92,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -130,61 +118,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f062a854-8dd9-403b-bfd8-5eee5a5b0119" name="Default Changelist" comment="" />
-      <created>1590396210067</created>
+      <changelist id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="" />
+      <created>1590467445313</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
-      <updated>1581866497449</updated>
-      <workItem from="1581866498788" duration="221000" />
-      <workItem from="1581907141307" duration="7649000" />
-      <workItem from="1581988724823" duration="1389000" />
-      <workItem from="1582079881157" duration="6273000" />
-=======
-      <updated>1590396210067</updated>
-      <workItem from="1590396211476" duration="586000" />
->>>>>>> blade.phpでテンプレート
+      <updated>1590467445313</updated>
+      <workItem from="1590467446858" duration="541000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-<<<<<<< HEAD
-  <component name="WindowStateProjectService">
-    <state x="872" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581991706658">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state x="872" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.999@0.23.1680.999" timestamp="1581991706658" />
-    <state width="956" height="120" key="GridCell.Tab.0.bottom" timestamp="1581951571381">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state width="956" height="120" key="GridCell.Tab.0.bottom/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
-    <state width="956" height="120" key="GridCell.Tab.0.center" timestamp="1581951571381">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state width="956" height="120" key="GridCell.Tab.0.center/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
-    <state width="956" height="120" key="GridCell.Tab.0.left" timestamp="1581951571380">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state width="956" height="120" key="GridCell.Tab.0.left/0.23.1680.999@0.23.1680.999" timestamp="1581951571380" />
-    <state width="956" height="120" key="GridCell.Tab.0.right" timestamp="1581951571381">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state width="956" height="120" key="GridCell.Tab.0.right/0.23.1680.999@0.23.1680.999" timestamp="1581951571381" />
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582079945090">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state x="808" y="346" key="com.intellij.ide.util.TipDialog/0.23.1680.999@0.23.1680.999" timestamp="1582079945090" />
-    <state x="748" y="271" width="756" height="486" key="find.popup" timestamp="1582081397561">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state x="748" y="271" width="756" height="486" key="find.popup/0.23.1680.999@0.23.1680.999" timestamp="1582081397561" />
-    <state x="694" y="462" width="670" height="676" key="search.everywhere.popup" timestamp="1582086183096">
-      <screen x="0" y="23" width="1680" height="999" />
-    </state>
-    <state x="694" y="462" width="670" height="676" key="search.everywhere.popup/0.23.1680.999@0.23.1680.999" timestamp="1582086183096" />
-  </component>
-=======
->>>>>>> blade.phpでテンプレート
 </project>
