@@ -13,37 +13,46 @@ class TagTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tags')->delete();
+
         DB::table('tags')->insert([
+            'id' => 1,
             'name' => '小説',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('tags')->insert([
+            'id' => 2,
             'name' => 'エッセイ',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('tags')->insert([
+            'id' => 3,
             'name' => '映画',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('tags')->insert([
+            'id' => 4,
             'name' => '仕事',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('tags')->insert([
-            'name' => 'お金',
+            'id' => 5,
+            'name' => 'マネー',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('tags')->insert([
+            'id' => 6,
             'name' => '人生',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('tags')->insert([
+            'id' => 7,
             'name' => '恋愛',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

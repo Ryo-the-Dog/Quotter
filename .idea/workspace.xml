@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/quotter-share.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/quotter-share.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_22_044933_foreign_user_id_to_phrases.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_22_044933_foreign_user_id_to_phrases.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TagTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TagTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590467445313</updated>
-      <workItem from="1590467446858" duration="541000" />
+      <workItem from="1590467446858" duration="1972000" />
     </task>
     <servers />
   </component>
