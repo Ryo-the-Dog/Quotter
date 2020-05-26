@@ -107,7 +107,7 @@
                     <ul class="navbar-nav mr-auto category-nav">
                         <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
                             <a class="nav-link category-nav__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
-                               href="{{ route('phrases', ['sort_id' => $sortId]) }}">
+                               href="{{ route('phrases', ['sort_id' => $sort_id]) }}">
                                 ALL
                             </a>
                         </li>
