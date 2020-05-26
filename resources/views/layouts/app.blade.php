@@ -105,8 +105,8 @@
             <div class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul class="navbar-nav mr-auto category-nav">
-                        <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tagId)) active @endif">
-                            <a class="nav-link category-nav__link @if(url()->full() == 'https://laravel.app') active @endif"
+                        <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
+                            <a class="nav-link category-nav__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
                                href="{{ route('phrases') }}">
                                 ALL
                             </a>
@@ -117,8 +117,8 @@
 
                             @endif
 
-                            <li class="nav-item @if($tagId == $tag->id) active @endif">
-                                <a class="nav-link category-nav__link @if($tagId == $tag->id) active @endif"
+                            <li class="nav-item @if($tag_id == $tag->id) active @endif">
+                                <a class="nav-link category-nav__link @if($tag_id == $tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>
@@ -129,9 +129,8 @@
                     </ul>
                     <ul class="navbar-nav ml-auto sort-nav">
 
-                        <li class="nav-item @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif">
-                            <a class="nav-link sort-nav__link
-                               @if(url()->full() == 'https://laravel.app/?sort_id=desc') active @endif "
+                        <li class="nav-item @if($sort_id === 'desc') active @endif">
+                            <a class="nav-link sort-nav__link @if($sort_id === 'desc') active @endif"
                                 href="{{ route('phrases', ['sort_id' => 'desc']) }}">
                                 人気のクオート
                             </a>
