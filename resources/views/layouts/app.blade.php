@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Quotter(クオッター)は本や映画の好きなフレーズを「引用」してシェアできるサービスです。">
+
     <!-- Twitter -->
-    {{--  TODO  --}}
     <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:title" content="Quotter" >
     <meta property="og:description" content="Quotter(クオッター)は本や映画の好きなフレーズを「引用」してシェアできるサービスです。" >
