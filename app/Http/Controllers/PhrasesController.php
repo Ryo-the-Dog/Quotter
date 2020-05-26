@@ -107,13 +107,15 @@ class PhrasesController extends Controller
                 'userAuth' => $userAuth,
                 'list' => $list,
                 'tag_list' => $tag_list,
-                'tagId' => $tag_id,
+                'tag_id' => $tag_id,
+                'sort_id' => $sort_id,
             ]);
         }else{
             return view('index', [
                 'list' => $list,
                 'tag_list' => $tag_list,
                 'tag_id' => $tag_id,
+                'sort_id' => $sort_id,
             ]);
         }
 
