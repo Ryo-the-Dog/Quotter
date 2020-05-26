@@ -113,7 +113,7 @@ class PhrasesController extends Controller
             return view('index', [
                 'list' => $list,
                 'tag_list' => $tag_list,
-                'tagId' => $tag_id,
+                'tag_id' => $tag_id,
             ]);
         }
 
