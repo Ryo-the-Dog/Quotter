@@ -107,7 +107,7 @@
                     <ul class="navbar-nav mr-auto category-nav">
                         <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
                             <a class="nav-link category-nav__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
-                               href="{{ route('phrases') }}">
+                               href="{{ route('phrases', ['sort_id' => $sortId]) }}">
                                 ALL
                             </a>
                         </li>
@@ -119,7 +119,7 @@
 
                             <li class="nav-item @if($tag_id == $tag->id) active @endif">
                                 <a class="nav-link category-nav__link @if($tag_id == $tag->id) active @endif"
-                                   href="{{ route('phrases', ['tag_id' => $tag->id]) }}">
+                                   href="{{ route('phrases', ['tag_id' => $tag->id, 'sort_id' => $sort_id]) }}">
                                     {{ $tag->name }}
                                 </a>
                             </li>
@@ -131,7 +131,7 @@
 
                         <li class="nav-item @if($sort_id === 'desc') active @endif">
                             <a class="nav-link sort-nav__link @if($sort_id === 'desc') active @endif"
-                                href="{{ route('phrases', ['sort_id' => 'desc']) }}">
+                                href="{{ route('phrases', ['sort_id' => 'desc', 'tag_id' => $tag_id]) }}">
                                 人気のクオート
                             </a>
                         </li>

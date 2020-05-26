@@ -38,8 +38,8 @@ class Phrase extends Model
         // Eager ロードの設定を追加
         if($sort_id) {
             // ソート順を指定されている場合
-            $query->Like::withCount('likes')->orderBy('phrase_id', 'asc');
-//            $query = $this->withCount('likes','tags')->orderBy('likes_count','desc');
+            $query = $this->withCount('likes','tags')->orderBy('likes_count','desc');
+
         }else{
             $query = $this->with('tags');
         }
@@ -51,13 +51,13 @@ class Phrase extends Model
             });
         }
 
-//        if($sort_id == 'asc'){
-//
-//            $query->Like::withCount('likes')->orderBy('phrase_id', 'asc');
-//
-//        } elseif($sort_id == 'desc') {
-//            $query->orderBy('created_at', 'desc');
-//        }
+        if($sort_id == 'asc'){
+
+            $query->Like::withCount('likes')->orderBy('phrase_id', 'asc');
+
+        } elseif($sort_id == 'desc') {
+            $query->orderBy('created_at', 'desc');
+        }
 //        dd($query);
         // paginate メソッドを使うと、ページネーションに必要な全件数やオフセットの指定などは全部やってくれる
         return $query->paginate($num_per_page);
