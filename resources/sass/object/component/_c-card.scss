@@ -31,6 +31,16 @@ component
         height: 100%;
         text-indent:-999px;
         z-index: 2;
+
+        &:hover {
+            .phrase-card__body {
+                box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
+                color: #0c2e48;
+                text-decoration: none;
+                transform: scale(1.01);
+                transition: all .4s;
+            }
+        }
     }
 
     &__main {
@@ -39,15 +49,6 @@ component
 
     &__body {
         height: 230px;
-
-        &:hover {
-            box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
-            color: #0c2e48;
-            text-decoration: none;
-            transform: scale(1.01);
-            transform-origin: top;
-            transition: all .4s;
-        }
 
         @include mq(sm) {
             padding: 10px !important;

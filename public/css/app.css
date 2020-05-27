@@ -17051,21 +17051,20 @@ component
   z-index: 2;
 }
 
+.phrase-card__link-large:hover .phrase-card__body {
+  box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
+  color: #0c2e48;
+  text-decoration: none;
+  transform: scale(1.01);
+  transition: all 0.4s;
+}
+
 .phrase-card__main {
   justify-content: space-between;
 }
 
 .phrase-card__body {
   height: 230px;
-}
-
-.phrase-card__body:hover {
-  box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
-  color: #0c2e48;
-  text-decoration: none;
-  transform: scale(1.01);
-  transform-origin: top;
-  transition: all 0.4s;
 }
 
 @media screen and (max-width: 479px) {
