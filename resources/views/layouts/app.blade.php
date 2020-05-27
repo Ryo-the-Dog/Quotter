@@ -107,6 +107,7 @@
             <div class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <ul class="navbar-nav mr-auto category-nav">
+
                         <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
                             <a class="nav-link category-nav__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => $sort_id]) }}">
@@ -138,7 +139,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item @if($sort_id === 'new') active @endif">
+                        <li class="nav-item @if($sort_id === 'new' || empty($sort_id)) active @endif">
                             <a class="nav-link sort-nav__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => 'new', 'tag_id' => $tag_id]) }}">
                                 最新順
