@@ -9,11 +9,8 @@
                     <p class="card-title phrase-card__phrase">{{$phrase->phrase}}</p>
                 </div>
                 <div class="phrase-card__img ml-auto">
-                    @if($phrase->title_img_path == null)
-                        <img src="/storage/img/noimg.png" alt="{{$phrase->title}}">
-                    @else
-                        <img src="{{ asset('/storage/img/'.$phrase->title_img_path) }}" alt="{{$phrase->title}}">
-                    @endif
+                        <img src="@if(empty($phrase->title_img_path)){{asset('/img/noimg.png')}} @else {{$phrase->title_img_path}} @endif"
+                             alt="@if(empty($phrase->title_img_path)) quoteの画像 @else {{$phrase->title}} @endif">
                 </div>
             </div>
             <p class="phrase-card__title">「{{$phrase->title}}」</p>
