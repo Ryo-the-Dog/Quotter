@@ -1,26 +1,34 @@
-<div class="phrase-card
-@if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8
-@else col-lg-6 @endif">
+<div class="phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">
     <div class="card rounded-0 ">
+
+        @if(Route::currentRouteName() == 'phrases.show' )
+
+        @else
+            <!-- パネル全体をリンクにする -->
+            <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link-large" title="クオートの詳細"></a>
+            {{--  <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>--}}
+        @endif
+
         <div class="card-body phrase-card__body">
             <div class="flex phrase-card__main">
+
                 <div class="phrase-card__phraseArea">
                     <i class="fas fa-quote-left"></i>
                     <p class="card-title phrase-card__phrase">{{$phrase->phrase}}</p>
                 </div>
+
                 <div class="phrase-card__img ml-auto">
                         <img src="@if(empty($phrase->title_img_path)){{asset('/img/noimg.png')}} @else {{$phrase->title_img_path}} @endif"
                              alt="@if(empty($phrase->title_img_path)) quoteの画像 @else {{$phrase->title}} @endif">
                 </div>
+
             </div>
+
             <p class="phrase-card__title">「{{$phrase->title}}」</p>
+
             <div class="container">
                 <div class="row">
                     <div class="card-menu-left mr-auto">
-                        @if(Route::currentRouteName() == 'phrases.show' )
-                        @else
-                            <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>
-                        @endif
                         @forelse($phrase->tags as $tag)
                             <a href="{{ route('phrases', ['tag_id' => $tag->id]) }}" class="phrase-card__link category">
                                 {{ $tag->name }}
@@ -29,6 +37,7 @@
                             <p>カテゴリーがありません</p>
                         @endforelse
                     </div>
+
                     <div class="card-menu-right">
                         <a href="http://twitter.com/intent/tweet?url=https://ryonexta.com/portfolio/
                         &text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Quotter" class="twitter-btn card-menu-right__btn">
@@ -61,6 +70,7 @@
                     </div>
                 </div>
             </div>
+
             @if(Route::currentRouteName() == 'phrases.show' )
             <div class="phrase-profile" >
                 <div class="phrase-profile__img">

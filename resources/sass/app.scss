@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'foundation/variables';
+@import 'foundation/f-variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -17,40 +17,41 @@
 /* Foundation
 ------------------------------------ */
 // ブレイクポイント
-@import 'foundation/breakpoint';
-@import 'foundation/base';
+@import 'foundation/f-breakpoint';
+@import 'foundation/f-base';
 
 /* Layout
 ------------------------------------ */
-@import 'layout/main';
+@import 'layout/l-main';
+// flexbox
+@import 'layout/l-flexbox';
 
 /* Component
 ------------------------------------ */
 // ボタン
-@import 'component/btn';
+@import 'object/component/c-btn';
 // カード
-@import 'component/card';
+@import 'object/component/c-card';
 // ページネーション
-@import 'component/pagination';
+@import 'object/component/c-pagination';
 // 入力フォーム
-@import 'component/input';
+@import 'object/component/c-input';
 
 /* Project
 ------------------------------------ */
 // ヘッダー
-@import 'project/header';
+@import 'object/project/p-header';
 // フッター
-@import 'project/footer';
+@import 'object/project/p-footer';
 // マイページのタブ
-@import 'project/tabs';
+@import 'object/project/p-tabs';
 // フレーズ詳細ページ
-@import 'project/phrase-detail';
+@import 'object/project/p-phrase-detail';
 // プロフィール編集ページ
-@import 'project/profile-edit';
+@import 'object/project/p-profile-edit';
 // アカウント削除ページ
-@import 'project/user_delete';
+@import 'object/project/p-user_delete';
 
 /* Utility
 ------------------------------------ */
-// flexbox
-@import 'utility/flexbox';
+
