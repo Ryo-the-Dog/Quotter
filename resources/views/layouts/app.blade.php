@@ -70,7 +70,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <button class="btn btn-primary nav-link"><a class="text-white" href="{{ route('register') }}">{{ __('User Register') }}</a></button>
+                                    <a class="btn btn-primary nav-link text-white" href="{{ route('register') }}">{{ __('User Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -95,9 +95,10 @@
                                     </form>
                                 </div>
                             </li>
-                            <button class="btn btn-primary">
-                                <a href="{{ route('phrases.new') }}" style="color: white;">{{__('Post')}}</a>
-                            </button>
+
+                            <li>
+                                <a class="btn btn-primary" href="{{ route('phrases.new') }}" style="color: white;">{{__('Post')}}</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
