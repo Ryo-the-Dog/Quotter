@@ -1,24 +1,16 @@
-<<<<<<< HEAD
 // ストアをインポートする
 import store from './store' // ★　追加
 import './bootstrap' // CSRF対策用
 import Vue from 'vue'
-=======
-import Vue from 'vue';
 import jquery from 'jquery';
 // import Toasted from 'vue-toasted';
 import './main';
 import axios from 'axios';
->>>>>>> blade.phpでテンプレート
 // ルーティングの定義をインポートする
 // import router from './router'
 // ルートコンポーネントをインポートする
-<<<<<<< HEAD
 import App from './App.vue'
-
-=======
 // import App from './App.vue'
->>>>>>> blade.phpでテンプレート
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -61,7 +53,6 @@ Vue.component('imagetest', require('./components/ImageTest.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-<<<<<<< HEAD
 // const app = new Vue({
 //     el: '#app',
 //     router, // ルーティングの定義を読み込む
@@ -83,7 +74,6 @@ const createApp = async () => {
 }
 
 createApp()
-=======
 const app = new Vue({
     el: '#app',
     // router, // ルーティングの定義を読み込む
@@ -91,5 +81,3 @@ const app = new Vue({
     // template: '<App />' // ルートコンポーネントを描画する
 });
 
-
->>>>>>> blade.phpでテンプレート
