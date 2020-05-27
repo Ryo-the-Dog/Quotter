@@ -169,6 +169,8 @@ return [
         /*
          * Package Service Providers...
          */
+        // herokuで画像アップロードするためのCloudder
+        JD\Cloudder\CloudderServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -234,6 +236,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // Twitterログイン
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        // herokuで画像アップロードするためのCloudder
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
     ],
 
 ];

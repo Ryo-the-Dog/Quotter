@@ -9,6 +9,7 @@ class Phrase extends Model
 {
     // テーブル名の設定
     protected $table = 'phrases';
+
     // テーブルのカラム名を指定する
     protected $fillable = ['user_id','title', 'title_img_path', 'phrase', 'tag_ids[]', 'detail',];
 
@@ -17,7 +18,7 @@ class Phrase extends Model
     {
         return $this->belongsTo('App\User');
     }
-    // YouTube
+
     // likesテーブルに対してのリレーション(１つのフレーズに対して複数のいいねが付く)
     public  function likes() {
         return $this->hasMany('App\Like');
@@ -28,6 +29,7 @@ class Phrase extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
+
     // 投稿をカテゴリ別表示
     public function getPhraseList(int $num_per_page = 20, array $condition = [])
     {
@@ -95,16 +97,4 @@ class Phrase extends Model
 
     }
 
-
-    // https://qiita.com/ma7ma7pipipi/items/50a77cd392e9f27915d7
-//    public  function likes() {
-//        return $this->hasMany('App\Like', 'foreign_key')->where('model', 'User');
-//    }
-
-    // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
-//    public function like_users() {
-//        return $this->belongsToMany(
-//            'App/User','likes','phrase_id','user_id'
-//        )->withTimestamps();
-//    }
 }

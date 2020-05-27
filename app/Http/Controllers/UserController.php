@@ -16,6 +16,7 @@ class UserController extends Controller
         $auth = Auth::user();
         return view('users.userEdit',['auth' => $auth]);
     }
+
     public  function  update(Request $request) {
         if (!$this) {
             return false;
@@ -25,17 +26,11 @@ class UserController extends Controller
         $auth = Auth::user();
         // リクエストデータ受け取り
 
-        // フォームトークン削除
 
         // プロフィール画像
         $path = $request->file('profile_img_path') ? $request->file('profile_img_path')->store('public/img') : '';
-        dd($path);
+
         // 画像が選択されていなければ更新しない
-//        if(!empty($path)) {
-//            $auth->fill([
-//                'profile_img_path' => $path ? basename($path) : '',
-//            ])->save();
-//        }
         if(strcmp($request->get('email'), Auth::user()->email) == 0) {
             $validated_data = $request->validate([
                 'name' => 'required|string|max:20',
@@ -49,20 +44,7 @@ class UserController extends Controller
                 'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
         }
-//        if(!strcmp($request->get('email'), Auth::user()->email) == 0) {
-//            $auth->fill([
-//                'email' => $request->input('email')
-//            ])->save();
-//        }
-//        if(!empty(Auth::user()->profile_img_path)){
-//            if(strcmp($request->get('profile_img_path'), Auth::user()->profile_img_path) == 0) {
-//                $auth->fill([
-//                    'name' => $request->input('name'),
-//                    'email' => $request->input('email'),
-//                    'profile_img_path' => $path ? basename($path) : '',
-//                ])->save();
-//            }
-//        }
+
         if(empty($path)){
             $auth->fill([
                 'name' => $request->input('name'),

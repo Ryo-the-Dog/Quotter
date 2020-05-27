@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // ビューで現在のルートを取得するため
 use Illuminate\Support\Facades\Route;
+// 画像アップロード
+use JD\Cloudder\Facades\Cloudder;
 
 class PhrasesController extends Controller
 {
@@ -43,17 +45,22 @@ class PhrasesController extends Controller
 
         $phrase = new Phrase;
 
-        $path = $request->file('title_img_path') ? $request->file('title_img_path')->store('public/img') : '';
+//        $path = $request->file('title_img_path') ? $request->file('title_img_path')->store('public/img') : '';
+
+        $imgFile = $request->file('title_img_path');
+
+        // Cloudinaryにアップロード後に生成されたURLを格納
+        $imgUrl = uploadImg($imgFile);
 
         // カテゴリー
         // createメソッドでDBに保存する(テーブルのカラム名を指定する)
         $id = $phrase::create([ // $img->createでもいける。
-            // https://qiita.com/kgkgon/items/c83d52f966020ee3be79#5-%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6db%E4%BD%9C%E6%88%90
-            // クイズアプリの記事の書き方
+
             'user_id' => $request->user()->id,
             'title' => $request->input('title'),
             // basenameメソッドでファイル名のみを保存する。
-            'title_img_path' => $path ? basename($path) : '',
+//            'title_img_path' => $path ? basename($path) : '',
+            'title_img_path' => $imgUrl,
             'phrase' => $request->input('phrase'),
             'detail' => $request->input('detail'),
         ])->id;
@@ -164,17 +171,11 @@ class PhrasesController extends Controller
         //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
         // そのユーザーがその投稿にいいねを押しているか
         if(!empty(Auth::user()) ) {
-            // TODO　いいね用
+
             $userAuth = Auth::user();
 
             $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
 
-            // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
-            // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
-            /* 2020.02.24 TODO 一覧ページで最初に表示される時に、全て$defaultLikedが空の状態になってしまう＋いいね数が表示されない。
-            TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
-            TODO　とにかく最初の取得ができない。 */
-            // TODO 非会員だとエラーが出ちゃう
             if (isset($defaultLiked)) {
                 $defaultLiked = true;
             } else {
@@ -223,12 +224,7 @@ class PhrasesController extends Controller
         foreach($list as $phrase){
             $defaultLiked[] = $phrase->likes->where('phrase_id', $phrase->id)->where('user_id', $userAuth->id)->first();
         }
-        // 2020.02.24 $defaultLikedがnullなのが全ての元凶→PHP7.2でcountの使用が変更したことが原因かも
-        // 現状だと１つのフレーズにいいねが付いたら全てがいいね済みになってしまう。削除みたいにidで区別しないと。
-        /* 2020.02.24 TODO 一覧ページで最初に表示される時に、全て$defaultLikedが空の状態になってしまう＋いいね数が表示されない。
-        TODO　クリックすると$defaultLikedがtrueになる＋いいね数表示される。だがリロードするとまた元に戻るので、同じユーザーが何度もいいねを押せちゃう。
-        TODO　とにかく最初の取得ができない。 */
-        // TODO 非会員だとエラーが出ちゃう
+
         if (isset($defaultLiked)) {
             $defaultLiked = true;
         } else {
