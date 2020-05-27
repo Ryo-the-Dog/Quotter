@@ -1,15 +1,15 @@
 <div class="phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">
 
-    @if(Route::currentRouteName() == 'phrases.show' )
-
-    @else
-        <!-- パネル全体をリンクにする -->
-        <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link-large" title="クオートの詳細"></a>
-        {{--  <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>--}}
-    @endif
-
     <div class="card card-body phrase-card__body">
         <div class="flex phrase-card__main">
+
+            @if(Route::currentRouteName() == 'phrases.show' )
+
+            @else
+                <!-- パネル全体をリンクにする -->
+                <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link-large" title="クオートの詳細"></a>
+                {{--  <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>--}}
+            @endif
 
             <div class="phrase-card__phraseArea">
                 <i class="fas fa-quote-left"></i>

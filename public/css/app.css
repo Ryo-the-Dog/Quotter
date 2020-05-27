@@ -17029,11 +17029,6 @@ component
 /* 画像
 ==================================== */
 
-.phrase-card {
-  position: relative;
-  z-index: 1;
-}
-
 @media screen and (max-width: 479px) {
   .phrase-card {
     padding-right: 0;
@@ -17051,20 +17046,22 @@ component
   z-index: 2;
 }
 
-.phrase-card__link-large:hover .phrase-card__body {
-  box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
-  color: #0c2e48;
-  text-decoration: none;
-  transform: scale(1.01);
-  transition: all 0.4s;
-}
-
 .phrase-card__main {
   justify-content: space-between;
 }
 
 .phrase-card__body {
   height: 230px;
+  position: relative;
+  z-index: 1;
+}
+
+.phrase-card__body:hover .phrase-card__body {
+  box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
+  color: #0c2e48;
+  text-decoration: none;
+  transform: scale(1.01);
+  transition: all 0.4s;
 }
 
 @media screen and (max-width: 479px) {
@@ -17128,6 +17125,11 @@ component
 .card-menu-left {
   height: 28px;
   line-height: 28px;
+}
+
+.card-menu-right__btn {
+  position: relative;
+  z-index: 3;
 }
 
 .card-menu-right__btn:not(:last-child) {

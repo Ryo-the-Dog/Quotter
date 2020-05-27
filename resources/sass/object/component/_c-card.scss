@@ -14,8 +14,6 @@ component
 /* 画像
 ==================================== */
 .phrase-card {
-    position: relative;
-    z-index: 1;
 
     @include mq(sm) {
         padding-right: 0;
@@ -32,6 +30,17 @@ component
         text-indent:-999px;
         z-index: 2;
 
+    }
+
+    &__main {
+        justify-content: space-between;
+    }
+
+    &__body {
+        height: 230px;
+        position: relative;
+        z-index: 1;
+
         &:hover {
             .phrase-card__body {
                 box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
@@ -41,14 +50,6 @@ component
                 transition: all .4s;
             }
         }
-    }
-
-    &__main {
-        justify-content: space-between;
-    }
-
-    &__body {
-        height: 230px;
 
         @include mq(sm) {
             padding: 10px !important;
@@ -114,6 +115,12 @@ component
     line-height: 28px;
 }
 .card-menu-right {
+
+    &__btn {
+        position: relative;
+        z-index: 3;
+    }
+
     &__btn:not(:last-child) {
         margin-right: 10px;
     }
