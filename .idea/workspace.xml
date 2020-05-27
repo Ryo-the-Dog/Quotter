@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ja.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590467445313</updated>
       <workItem from="1590467446858" duration="8456000" />
-      <workItem from="1590549709131" duration="10905000" />
+      <workItem from="1590549709131" duration="11050000" />
     </task>
     <servers />
   </component>
