@@ -48,11 +48,13 @@
         <header class="bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
+
                     <div class="navbar-logo">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             <img src="{{asset('/img/quotter_logo.png')}}" alt="Quotter" class="navbar-logo-img">
                         </a>
                     </div>
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -137,7 +139,7 @@
                         </li>
 
                         <li class="nav-item @if($sort_id === 'new') active @endif">
-                            <a class="nav-link sort-nav__link @if($sort_id === 'new') active @endif"
+                            <a class="nav-link sort-nav__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => 'new', 'tag_id' => $tag_id]) }}">
                                 最新順
                             </a>

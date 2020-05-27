@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request; // ★ 追加
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +26,11 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+//    protected $redirectTo = '/steps';
+//    protected function redirectTo()
+//    {
+//        return '/';
+//    }
 
     /**
      * Create a new controller instance.
@@ -37,17 +41,32 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    // ★ メソッド追加
+
+    /**
+     * ログイン後の処理
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return \Illuminate\Http\Response
+     */
     protected function authenticated(Request $request, $user)
     {
-        return $user;
+        // ログインしたら、ログインする直前のページへ遷移する
+        return redirect()->intended('/steps')->with('flash_message', __('You logged in.'));
     }
-    // ログアウトメソッド
-    protected function loggedOut(Request $request)
-    {
-        // セッションを再生成する
-        $request->session()->regenerate();
 
-        return response()->json();
+    /**
+     * ログアウトの処理
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+
+        // ログアウトしたら、トップページへ移動
+        return $this->loggedOut($request) ?: redirect('/')->with('flash_message', __('You logged out.'));
     }
 }
