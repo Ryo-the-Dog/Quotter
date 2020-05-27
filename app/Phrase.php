@@ -53,7 +53,7 @@ class Phrase extends Model
 
         if($sort_id === 'like'){
 
-            $query->Like::withCount('likes')->orderBy('phrase_id', 'asc');
+//            $query->Like::withCount('likes')->orderBy('phrase_id', 'asc');
 
         } elseif($sort_id === 'new') {
 
