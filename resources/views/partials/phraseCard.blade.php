@@ -1,4 +1,4 @@
-<div class="card phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">
+<div class="phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">
 
     @if(Route::currentRouteName() == 'phrases.show' )
 
@@ -8,7 +8,7 @@
         {{--  <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>--}}
     @endif
 
-    <div class="card-body phrase-card__body">
+    <div class="card card-body phrase-card__body">
         <div class="flex phrase-card__main">
 
             <div class="phrase-card__phraseArea">
