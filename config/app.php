@@ -183,6 +183,8 @@ return [
 
         // ユーザーコンポーザーを読み込むために読み込む
         App\Providers\ComposerServiceProvider::class,
+        // 自作の関数
+        App\Providers\HelperServiceProvider::class,
 
     ],
 
