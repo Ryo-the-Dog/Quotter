@@ -14,7 +14,6 @@ component
 /* 画像
 ==================================== */
 .phrase-card {
-
     position: relative;
     z-index: 1;
 
@@ -25,18 +24,6 @@ component
         transform: scale(1.01);
         transform-origin: top;
         transition: all .4s;
-    }
-
-    &:nth-child(odd) {
-        @include mq(lg) {
-            padding-right: 0 !important;
-        }
-    }
-
-    &:nth-child(even) {
-        @include mq(lg) {
-            padding-left: 0 !important;
-        }
     }
 
     @include mq(sm) {
