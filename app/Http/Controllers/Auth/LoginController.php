@@ -52,7 +52,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         // ログインしたら、ログインする直前のページへ遷移する
-        return redirect()->intended('/steps')->with('flash_message', __('You logged in.'));
+        return redirect()->intended('/')->with('flash_message', __('You logged in.'));
     }
 
     /**
