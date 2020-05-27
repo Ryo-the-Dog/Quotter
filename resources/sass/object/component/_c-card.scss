@@ -42,13 +42,11 @@ component
         z-index: 1;
 
         &:hover {
-            .phrase-card__body {
-                box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
-                color: #0c2e48;
-                text-decoration: none;
-                transform: scale(1.01);
-                transition: all .4s;
-            }
+            box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
+            color: #0c2e48;
+            text-decoration: none;
+            transform: scale(1.01);
+            transition: all .4s;
         }
 
         @include mq(sm) {

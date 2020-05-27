@@ -17056,7 +17056,7 @@ component
   z-index: 1;
 }
 
-.phrase-card__body:hover .phrase-card__body {
+.phrase-card__body:hover {
   box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
   color: #0c2e48;
   text-decoration: none;
