@@ -80,15 +80,13 @@ component
     &__link {
         color: $gray_light;
         margin-right: 10px;
+        z-index: 3;
+
         &:hover {
             color: $black_light;
             text-decoration: none;
             transition: all $transition_speed;
         }
-    }
-
-    &__link.detail{
-        margin-right: 20px;
     }
 
     &__img{

@@ -17103,16 +17103,13 @@ component
 .phrase-card__link {
   color: #919aa2;
   margin-right: 10px;
+  z-index: 3;
 }
 
 .phrase-card__link:hover {
   color: #46494c;
   text-decoration: none;
   transition: all 0.3s;
-}
-
-.phrase-card__link.detail {
-  margin-right: 20px;
 }
 
 .phrase-card__img {

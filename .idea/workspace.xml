@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/component/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/component/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/component/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/component/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_f-base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/foundation/_breakpoint.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_f-breakpoint.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/foundation/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_f-variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_phrase-detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-phrase-detail.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_profile-edit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-profile-edit.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-tabs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/project/_user_delete.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-user_delete.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/utility/_flexbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590467445313</updated>
       <workItem from="1590467446858" duration="8456000" />
-      <workItem from="1590549709131" duration="9439000" />
+      <workItem from="1590549709131" duration="9656000" />
     </task>
     <servers />
   </component>
