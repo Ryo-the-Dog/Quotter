@@ -1,5 +1,5 @@
 // ストアをインポートする
-import store from './store' // ★　追加
+// import store from './store' // ★　追加
 import './bootstrap' // CSRF対策用
 import Vue from 'vue'
 import jquery from 'jquery';
@@ -9,7 +9,7 @@ import axios from 'axios';
 // ルーティングの定義をインポートする
 // import router from './router'
 // ルートコンポーネントをインポートする
-import App from './App.vue'
+// import App from './App.vue'
 // import App from './App.vue'
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -62,11 +62,11 @@ Vue.component('imagetest', require('./components/ImageTest.vue').default);
 // });
 // ログインチェックしてからアプリを生成する
 const createApp = async () => {
-    //await store.dispatch('auth/currentUser') // TODO　ここが原因でエラー。レスポンスが無い的な。
+    //await store.dispatch('auth/currentUser')
 
     new Vue({
         el: '#app',
-        router,
+        // router,
         store,
         components: { App },
         template: '<App />'
