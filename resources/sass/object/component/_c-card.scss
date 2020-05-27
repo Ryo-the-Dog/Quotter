@@ -18,6 +18,15 @@ component
     position: relative;
     z-index: 1;
 
+    &:hover {
+        box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
+        color: #0c2e48;
+        text-decoration: none;
+        transform: scale(1.01);
+        transform-origin: top;
+        transition: all .4s;
+    }
+
     &:nth-child(odd) {
         @include mq(lg) {
             padding-right: 0 !important;

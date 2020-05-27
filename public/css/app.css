@@ -17034,6 +17034,15 @@ component
   z-index: 1;
 }
 
+.phrase-card:hover {
+  box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
+  color: #0c2e48;
+  text-decoration: none;
+  transform: scale(1.01);
+  transform-origin: top;
+  transition: all 0.4s;
+}
+
 @media screen and (min-width: 990px) {
   .phrase-card:nth-child(odd) {
     padding-right: 0 !important;
