@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Phrase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Phrase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -9,7 +11,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -126,7 +128,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590467445313</updated>
-      <workItem from="1590467446858" duration="8378000" />
+      <workItem from="1590467446858" duration="8456000" />
+      <workItem from="1590549709131" duration="600000" />
     </task>
     <servers />
   </component>
@@ -142,6 +145,10 @@
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
     <state x="453" y="427" key="NewPhpFileDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590479197846" />
+    <state x="265" y="355" key="com.intellij.ide.util.TipDialog" timestamp="1590549989344">
+      <screen x="0" y="23" width="1680" height="1000" />
+    </state>
+    <state x="265" y="355" key="com.intellij.ide.util.TipDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590549989344" />
     <state x="344" y="449" width="756" height="486" key="find.popup" timestamp="1590505027850">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>

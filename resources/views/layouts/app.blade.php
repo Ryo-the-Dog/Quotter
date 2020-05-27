@@ -129,10 +129,17 @@
                     </ul>
                     <ul class="navbar-nav ml-auto sort-nav">
 
-                        <li class="nav-item @if($sort_id === 'desc') active @endif">
-                            <a class="nav-link sort-nav__link @if($sort_id === 'desc') active @endif"
-                                href="{{ route('phrases', ['sort_id' => 'desc', 'tag_id' => $tag_id]) }}">
-                                人気のクオート
+                        <li class="nav-item @if($sort_id === 'like') active @endif">
+                            <a class="nav-link sort-nav__link @if($sort_id === 'like') active @endif"
+                                href="{{ route('phrases', ['sort_id' => 'like', 'tag_id' => $tag_id]) }}">
+                                いいね順
+                            </a>
+                        </li>
+
+                        <li class="nav-item @if($sort_id === 'new') active @endif">
+                            <a class="nav-link sort-nav__link @if($sort_id === 'new') active @endif"
+                               href="{{ route('phrases', ['sort_id' => 'new', 'tag_id' => $tag_id]) }}">
+                                最新順
                             </a>
                         </li>
 

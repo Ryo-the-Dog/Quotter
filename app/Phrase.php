@@ -36,7 +36,7 @@ class Phrase extends Model
         $sort_id = Arr::get($condition, 'sort_id');
 
         // Eager ロードの設定を追加
-        if($sort_id) {
+        if($sort_id === 'like') {
             // ソート順を指定されている場合
             $query = $this->withCount('likes','tags')->orderBy('likes_count','desc');
 
@@ -51,14 +51,15 @@ class Phrase extends Model
             });
         }
 
-        if($sort_id == 'asc'){
+        if($sort_id === 'like'){
 
             $query->Like::withCount('likes')->orderBy('phrase_id', 'asc');
 
-        } elseif($sort_id == 'desc') {
+        } elseif($sort_id === 'new') {
+
             $query->orderBy('created_at', 'desc');
+
         }
-//        dd($query);
         // paginate メソッドを使うと、ページネーションに必要な全件数やオフセットの指定などは全部やってくれる
         return $query->paginate($num_per_page);
 
@@ -66,7 +67,6 @@ class Phrase extends Model
     // 順番表示
     public function order($select)
     {
-//        dd($this->orderBy('created_at', 'desc')->get());
         if($select == 'asc'){
             return $this->orderBy('created_at', 'asc')->get();
         } elseif($select == 'desc') {
