@@ -53,9 +53,11 @@
 // フッター
 @import 'object/project/p-footer';
 // マイページのタブ
-@import 'object/project/p-tabs';
-// フレーズ詳細ページ
+@import 'object/project/p-mypage-tabs';
+// クオート詳細ページ
 @import 'object/project/p-phrase-detail';
+// クオート詳細ページのプロフィール
+@import 'object/project/p-phrase-profile';
 // プロフィール編集ページ
 @import 'object/project/p-profile-edit';
 // アカウント削除ページ

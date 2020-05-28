@@ -11,19 +11,10 @@
 |
 */
 
-// Vue Router
-// APIのURL以外のリクエストに対してはindexテンプレートを返す
-// 画面遷移はフロントエンドのVueRouterが制御する
-//Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
-
-
-//Route::get('/phrases', function () {
-//    return view('index');
-//});
 // フレーズ一覧表示画面のルーティング(トップページ)
 Route::get('/', 'PhrasesController@index')->name('phrases');
 // フレーズ詳細表示画面のルーティング
-Route::get('/phrases/{id}','PhrasesController@show')->name('phrases.show');
+Route::get('/quotes/{id}','PhrasesController@show')->name('phrases.show');
 
 // 会員限定のルーティング
 Route::group(['middleware' => 'auth'], function () {
@@ -46,29 +37,9 @@ Route::group(['middleware' => 'auth'], function () {
     // フレーズ登録のルーティング
     Route::post('/new', 'PhrasesController@create');
     // フレーズ削除のルーティング
-    Route::post('/phrases/{id}/delete', 'PhrasesController@destroy')->name('phrases.delete');
+    Route::post('/quotes/{id}/delete', 'PhrasesController@destroy')->name('phrases.delete');
 
-    // https://qiita.com/Hiroyuki-Hiroyuki/items/e5cb3b6595a7e476b73d
-//    Route::group(['prefix'=>'phrases/{id}'],function(){
-//        Route::post('favorite','FavoriteController@store')->name('favorites.favorite');
-//        Route::delete('unfavorite','FavoriteController@destroy')->name('favorites.unfavorite');
-//    });
 });
-
-// 画像をtempディレクトリに仮保存
-//Route::post('/image_confirm', 'ImageController@postImageConfirm');
-//
-
-// 画像アップロード練習(https://promidea.co.jp/archives/2377)
-//Route::get('/phrases/uploader', function (){
-//    return view('phrases.uploader');
-//});
-//Route::get('/phrases/uploader', 'PhrasesController@uploader')->name('phrases.uploader');
-//// 画像一覧ページ表示のルーティング
-//Route::get('/uploader', 'PhrasesController@index');
-// 画像アップロードページを表示するルーティングと画像をPOST送信でアップロードするルーティング
-//Route::match(['GET', 'POST'], '/uploader', 'PhrasesController@upload');
-
 
 Auth::routes();
 

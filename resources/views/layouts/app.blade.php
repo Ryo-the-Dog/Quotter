@@ -157,7 +157,7 @@
         <footer class="l-footer p-footer l-flex">
             <div class="container footer-container">
                 <p class="text-muted">Copyright &copy;Quotter All Rights Reserved.</p>
-                <a href="https://twitter.com/ryonextStandard" target="_blank" class="twitter-btn">
+                <a href="https://twitter.com/ryonextStandard" target="_blank" class="c-btn--twitter">
                     <i class="fab fa-twitter text-muted"></i>
                 </a>
             </div>

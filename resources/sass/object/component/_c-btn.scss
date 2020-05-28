@@ -16,8 +16,9 @@ component
         text-decoration: none;
     }
 }
+
 // Twitterボタン
-.twitter-btn {
+.c-btn--twitter {
     font-size: 18px;
 }
 
@@ -61,65 +62,23 @@ component
     }
 }
 
-//.like-btn {
-//    cursor: pointer;
-//    font-size: 18px;
-//    &.on {
-//        color: $pink;
-//        &:hover {
-//            color: $pink_hover;
-//            transition: all $transition_speed;
-//            .fas.fa-heart {
-//                color: $pink_hover;
-//                transition: all $transition_speed;
-//            }
-//        }
-//    }
-//    &.off {
-//        color: $gray_light;
-//        &:hover {
-//            color: $gray_dark;
-//            .far.fa-heart {
-//                color: $gray_dark;
-//            }
-//        }
-//    }
-//    &--disabled{
-//        color: $gray_light;
-//        font-size: 18px;
-//        &:hover{
-//            color: #525961;
-//            text-decoration: none;
-//            .far.fa-heart {
-//                color: #525961;
-//            }
-//        }
-//        .far.fa-heart {
-//            &:hover {
-//                .like-btn--disabled {
-//                    color: #525961;
-//                }
-//                color: #525961;
-//            }
-//        }
-//    }
-//}
-
 // フレーズ削除ボタン
-.delete-btn {
+.c-btn--delete {
     border: none;
     background-color: inherit;
     color: $gray_light;
-    font-size: 17px;
+    font-size: $font-size_s;
     padding: 0;
+
     &:hover {
-        color: #525961;
+        color: $gray_dark;
         transition: all $transition_speed;
     }
     &:focus {
         outline: 0;
     }
 }
+
 // 戻るボタン
 .back-btn-area {
     margin: 0 auto;
@@ -128,9 +87,11 @@ component
     }
 
 }
+
 // アカウント削除
 .userDelete {
-    margin-top: 20px;
+    margin-top: $space_l;
+
     &-btn-area {
         margin-left: auto;
         text-align: right;

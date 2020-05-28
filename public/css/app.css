@@ -16934,7 +16934,7 @@ component
   text-decoration: none;
 }
 
-.twitter-btn {
+.c-btn--twitter {
   font-size: 18px;
 }
 
@@ -16973,20 +16973,20 @@ component
   transition: all 0.3s;
 }
 
-.delete-btn {
+.c-btn--delete {
   border: none;
   background-color: inherit;
   color: #919aa2;
-  font-size: 17px;
+  font-size: 18px;
   padding: 0;
 }
 
-.delete-btn:hover {
+.c-btn--delete:hover {
   color: #525961;
   transition: all 0.3s;
 }
 
-.delete-btn:focus {
+.c-btn--delete:focus {
   outline: 0;
 }
 
@@ -17173,6 +17173,13 @@ component
   margin-right: 10px;
 }
 
+/* ====================================
+ component
+==================================== */
+
+/* ページネーションを定義しています
+------------------------------------ */
+
 .pagination {
   justify-content: center;
   margin-top: 40px;
@@ -17185,6 +17192,48 @@ component
 
 .pagination a {
   color: #6CD6C7 !important;
+}
+
+.c-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.c-pagination__page-item.active .c-pagination__page-link {
+  background-color: #6CD6C7;
+  border-color: #6CD6C7;
+  color: #fff;
+}
+
+.c-pagination__page-item.disabled {
+  pointer-events: none;
+}
+
+.c-pagination__page-item.disabled .c-pagination__page-link {
+  color: #212529;
+}
+
+.c-pagination__page-link {
+  color: #6CD6C7;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  position: relative;
+}
+
+@media screen and (max-width: 479px) {
+  .c-pagination__page-link {
+    padding: 5px 10px;
+  }
+}
+
+.c-pagination__page-link:hover {
+  background-color: #e4e4e4;
+  transition: all 0.3s;
 }
 
 /* ====================================
@@ -17308,7 +17357,7 @@ project
 }
 
 /* ====================================
-project
+ project
 ==================================== */
 
 /* マイページのタブを定義しています
@@ -17330,7 +17379,7 @@ project
 }
 
 .mypage-tabs .nav-link.active {
-  color: #495057;
+  color: #525961;
 }
 
 /* ====================================
@@ -17348,7 +17397,14 @@ project
   height: auto;
 }
 
-.phrase-profile {
+/* ====================================
+ project
+==================================== */
+
+/* フレーズ詳細ページのプロフィールを定義しています
+------------------------------------ */
+
+.p-phrase-profile {
   display: flex;
   align-items: center;
   border-top: solid 1px #e4e4e4;
@@ -17356,21 +17412,21 @@ project
   padding-top: 10px;
 }
 
-.phrase-profile__img {
+.p-phrase-profile__img {
   width: 60px;
   margin-right: 20px;
 }
 
-.phrase-profile__img img {
+.p-phrase-profile__img img {
   width: 100%;
 }
 
-.phrase-profile__name {
+.p-phrase-profile__name {
   margin-bottom: 0;
   margin-right: 15px;
 }
 
-.phrase-profile__date {
+.p-phrase-profile__date {
   margin-bottom: 0;
   margin-right: 5px;
 }

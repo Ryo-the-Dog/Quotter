@@ -39,7 +39,7 @@
 
                 <div class="card-menu-right">
                     <a href="http://twitter.com/intent/tweet?url=https://ryonexta.com/portfolio/
-                    &text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Quotter" class="twitter-btn card-menu-right__btn">
+                    &text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Quotter" class="c-btn--twitter card-menu-right__btn">
                         <i class="fab fa-twitter"></i>
                     </a>
 
@@ -63,31 +63,39 @@
 
                     @endguest
 
+                    <!-- マイページ用のゴミ箱ボタン -->
                     @if(Route::currentRouteName() == 'phrases.mypage' )
                         <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
+
                             @csrf
-                            <button class="delete-btn card-menu-right__btn" onclick="return confirm('このクオートを削除してよろしいですか？')">
+
+                            <button class="c-btn--delete card-menu-right__btn" onclick="return confirm('このクオートを削除してよろしいですか？')">
                                 <i class="far fa-trash-alt"></i>
                             </button>
+
                         </form>
                     @endif
                 </div>
             </div>
         </div>
 
+        <!-- 詳細ページでは投稿者の情報を表示する -->
         @if(Route::currentRouteName() == 'phrases.show' )
-        <div class="phrase-profile" >
-            <div class="phrase-profile__img">
-                @if($phrase->user->profile_img_path == null)
-                    <img src="/storage/img/noimg.png" alt="{{$phrase->user->name}}">
-                @else
-                    <img src="{{ asset('/storage/img/'.$phrase->user->profile_img_path) }}" alt="{{$phrase->user->name}}">
-                @endif
+            <div class="p-phrase-profile" >
+
+                <div class="p-phrase-profile__img">
+                    @if($phrase->user->profile_img_path == null)
+                        <img src="img/noimg.png" alt="{{$phrase->user->name}}">
+                    @else
+                        <img src="{{ asset('/storage/img/'.$phrase->user->profile_img_path) }}" alt="{{$phrase->user->name}}">
+                    @endif
+                </div>
+
+                <p class="p-phrase-profile__name">{{$phrase->user->name}}</p>
+                <p class="p-phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
+                <span>の投稿</span>
             </div>
-            <p class="phrase-profile__name">{{$phrase->user->name}}</p>
-            <p class="phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
-            <span>の投稿</span>
-        </div>
         @endif
+
     </div>
 </div>

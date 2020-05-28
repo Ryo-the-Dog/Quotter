@@ -1,0 +1,33 @@
+/* ====================================
+ project
+==================================== */
+/* フレーズ詳細ページのプロフィールを定義しています
+------------------------------------ */
+.p-phrase-profile {
+    display: flex;
+    align-items: center;
+    border-top: solid 1px $gray_lighter;
+    margin-top: $space_s;
+    padding-top: $space_s;
+
+    // プロフィール画像
+    &__img {
+        width: 60px;
+        margin-right: $space_l;
+        img {
+            width: 100%;
+        }
+    }
+
+    // 投稿者名
+    &__name {
+        margin-bottom: 0;
+        margin-right: $space_m;
+    }
+
+    // 投稿日
+    &__date {
+        margin-bottom: 0;
+        margin-right: $space_xs;
+    }
+}
