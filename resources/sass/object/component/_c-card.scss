@@ -52,6 +52,11 @@ component
         @include mq(sm) {
             padding: 10px !important;
         }
+
+        &.detailPage {
+            pointer-events: none;
+        }
+
     }
 
     &__phraseArea {
