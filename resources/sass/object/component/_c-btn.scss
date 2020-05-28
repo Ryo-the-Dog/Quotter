@@ -32,6 +32,7 @@ component
 
         &:hover {
             color: $pink_hover;
+            text-decoration: none;
             transition: all $transition_speed;
 
             // ハートアイコンにもホバーイベントを指定
@@ -48,6 +49,7 @@ component
 
         &:hover {
             color: $gray_dark;
+            text-decoration: none;
             transition: all $transition_speed;
 
             // ハートアイコンにもホバーイベントを指定

@@ -16851,7 +16851,7 @@ button:focus,
   outline: 0 !important;
 }
 
-a {
+a:hover {
   text-decoration: none;
 }
 
@@ -16949,6 +16949,7 @@ component
 
 .c-btn-like--on:hover {
   color: #dc628b;
+  text-decoration: none;
   transition: all 0.3s;
 }
 
@@ -16963,6 +16964,7 @@ component
 
 .c-btn-like--off:hover {
   color: #525961;
+  text-decoration: none;
   transition: all 0.3s;
 }
 
