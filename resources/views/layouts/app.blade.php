@@ -22,9 +22,6 @@
         <title>{{ config('app.name', 'Quotter') }}</title>
     @endif
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -35,16 +32,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
     <div id="app">
+
         @if (session('flash_message'))
             <div class="alert alert-primary text-center flash-message" role="alert">
-                {{--        <div class="flash-message">--}}
                 {{ session('flash_message') }}
             </div>
-            {{--            <toast message="{{ session('flash_message') }}" type="success"></toast>--}}
         @endif
+
         <header class="bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
@@ -117,10 +117,6 @@
                         </li>
 
                         @forelse($tag_list as $tag)
-                            @if($loop->index == 3)
-
-                            @endif
-
                             <li class="nav-item @if($tag_id == $tag->id) active @endif">
                                 <a class="nav-link category-nav__link @if($tag_id == $tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id, 'sort_id' => $sort_id]) }}">
@@ -166,6 +162,7 @@
                 </a>
             </div>
         </footer>
+
     </div>
 
 </body>
