@@ -10,7 +10,7 @@
             {{--  <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>--}}
         @endif
 
-        <div class="flex phrase-card__main">
+        <div class="l-flex phrase-card__main">
 
             <div class="phrase-card__phraseArea">
                 <i class="fas fa-quote-left"></i>

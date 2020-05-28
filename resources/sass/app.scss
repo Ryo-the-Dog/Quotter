@@ -22,6 +22,9 @@
 
 /* Layout
 ------------------------------------ */
+// ヘッダー
+@import 'layout/l-header';
+// メインコンテンツ
 @import 'layout/l-main';
 // flexbox
 @import 'layout/l-flexbox';

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +173,7 @@
       <updated>1590467445313</updated>
       <workItem from="1590467446858" duration="8456000" />
       <workItem from="1590549709131" duration="13179000" />
-      <workItem from="1590642951531" duration="3201000" />
+      <workItem from="1590642951531" duration="4288000" />
     </task>
     <servers />
   </component>
@@ -191,10 +197,10 @@
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
     <state x="265" y="355" key="com.intellij.ide.util.TipDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590549989344" />
-    <state x="392" y="274" width="756" height="486" key="find.popup" timestamp="1590587499124">
+    <state x="392" y="274" width="982" height="550" key="find.popup" timestamp="1590653276392">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
-    <state x="392" y="274" width="756" height="486" key="find.popup/0.23.1680.1000@0.23.1680.1000" timestamp="1590587499124" />
+    <state x="392" y="274" width="982" height="550" key="find.popup/0.23.1680.1000@0.23.1680.1000" timestamp="1590653276392" />
     <state x="414" y="347" width="670" height="676" key="search.everywhere.popup" timestamp="1590585479453">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
