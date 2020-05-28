@@ -13,7 +13,7 @@
             @endforelse
         </div>
 
-        @if ( $steps->hasPages() )
+        @if ( $list->hasPages() )
             {{ $list->links() }}
 
         @elseif(count($list) !== 0 )
