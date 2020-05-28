@@ -7,7 +7,6 @@
         @else
             <!-- パネル全体をリンクにする -->
             <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link-large" title="クオートの詳細"></a>
-            {{--  <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link detail">詳細</a>--}}
         @endif
 
         <div class="flex phrase-card__main">

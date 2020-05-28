@@ -14,7 +14,7 @@ component
 /* 画像
 ==================================== */
 .phrase-card {
-
+    margin-bottom: $space_l;
     @include mq(sm) {
         padding-right: 0;
         padding-left: 0;
@@ -61,7 +61,6 @@ component
                 transform: none;
             }
         }
-
     }
 
     &__phraseArea {

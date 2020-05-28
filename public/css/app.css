@@ -17065,6 +17065,10 @@ component
 /* 画像
 ==================================== */
 
+.phrase-card {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 479px) {
   .phrase-card {
     padding-right: 0;
