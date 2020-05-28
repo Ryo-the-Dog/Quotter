@@ -43,7 +43,6 @@ component
 
         &:hover {
             box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
-            color: #0c2e48;
             text-decoration: none;
             transform: scale(1.01);
             transition: all .4s;
@@ -53,8 +52,14 @@ component
             padding: 10px !important;
         }
 
+        // クオート詳細画面ではホバーイベントを無効化
         &.detailPage {
-            pointer-events: none;
+            //pointer-events: none;
+            &:hover {
+                box-shadow: none;
+                text-decoration: none;
+                transform: none;
+            }
         }
 
     }

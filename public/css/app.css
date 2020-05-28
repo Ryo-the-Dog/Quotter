@@ -17058,7 +17058,6 @@ component
 
 .phrase-card__body:hover {
   box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
-  color: #0c2e48;
   text-decoration: none;
   transform: scale(1.01);
   transition: all 0.4s;
@@ -17070,8 +17069,10 @@ component
   }
 }
 
-.phrase-card__body.detailPage {
-  pointer-events: none;
+.phrase-card__body.detailPage:hover {
+  box-shadow: none;
+  text-decoration: none;
+  transform: none;
 }
 
 .phrase-card__phraseArea {
