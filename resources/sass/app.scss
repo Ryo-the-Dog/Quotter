@@ -24,8 +24,12 @@
 ------------------------------------ */
 // ヘッダー
 @import 'layout/l-header';
+// コンテンツのラッパー
+@import 'layout/l-wrapper';
 // メインコンテンツ
 @import 'layout/l-main';
+// フッター
+@import 'layout/l-footer';
 // flexbox
 @import 'layout/l-flexbox';
 

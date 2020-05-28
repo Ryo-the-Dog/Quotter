@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +167,7 @@
       <updated>1590467445313</updated>
       <workItem from="1590467446858" duration="8456000" />
       <workItem from="1590549709131" duration="13179000" />
-      <workItem from="1590642951531" duration="4288000" />
+      <workItem from="1590642951531" duration="4587000" />
     </task>
     <servers />
   </component>
