@@ -26,7 +26,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- フッター -->
-    <link href="sticky-footer.css" rel="stylesheet">
+{{--    <link href="sticky-footer.css" rel="stylesheet">--}}
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}">
 
