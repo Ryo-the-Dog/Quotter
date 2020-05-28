@@ -1,8 +1,3 @@
-// (function() {
-//     'use strict';
-
-    // フラッシュメッセージのfadeout
-
 
 window.onload = function(){
     setTimeout(function () {

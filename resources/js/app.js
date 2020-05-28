@@ -1,16 +1,8 @@
-// ストアをインポートする
-// import store from './store' // ★　追加
 import './bootstrap' // CSRF対策用
 import Vue from 'vue'
 import jquery from 'jquery';
-// import Toasted from 'vue-toasted';
 import './main';
 import axios from 'axios';
-// ルーティングの定義をインポートする
-// import router from './router'
-// ルートコンポーネントをインポートする
-// import App from './App.vue'
-// import App from './App.vue'
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -38,14 +30,9 @@ if(token) {
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('like',require('./components/Like.vue').default);
 Vue.component('counter', require('./components/Counter.vue').default);
 Vue.component('imagetest', require('./components/ImageTest.vue').default);
-// Vue.use(Toasted)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -53,31 +40,28 @@ Vue.component('imagetest', require('./components/ImageTest.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+new Vue({
+    el: '#app',
+});
+
+// ログインチェックしてからアプリを生成する
+// const createApp = async () => {
+//     //await store.dispatch('auth/currentUser')
+//
+//     new Vue({
+//         el: '#app',
+//         // router,
+//         store,
+//         components: { App },
+//         template: '<App />'
+//     })
+// }
+//
+// createApp()
 // const app = new Vue({
 //     el: '#app',
-//     router, // ルーティングの定義を読み込む
-//     store, // ストアを読み込む
-//     components: { App }, // ルートコンポーネントの使用を宣言する
-//     template: '<App />' // ルートコンポーネントを描画する
+//     // router, // ルーティングの定義を読み込む
+//     // components: { App }, // ルートコンポーネントの使用を宣言する
+//     // template: '<App />' // ルートコンポーネントを描画する
 // });
-// ログインチェックしてからアプリを生成する
-const createApp = async () => {
-    //await store.dispatch('auth/currentUser')
-
-    new Vue({
-        el: '#app',
-        // router,
-        store,
-        components: { App },
-        template: '<App />'
-    })
-}
-
-createApp()
-const app = new Vue({
-    el: '#app',
-    // router, // ルーティングの定義を読み込む
-    // components: { App }, // ルートコンポーネントの使用を宣言する
-    // template: '<App />' // ルートコンポーネントを描画する
-});
 

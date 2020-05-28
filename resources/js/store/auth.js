@@ -34,7 +34,7 @@ const actions = {
     },
     // ログイン認証
     async currentUser (context) {
-        const response = await axios.get('/api/user') // TODO　この処理ができない！
+        const response = await axios.get('/api/user')
         console.log('auth.js/currentUser')
         const user = response.data || null
         context.commit('setUser', user)
