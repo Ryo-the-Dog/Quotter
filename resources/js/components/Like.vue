@@ -1,20 +1,28 @@
 <template>
+
     <span v-if="userId" class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->
-        <span v-if="!liked" @click="like(phraseId)" class="like-btn off"><i class="far fa-heart"></i>{{likeCount}}</span>
-        <span v-else @click="unlike(phraseId)" class="like-btn on"><i class="fas fa-heart"></i>{{likeCount}}</span>
+        <span v-if="!liked" @click="like(phraseId)" class="c-btn-like--off like-btn off">
+            <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}
+        </span>
+        <span v-else @click="unlike(phraseId)" class="c-btn-like--on like-btn on">
+            <i class="fas fa-heart c-icon--pink-heart"></i>{{likeCount}}
+        </span>
     </span>
+
     <span v-else class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->
-        <!-- TODO　URLを本番デプロイした時ように/loginと指定したい -->
-        <a href="https://laravel.app/login" class="like-btn--disabled"><i class="far fa-heart"></i>{{likeCount}}</a>
+        <a href="{{loginRoute}}" class="c-btn-like--off">
+            <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}
+        </a>
     </span>
+
 </template>
 
 <script>
     export default {
         // ビューのVueの箇所からフレーズのidとユーザーのidをpropsで受け取る
-        props: ['phraseId', 'userId', 'defaultLiked', 'defaultCount'],
+        props: ['phraseId', 'userId', 'defaultLiked', 'defaultCount', 'loginRoute'],
         data() {
             return {
                 liked: false,

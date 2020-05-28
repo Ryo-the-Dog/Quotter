@@ -16934,77 +16934,34 @@ component
   font-size: 18px;
 }
 
-.fa-heart {
-  cursor: pointer;
-  margin-right: 3px;
-}
-
-.far.fa-heart {
-  color: #919aa2;
-}
-
-.far.fa-heart:hover {
-  color: #525961;
-}
-
-.far.fa-heart:hover .like-btn.off {
-  color: #525961;
-}
-
-.fas.fa-heart {
-  color: #f66d9b;
-}
-
-.like-btn {
+.c-btn-like {
   cursor: pointer;
   font-size: 18px;
 }
 
-.like-btn.on {
+.c-btn-like--on {
   color: #f66d9b;
 }
 
-.like-btn.on:hover {
+.c-btn-like--on:hover {
   color: #dc628b;
   transition: all 0.3s;
 }
 
-.like-btn.on:hover .fas.fa-heart {
+.c-btn-like--on:hover .c-icon--pink-heart {
   color: #dc628b;
   transition: all 0.3s;
 }
 
-.like-btn.off {
+.c-btn-like--off {
   color: #919aa2;
 }
 
-.like-btn.off:hover {
+.c-btn-like--off:hover {
   color: #525961;
 }
 
-.like-btn.off:hover .far.fa-heart {
-  color: #525961;
-}
-
-.like-btn--disabled {
-  color: #919aa2;
-  font-size: 18px;
-}
-
-.like-btn--disabled:hover {
-  color: #525961;
-  text-decoration: none;
-}
-
-.like-btn--disabled:hover .far.fa-heart {
-  color: #525961;
-}
-
-.like-btn--disabled .far.fa-heart:hover {
-  color: #525961;
-}
-
-.like-btn--disabled .far.fa-heart:hover .like-btn--disabled {
+.c-btn-like--off:hover .c-icon--gray-heart {
   color: #525961;
 }
 
@@ -17043,27 +17000,48 @@ component
 }
 
 /* ====================================
-component
+ component
 ==================================== */
 
-/* フレーズカードを定義しています
+/* アイコンを定義しています
 ------------------------------------ */
 
-/* アイコン
-==================================== */
-
-.fa-quote-left {
+.c-icon--quote {
   color: #6CD6C7;
 }
 
 @media screen and (max-width: 479px) {
-  .fa-quote-left {
-    font-size: 12px;
+  .c-icon--quote {
+    font-size: 14px;
   }
 }
 
-/* 画像
+.c-icon--gray-heart {
+  cursor: pointer;
+  margin-right: 5px;
+  color: #919aa2;
+}
+
+.c-icon--gray-heart:hover {
+  color: #525961;
+}
+
+.c-icon--gray-heart:hover .like-btn.off {
+  color: #525961;
+}
+
+.c-icon--pink-heart {
+  cursor: pointer;
+  margin-right: 5px;
+  color: #f66d9b;
+}
+
+/* ====================================
+ component
 ==================================== */
+
+/* フレーズカードを定義しています
+------------------------------------ */
 
 .phrase-card {
   margin-bottom: 30px;
@@ -17309,8 +17287,6 @@ project
   height: 90px;
   width: 100%;
   text-align: center;
-  position: absolute;
-  bottom: 0;
 }
 
 .p-footer-container {

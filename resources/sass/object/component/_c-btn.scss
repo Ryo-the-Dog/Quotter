@@ -20,66 +20,87 @@ component
 .twitter-btn {
     font-size: 18px;
 }
+
 // いいねボタン
-.fa-heart{
-    cursor: pointer;
-    margin-right: 3px;
-}
-.far.fa-heart{
-    color: $gray_light;
-    &:hover {
-        color: #525961;
-        .like-btn.off {
-            color: #525961;
-        }
-    }
-}
-.fas.fa-heart{
-    color: $pink;
-}
-.like-btn {
+.c-btn-like {
     cursor: pointer;
     font-size: 18px;
-    &.on {
+
+    // 自分がいいねを押している時
+    &--on {
         color: $pink;
+
         &:hover {
             color: $pink_hover;
             transition: all $transition_speed;
-            .fas.fa-heart {
+
+            // ハートアイコンにもホバーイベントを指定
+            .c-icon--pink-heart {
                 color: $pink_hover;
                 transition: all $transition_speed;
             }
         }
     }
-    &.off {
+
+    // 自分がいいねを押してない時
+    &--off {
         color: $gray_light;
+
         &:hover {
-            color: #525961;
-            .far.fa-heart {
-                color: #525961;
-            }
-        }
-    }
-    &--disabled{
-        color: $gray_light;
-        font-size: 18px;
-        &:hover{
-            color: #525961;
-            text-decoration: none;
-            .far.fa-heart {
-                color: #525961;
-            }
-        }
-        .far.fa-heart {
-            &:hover {
-                .like-btn--disabled {
-                    color: #525961;
-                }
-                color: #525961;
+            color: $gray_dark;
+
+            // ハートアイコンにもホバーイベントを指定
+            .c-icon--gray-heart {
+                color: $gray_dark;
             }
         }
     }
 }
+
+//.like-btn {
+//    cursor: pointer;
+//    font-size: 18px;
+//    &.on {
+//        color: $pink;
+//        &:hover {
+//            color: $pink_hover;
+//            transition: all $transition_speed;
+//            .fas.fa-heart {
+//                color: $pink_hover;
+//                transition: all $transition_speed;
+//            }
+//        }
+//    }
+//    &.off {
+//        color: $gray_light;
+//        &:hover {
+//            color: $gray_dark;
+//            .far.fa-heart {
+//                color: $gray_dark;
+//            }
+//        }
+//    }
+//    &--disabled{
+//        color: $gray_light;
+//        font-size: 18px;
+//        &:hover{
+//            color: #525961;
+//            text-decoration: none;
+//            .far.fa-heart {
+//                color: #525961;
+//            }
+//        }
+//        .far.fa-heart {
+//            &:hover {
+//                .like-btn--disabled {
+//                    color: #525961;
+//                }
+//                color: #525961;
+//            }
+//        }
+//    }
+//}
+
 // フレーズ削除ボタン
 .delete-btn {
     border: none;

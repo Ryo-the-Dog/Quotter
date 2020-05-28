@@ -45,7 +45,7 @@
             </div>
         @endif
 
-        <header class="l-header header bg-white shadow-sm">
+        <header class="l-header bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
 
@@ -154,7 +154,7 @@
             @yield('content')
         </main>
 
-        <footer class="l-footer p-footer">
+        <footer class="l-footer p-footer l-flex">
             <div class="container footer-container">
                 <p class="text-muted">Copyright &copy;Quotter All Rights Reserved.</p>
                 <a href="https://twitter.com/ryonextStandard" target="_blank" class="twitter-btn">

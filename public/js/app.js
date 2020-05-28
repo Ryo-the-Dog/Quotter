@@ -2006,9 +2006,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // ビューのVueの箇所からフレーズのidとユーザーのidをpropsで受け取る
-  props: ['phraseId', 'userId', 'defaultLiked', 'defaultCount'],
+  props: ['phraseId', 'userId', 'defaultLiked', 'defaultCount', 'loginRoute'],
   data: function data() {
     return {
       liked: false,
@@ -37493,60 +37501,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm.userId
-    ? _c("span", { staticClass: "card-menu-right__btn" }, [
-        !_vm.liked
-          ? _c(
-              "span",
-              {
-                staticClass: "like-btn off",
-                on: {
-                  click: function($event) {
-                    return _vm.like(_vm.phraseId)
-                  }
-                }
-              },
-              [
-                _c("i", { staticClass: "far fa-heart" }),
-                _vm._v(_vm._s(_vm.likeCount))
-              ]
-            )
-          : _c(
-              "span",
-              {
-                staticClass: "like-btn on",
-                on: {
-                  click: function($event) {
-                    return _vm.unlike(_vm.phraseId)
-                  }
-                }
-              },
-              [
-                _c("i", { staticClass: "fas fa-heart" }),
-                _vm._v(_vm._s(_vm.likeCount))
-              ]
-            )
-      ])
-    : _c("span", { staticClass: "card-menu-right__btn" }, [
-        _c(
-          "a",
-          {
-            staticClass: "like-btn--disabled",
-            attrs: { href: "https://laravel.app/login" }
-          },
-          [
-            _c("i", { staticClass: "far fa-heart" }),
-            _vm._v(_vm._s(_vm.likeCount))
-          ]
-        )
-      ])
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 

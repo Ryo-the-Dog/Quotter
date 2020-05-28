@@ -1,0 +1,35 @@
+/* ====================================
+ component
+==================================== */
+/* アイコンを定義しています
+------------------------------------ */
+
+// 引用符アイコン
+.c-icon--quote {
+    color: $color_main;
+
+    @include mq(sm) {
+        font-size: $font-size_xxs;
+    }
+}
+
+// ハートアイコン(グレー)
+.c-icon--gray-heart {
+    cursor: pointer;
+    margin-right: $space_xs;
+    color: $gray_light;
+
+    &:hover {
+        color: $gray_dark;
+        .like-btn.off {
+            color: $gray_dark;
+        }
+    }
+}
+
+// ハートアイコン(ピンク)
+.c-icon--pink-heart {
+    cursor: pointer;
+    margin-right: $space_xs;
+    color: $pink;
+}

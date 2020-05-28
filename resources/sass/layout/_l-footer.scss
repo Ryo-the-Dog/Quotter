@@ -4,5 +4,9 @@
 /* フッターのレイアウトを定義しています
 ------------------------------------ */
 .l-footer {
+    // フッター固定用
     flex-shrink: 0;
+    // 縦中央揃え用
+    flex-direction: column;
+    justify-content: center;
 }

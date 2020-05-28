@@ -12,7 +12,7 @@
         <div class="l-flex phrase-card__main">
 
             <div class="phrase-card__phraseArea">
-                <i class="fas fa-quote-left"></i>
+                <i class="fas fa-quote-left c-icon--quote"></i>
                 <p class="card-title phrase-card__phrase">{{$phrase->phrase}}</p>
             </div>
 
@@ -42,10 +42,13 @@
                     &text={{$phrase->phrase}}「{{$phrase->title}}」&related=ryonextStandard&hashtags=Quotter" class="twitter-btn card-menu-right__btn">
                         <i class="fab fa-twitter"></i>
                     </a>
+
+                    <!-- いいねボタン -->
                     @guest
                         <like
                             :phrase-id="{{ json_encode($phrase->id) }}"
                             :default-count="{{json_encode(count($phrase->likes))}}"
+                            :login-route="{{json_encode(route('login'))}}"
                         >
                         </like>
                     @else
@@ -57,7 +60,9 @@
                             :default-count="{{json_encode(count($phrase->likes))}}"
                         >
                         </like>
+
                     @endguest
+
                     @if(Route::currentRouteName() == 'phrases.mypage' )
                         <form action="{{route('phrases.delete', $phrase->id)}}" method="post" class="d-inline">
                             @csrf
