@@ -39,7 +39,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body class="body flex">
-    <div id="app" class="wrapper flex">
+{{--    <div id="app" class="wrapper flex">--}}
 
         @if (session('flash_message'))
             <div class="alert alert-primary text-center flash-message" role="alert">
@@ -165,7 +165,7 @@
             </div>
         </footer>
 
-    </div>
+{{--    </div>--}}
 
 </body>
 </html>
