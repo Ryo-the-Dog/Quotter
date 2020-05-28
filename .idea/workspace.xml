@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-flexbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_l-wrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_l-wrapper.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/phraseCard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +176,7 @@
       <updated>1590467445313</updated>
       <workItem from="1590467446858" duration="8456000" />
       <workItem from="1590549709131" duration="13179000" />
-      <workItem from="1590642951531" duration="4587000" />
+      <workItem from="1590642951531" duration="4823000" />
     </task>
     <servers />
   </component>
@@ -175,10 +184,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="531" y="329" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590565066477">
+    <state x="531" y="329" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590655125706">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
-    <state x="531" y="329" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590565066477" />
+    <state x="531" y="329" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590655125706" />
     <state x="60" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590479460609">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
@@ -191,10 +200,10 @@
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
     <state x="265" y="355" key="com.intellij.ide.util.TipDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590549989344" />
-    <state x="392" y="274" width="982" height="550" key="find.popup" timestamp="1590653276392">
+    <state x="392" y="274" width="982" height="550" key="find.popup" timestamp="1590655170786">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
-    <state x="392" y="274" width="982" height="550" key="find.popup/0.23.1680.1000@0.23.1680.1000" timestamp="1590653276392" />
+    <state x="392" y="274" width="982" height="550" key="find.popup/0.23.1680.1000@0.23.1680.1000" timestamp="1590655170786" />
     <state x="414" y="347" width="670" height="676" key="search.everywhere.popup" timestamp="1590585479453">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>

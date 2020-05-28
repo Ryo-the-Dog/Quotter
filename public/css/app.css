@@ -16861,7 +16861,7 @@ button:focus,
 /* ヘッダーのレイアウトを定義しています
 ------------------------------------ */
 
-.l-header {
+.header {
   flex-shrink: 0;
 }
 
@@ -16872,7 +16872,7 @@ button:focus,
 /* 全コンテンツの親ラッパーを定義しています。
 ==================================== */
 
-.l-wrapper {
+.wrapper {
   flex-direction: column;
   min-height: 100vh;
 }
@@ -16884,24 +16884,13 @@ button:focus,
 /* mainコンテンツを定義しています
 ------------------------------------ */
 
-.l-main {
+.main {
   flex: 1 0 auto;
   min-height: 1px;
   padding: 30px 0 60px;
 }
 
-/* ====================================
- layout
-==================================== */
-
-/* フッターのレイアウトを定義しています
------------------------------------- */
-
-.l-footer {
-  flex-shrink: 0;
-}
-
-.l-flex {
+.flex {
   display: flex;
 }
 
@@ -17307,6 +17296,7 @@ body {
 }
 
 .footer {
+  flex-shrink: 0;
   background-color: #fff;
   box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   height: 90px;

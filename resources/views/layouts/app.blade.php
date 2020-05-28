@@ -38,8 +38,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="l-body l-flex">
-    <div id="app" class="l-wrapper l-flex">
+<body class="body flex">
+    <div id="app" class="wrapper flex">
 
         @if (session('flash_message'))
             <div class="alert alert-primary text-center flash-message" role="alert">
@@ -47,7 +47,7 @@
             </div>
         @endif
 
-        <header class="l-header bg-white shadow-sm">
+        <header class="header bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
 
@@ -152,11 +152,11 @@
             @endif
         </header>
 
-        <main class="l-main">
+        <main class="main">
             @yield('content')
         </main>
 
-        <footer class="l-footer footer">
+        <footer class="footer">
             <div class="container footer-container">
                 <p class="text-muted">Copyright &copy;Quotter All Rights Reserved.</p>
                 <a href="https://twitter.com/ryonextStandard" target="_blank" class="twitter-btn">
