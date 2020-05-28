@@ -14,7 +14,12 @@ component
 /* 画像
 ==================================== */
 .phrase-card {
-    margin-bottom: $space_l;
+    margin-bottom: $space_xl;
+
+    @include mq(md) {
+        margin-bottom: $space_l;
+    }
+
     @include mq(sm) {
         padding-right: 0;
         padding-left: 0;
