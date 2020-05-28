@@ -16851,6 +16851,10 @@ button:focus,
   outline: 0 !important;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Layout
 ------------------------------------ */
 
@@ -16959,10 +16963,12 @@ component
 
 .c-btn-like--off:hover {
   color: #525961;
+  transition: all 0.3s;
 }
 
 .c-btn-like--off:hover .c-icon--gray-heart {
   color: #525961;
+  transition: all 0.3s;
 }
 
 .delete-btn {

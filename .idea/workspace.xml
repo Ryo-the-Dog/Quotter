@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/resources/js/components/Like.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Like.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/foundation/_f-base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/_f-base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-btn.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +169,7 @@
       <updated>1590467445313</updated>
       <workItem from="1590467446858" duration="8456000" />
       <workItem from="1590549709131" duration="13179000" />
-      <workItem from="1590642951531" duration="9083000" />
+      <workItem from="1590642951531" duration="9247000" />
     </task>
     <servers />
   </component>

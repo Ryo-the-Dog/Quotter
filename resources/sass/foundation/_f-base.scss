@@ -3,11 +3,14 @@ Foundation
 ==================================== */
 /* 共通のスタイルを定義しています。
 ------------------------------------ */
-
 button,
 .btn {
     outline: 0 !important;
     &:focus {
         outline: 0 !important;
     }
+}
+
+a {
+    text-decoration: none;
 }

@@ -48,10 +48,12 @@ component
 
         &:hover {
             color: $gray_dark;
+            transition: all $transition_speed;
 
             // ハートアイコンにもホバーイベントを指定
             .c-icon--gray-heart {
                 color: $gray_dark;
+                transition: all $transition_speed;
             }
         }
     }

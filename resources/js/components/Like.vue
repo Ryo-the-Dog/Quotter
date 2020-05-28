@@ -2,17 +2,17 @@
 
     <span v-if="userId" class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->
-        <span v-if="!liked" @click="like(phraseId)" class="c-btn-like--off like-btn off">
+        <span v-if="!liked" @click="like(phraseId)" class="c-btn-like c-btn-like--off like-btn off">
             <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}
         </span>
-        <span v-else @click="unlike(phraseId)" class="c-btn-like--on like-btn on">
+        <span v-else @click="unlike(phraseId)" class="c-btn-like c-btn-like--on like-btn on">
             <i class="fas fa-heart c-icon--pink-heart"></i>{{likeCount}}
         </span>
     </span>
 
     <span v-else class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->
-        <a :href="loginRoute" class="c-btn-like--off">
+        <a :href="loginRoute" class="c-btn-like c-btn-like--off">
             <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}
         </a>
     </span>

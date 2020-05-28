@@ -37511,7 +37511,7 @@ var render = function() {
           ? _c(
               "span",
               {
-                staticClass: "c-btn-like--off like-btn off",
+                staticClass: "c-btn-like c-btn-like--off like-btn off",
                 on: {
                   click: function($event) {
                     return _vm.like(_vm.phraseId)
@@ -37526,7 +37526,7 @@ var render = function() {
           : _c(
               "span",
               {
-                staticClass: "c-btn-like--on like-btn on",
+                staticClass: "c-btn-like c-btn-like--on like-btn on",
                 on: {
                   click: function($event) {
                     return _vm.unlike(_vm.phraseId)
@@ -37542,7 +37542,10 @@ var render = function() {
     : _c("span", { staticClass: "card-menu-right__btn" }, [
         _c(
           "a",
-          { staticClass: "c-btn-like--off", attrs: { href: _vm.loginRoute } },
+          {
+            staticClass: "c-btn-like c-btn-like--off",
+            attrs: { href: _vm.loginRoute }
+          },
           [
             _c("i", { staticClass: "far fa-heart c-icon--gray-heart" }),
             _vm._v(_vm._s(_vm.likeCount) + "\n    ")
