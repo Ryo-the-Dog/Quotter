@@ -12,7 +12,7 @@
 
     <span v-else class="card-menu-right__btn">
         <!-- 未ログインの場合spanタグにする？ -->
-        <a href="{{loginRoute}}" class="c-btn-like--off">
+        <a :href="loginRoute" class="c-btn-like--off">
             <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}
         </a>
     </span>

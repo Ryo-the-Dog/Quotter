@@ -37501,8 +37501,57 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.userId
+    ? _c("span", { staticClass: "card-menu-right__btn" }, [
+        !_vm.liked
+          ? _c(
+              "span",
+              {
+                staticClass: "c-btn-like--off like-btn off",
+                on: {
+                  click: function($event) {
+                    return _vm.like(_vm.phraseId)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "far fa-heart c-icon--gray-heart" }),
+                _vm._v(_vm._s(_vm.likeCount) + "\n    ")
+              ]
+            )
+          : _c(
+              "span",
+              {
+                staticClass: "c-btn-like--on like-btn on",
+                on: {
+                  click: function($event) {
+                    return _vm.unlike(_vm.phraseId)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fas fa-heart c-icon--pink-heart" }),
+                _vm._v(_vm._s(_vm.likeCount) + "\n    ")
+              ]
+            )
+      ])
+    : _c("span", { staticClass: "card-menu-right__btn" }, [
+        _c(
+          "a",
+          { staticClass: "c-btn-like--off", attrs: { href: _vm.loginRoute } },
+          [
+            _c("i", { staticClass: "far fa-heart c-icon--gray-heart" }),
+            _vm._v(_vm._s(_vm.likeCount) + "\n    ")
+          ]
+        )
+      ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
