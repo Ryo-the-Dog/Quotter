@@ -1,15 +1,4 @@
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 90px;
-}
-.footer {
-    flex-shrink: 0;
+.p-footer {
     background-color: #fff;
     box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     height: 90px;

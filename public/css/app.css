@@ -16861,7 +16861,7 @@ button:focus,
 /* ヘッダーのレイアウトを定義しています
 ------------------------------------ */
 
-.header {
+.l-header {
   flex-shrink: 0;
 }
 
@@ -16872,7 +16872,7 @@ button:focus,
 /* ボディを定義しています。
 ==================================== */
 
-.body {
+.l-body {
   flex-direction: column;
 }
 
@@ -16883,7 +16883,7 @@ button:focus,
 /* 全コンテンツの親ラッパーを定義しています。
 ==================================== */
 
-.wrapper {
+.l-wrapper {
   flex-direction: column;
   min-height: 100vh;
 }
@@ -16895,13 +16895,13 @@ button:focus,
 /* mainコンテンツを定義しています
 ------------------------------------ */
 
-.main {
+.l-main {
   flex: 1 0 auto;
   min-height: 1px;
   padding: 30px 0 60px;
 }
 
-.flex {
+.l-flex {
   display: flex;
 }
 
@@ -17303,21 +17303,7 @@ project
   z-index: 1;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 90px;
-}
-
-.footer {
-  flex-shrink: 0;
+.p-footer {
   background-color: #fff;
   box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   height: 90px;
@@ -17327,13 +17313,13 @@ body {
   bottom: 0;
 }
 
-.footer-container {
+.p-footer-container {
   width: auto;
   max-width: 680px;
   padding: 20px 0;
 }
 
-.footer .text-muted {
+.p-footer .text-muted {
   margin-bottom: 0;
 }
 

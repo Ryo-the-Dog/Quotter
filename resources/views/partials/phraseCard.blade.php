@@ -9,7 +9,7 @@
             <a href="{{route('phrases.show',$phrase->id)}}" class="phrase-card__link-large" title="クオートの詳細"></a>
         @endif
 
-        <div class="flex phrase-card__main">
+        <div class="l-flex phrase-card__main">
 
             <div class="phrase-card__phraseArea">
                 <i class="fas fa-quote-left"></i>

@@ -32,14 +32,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <!-- フッター -->
-{{--    <link href="sticky-footer.css" rel="stylesheet">--}}
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="body flex">
-    <div id="app" class="wrapper flex">
+
+<body class="l-body l-flex">
+    <div id="app" class="l-wrapper l-flex">
 
         @if (session('flash_message'))
             <div class="alert alert-primary text-center flash-message" role="alert">
@@ -47,7 +45,7 @@
             </div>
         @endif
 
-        <header class="header bg-white shadow-sm">
+        <header class="l-header header bg-white shadow-sm">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
 
@@ -152,11 +150,11 @@
             @endif
         </header>
 
-        <main class="main">
+        <main class="l-main">
             @yield('content')
         </main>
 
-        <footer class="footer">
+        <footer class="l-footer p-footer">
             <div class="container footer-container">
                 <p class="text-muted">Copyright &copy;Quotter All Rights Reserved.</p>
                 <a href="https://twitter.com/ryonextStandard" target="_blank" class="twitter-btn">
