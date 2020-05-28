@@ -17317,6 +17317,10 @@ component
   }
 }
 
+.phrase-card__title {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 479px) {
   .phrase-card__title {
     font-size: 13px;
