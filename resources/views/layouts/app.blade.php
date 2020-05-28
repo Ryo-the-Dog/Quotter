@@ -25,13 +25,15 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <!-- フッター -->
-{{--    <link href="sticky-footer.css" rel="stylesheet">--}}
+
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- フッター -->
+    <link href="sticky-footer.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
