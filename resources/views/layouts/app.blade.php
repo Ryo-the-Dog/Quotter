@@ -62,7 +62,7 @@
                     <ul class="navbar-nav mr-auto">
                     </ul>
 
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto l-flex">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -107,6 +107,8 @@
             @if(Route::currentRouteName() == 'phrases'  )
             <div class="navbar navbar-expand-md navbar-light">
                 <div class="container">
+
+                    <!-- カテゴリーナビ -->
                     <ul class="navbar-nav mr-auto category-nav">
 
                         <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
@@ -127,6 +129,8 @@
                             <p>カテゴリーがありません</p>
                         @endforelse
                     </ul>
+
+                    <!-- 並び替えナビ -->
                     <ul class="navbar-nav ml-auto sort-nav">
 
                         <li class="nav-item @if($sort_id === 'like') active @endif">
