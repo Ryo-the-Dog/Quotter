@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ImageTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ImagePreview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-logo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-logo.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/QuoteImagePreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/QuoteImagePreview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/phrases/uploader.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/userEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/userEdit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +181,7 @@
       <workItem from="1590642951531" duration="12158000" />
       <workItem from="1590675893129" duration="367000" />
       <workItem from="1590676348414" duration="77000" />
-      <workItem from="1590724865569" duration="6304000" />
+      <workItem from="1590724865569" duration="6611000" />
     </task>
     <servers />
   </component>

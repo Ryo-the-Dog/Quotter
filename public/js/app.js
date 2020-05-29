@@ -37651,7 +37651,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-6" }, [
+  return _c("div", [
     _c("input", {
       directives: [
         {
@@ -37661,8 +37661,8 @@ var render = function() {
           expression: "uploadedImage"
         }
       ],
-      staticClass: "form-control file-input profile-img-input",
-      attrs: { id: "file-sample", type: "file", name: "title_img_path" },
+      staticClass: "form-control file-input quote-img-input",
+      attrs: { id: "title_img_path", type: "file", name: "title_img_path" },
       on: { change: _vm.onFileChange }
     }),
     _vm._v(" "),
@@ -50260,7 +50260,7 @@ __webpack_require__.r(__webpack_exports__);
 
 window.onload = function () {
   setTimeout(function () {
-    $('.flash-message').slideUp(1000);
+    $('.c-flash-message').slideUp(1000);
   }, 2500); // $('.flash-message').slideUp(3000);
 };
 
