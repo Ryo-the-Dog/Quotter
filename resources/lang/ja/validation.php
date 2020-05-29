@@ -66,7 +66,7 @@ return [
     'same'                 => ':attributeと:otherは一致していません。',
     'size'                 => [
         'numeric' => ':attributeは:sizeにしてください。',
-        'file'    => ':attributeは:size KBにしてください。.',
+        'file'    => ':attributeは:size KBにしてください。',
         'string'  => ':attribute:size文字にしてください。',
         'array'   => ':attributeは:size個にしてください。',
     ],
@@ -112,6 +112,7 @@ return [
         'email' => 'アドレス',
         'new-password' => 'パスワード',
         'title_img_path' => '画像',
+        'profile_img_path' => '画像',
     ],
 
 ];

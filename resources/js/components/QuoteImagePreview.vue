@@ -1,14 +1,14 @@
 <template>
-    <div class="col-md-6">
-
+    <div>
         <input class="form-control c-input--file" id="title_img_path" type="file" name="title_img_path"
                v-preview-input="uploadedImage" @change="onFileChange">
+
         <img class="img" id="file-preview" v-show="uploadedImage"
              v-bind:src="uploadedImage" style="width:100%;">
+
         <span class="text-danger" role="alert">
             <strong>{{ error }}</strong>
         </span>
-
     </div>
 </template>
 

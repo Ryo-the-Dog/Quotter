@@ -53,15 +53,18 @@
                             <div class="form-group row">
                                 <label for="profile_img_path"  class="col-md-4 col-form-label text-md-right">{{ __('Profile Image') }}</label>
 
-                                <ImagePreview
-                                :auth="{{$auth}}"
-                                ></ImagePreview>
+                                <div class="col-md-6">
+                                    <ImagePreview
+                                    :auth="{{$auth}}"
+                                    ></ImagePreview>
 
-                                @error('profile_img_path')
-                                    <span class="text-danger" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
+                                    @error('profile_img_path')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">

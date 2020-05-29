@@ -40,13 +40,15 @@
                                     {{ __('Title Image') }}
                                 </label>
 
-                                <Quoteimagepreview></Quoteimagepreview>
+                                <div class="col-md-6">
+                                    <Quoteimagepreview></Quoteimagepreview>
 
-                                @error('title_img_path')
-                                    <span class="text-danger" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
+                                    @error('title_img_path')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
 
                             <!-- 引用するフレーズ -->
