@@ -33,27 +33,31 @@ class UserController extends Controller
         // プロフィール画像
 //        $path = $request->file('profile_img_path') ? $request->file('profile_img_path')->store('public/img') : '';
 
-        // 画像が選択されていなければ更新しない
+        // emailが更新されていればemailの重複チェックを行う
         if(strcmp($request->get('email'), Auth::user()->email) == 0) {
             $validated_data = $request->validate([
                 'name' => 'required|string|max:20',
                 'email' => 'required | string | email | max:255 ',
-                'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:1024',
             ]);
         }else{
             $validated_data = $request->validate([
                 'name' => 'required|string|max:20',
                 'email' => 'required | string | email | max:255 | unique:users',
-                'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'profile_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:1024',
             ]);
         }
 
-        $imgFile = $request->file('profile_img_path');
+        // 画像が選択された場合
+        if(!empty($request->file('profile_img_path'))) {
 
-        // Cloudinaryにアップロード後に生成されたURLを格納
-        $imgUrl = uploadImg($imgFile);
+            $imgFile = $request->file('profile_img_path');
 
-        if(empty($path)){
+            // Cloudinaryにアップロード後に生成されたURLを格納
+            $imgUrl = uploadImg($imgFile);
+        }
+        
+        if(empty($imgUrl)){
             $auth->fill([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
