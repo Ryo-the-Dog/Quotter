@@ -17,7 +17,6 @@ use JD\Cloudder\Facades\Cloudder;
 
 class PhrasesController extends Controller
 {
-    // フレーズ登録画面を表示させるアクション
     /**
      * @var Phrase
      */
@@ -27,6 +26,10 @@ class PhrasesController extends Controller
      */
     protected $tag;
 
+
+    // ========================================
+    // フレーズ登録画面を表示させるアクション
+    // ========================================
     public function new(Request $request) {
         // Categoryモデルのインスタンスを生成する
         $tag = new Tag;
@@ -34,7 +37,9 @@ class PhrasesController extends Controller
         return view('phrases.new',  [ 'all_tags_list' => $tag->all() ]);
     }
 
+    // ========================================
     // フレーズを投稿するアクション
+    // ========================================
     public function create(CreatePhraseRequest $request) {
 
         // POSTされたデータを格納する
@@ -245,13 +250,18 @@ class PhrasesController extends Controller
     // フレーズの詳細表示アクション
     public function show(Phrase $phrase, $id) {
 
+        // URLに数字以外がURLに入力された場合はリダイレクト
         if(!ctype_digit($id)){
             return redirect('/')->with('flash_message',__('Invalid operation was performed.'));
         }
 
         // クリックされたフレーズのidを格納
         $phrase = Phrase::find($id);
-        //dd($phrase->load('likes')); // relationsの項目が追加されてるが中身はitem[]
+
+        if(empty($phrase)){
+            return back()->with('flash_message',__('The URL does not exist.'));
+        }
+
         // そのユーザーがその投稿にいいねを押しているか
 //        if(Auth::user()) {
 
@@ -260,10 +270,9 @@ class PhrasesController extends Controller
 //        dd($phrase->user->name);
         $defaultCount = count($phrase->likes);
         if(!empty(Auth::user()) ) {
-            // TODO　いいね用
+
             $userAuth = Auth::user();
 
-            //            $defaultLiked = $phrase->likes->where('user_id', 3)->first();
             $defaultLiked = $phrase->likes->where('user_id', $userAuth->id)->first();
 
             if (isset($defaultLiked)) {

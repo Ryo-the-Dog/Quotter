@@ -39,17 +39,14 @@
                                 <label for="title_img_path" class="col-md-4 col-form-label text-md-right">
                                     {{ __('Title Image') }}
                                 </label>
-                                <div class="col-md-6">
-                                    {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
-                                    @error('title_img_path')
+
+                                <Quoteimagepreview></Quoteimagepreview>
+
+                                @error('title_img_path')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
-                                    @enderror
-
-                                    <Quoteimagepreview></Quoteimagepreview>
-
-                                </div>
+                                @enderror
                             </div>
 
                             <!-- 引用するフレーズ -->

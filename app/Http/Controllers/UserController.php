@@ -11,12 +11,17 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    // プロフィール編集
+    // ========================================
+    // プロフィール編集画面表示
+    // ========================================
     public function edit() {
         $auth = Auth::user();
         return view('users.userEdit',['auth' => $auth]);
     }
 
+    // ========================================
+    // プロフィール編集アクション
+    // ========================================
     public  function  update(Request $request) {
         if (!$this) {
             return false;
@@ -24,11 +29,9 @@ class UserController extends Controller
 
         // 対象レコード取得
         $auth = Auth::user();
-        // リクエストデータ受け取り
-
 
         // プロフィール画像
-        $path = $request->file('profile_img_path') ? $request->file('profile_img_path')->store('public/img') : '';
+//        $path = $request->file('profile_img_path') ? $request->file('profile_img_path')->store('public/img') : '';
 
         // 画像が選択されていなければ更新しない
         if(strcmp($request->get('email'), Auth::user()->email) == 0) {
@@ -45,6 +48,11 @@ class UserController extends Controller
             ]);
         }
 
+        $imgFile = $request->file('profile_img_path');
+
+        // Cloudinaryにアップロード後に生成されたURLを格納
+        $imgUrl = uploadImg($imgFile);
+
         if(empty($path)){
             $auth->fill([
                 'name' => $request->input('name'),
@@ -54,7 +62,7 @@ class UserController extends Controller
             $auth->fill([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
-                'profile_img_path' => $path ? basename($path) : '',
+                'profile_img_path' => $imgUrl,
             ])->save();
         }
 

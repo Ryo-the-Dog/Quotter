@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="col-md-6">
 
-        <input class="form-control file-input quote-img-input" id="title_img_path" type="file" name="title_img_path"
+        <input class="form-control c-input--file" id="title_img_path" type="file" name="title_img_path"
                v-preview-input="uploadedImage" @change="onFileChange">
         <img class="img" id="file-preview" v-show="uploadedImage"
              v-bind:src="uploadedImage" style="width:100%;">

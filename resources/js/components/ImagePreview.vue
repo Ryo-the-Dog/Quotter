@@ -1,7 +1,7 @@
 <template>
     <div class="col-md-6">
 
-        <input class="form-control file-input profile-img-input" id="file-sample" type="file" name="profile_img_path"
+        <input class="form-control c-input--file" id="file-sample" type="file" name="profile_img_path"
                v-preview-input="uploadedImage"
                @change="onFileChange">
         <img class="img" id="file-preview"
@@ -20,7 +20,7 @@
         props: ['auth'],
         data() {
             return {
-                uploadedImage: this.auth.profile_img_path?'/storage/img/'+this.auth.profile_img_path:'/storage/img/noimg.png',
+                uploadedImage: this.auth.profile_img_path ? this.auth.profile_img_path : '/img/noimg.png',
                 sizeLimit: 1024000,
                 error: null,
             };

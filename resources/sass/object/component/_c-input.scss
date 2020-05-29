@@ -8,9 +8,11 @@ component
     height: 80px !important;
 }
 
-.file-input {
-    line-height: 20px;
+.c-input--file {
+    line-height: 16px;
+    margin-bottom: $space_s;
 }
+
 .profile-img-input {
     margin-bottom: 5px;
 }

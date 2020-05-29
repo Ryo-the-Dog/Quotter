@@ -87,7 +87,7 @@
                     @if(empty($phrase->user->profile_img_path))
                         <img src="{{asset('/img/noimg.png')}}" alt="{{$phrase->user->name}}">
                     @else
-                        <img src="{{ asset('/storage/img/'.$phrase->user->profile_img_path) }}" alt="{{$phrase->user->name}}">
+                        <img src="{{$phrase->user->profile_img_path}}" alt="{{$phrase->user->name}}">
                     @endif
                 </div>
 

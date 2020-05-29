@@ -1959,7 +1959,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['auth'],
   data: function data() {
     return {
-      uploadedImage: this.auth.profile_img_path ? '/storage/img/' + this.auth.profile_img_path : '/storage/img/noimg.png',
+      uploadedImage: this.auth.profile_img_path ? this.auth.profile_img_path : '/img/noimg.png',
       sizeLimit: 1024000,
       error: null
     };
@@ -37535,7 +37535,7 @@ var render = function() {
           expression: "uploadedImage"
         }
       ],
-      staticClass: "form-control file-input profile-img-input",
+      staticClass: "form-control c-input--file",
       attrs: { id: "file-sample", type: "file", name: "profile_img_path" },
       on: { change: _vm.onFileChange }
     }),
@@ -37651,7 +37651,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "col-md-6" }, [
     _c("input", {
       directives: [
         {
@@ -37661,7 +37661,7 @@ var render = function() {
           expression: "uploadedImage"
         }
       ],
-      staticClass: "form-control file-input quote-img-input",
+      staticClass: "form-control c-input--file",
       attrs: { id: "title_img_path", type: "file", name: "title_img_path" },
       on: { change: _vm.onFileChange }
     }),

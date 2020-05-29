@@ -58,7 +58,7 @@
                                 ></ImagePreview>
 
                                 @error('profile_img_path')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                 @enderror
