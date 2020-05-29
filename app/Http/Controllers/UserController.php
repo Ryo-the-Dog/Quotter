@@ -56,7 +56,7 @@ class UserController extends Controller
             // Cloudinaryにアップロード後に生成されたURLを格納
             $imgUrl = uploadImg($imgFile);
         }
-        
+
         if(empty($imgUrl)){
             $auth->fill([
                 'name' => $request->input('name'),

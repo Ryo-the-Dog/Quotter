@@ -37554,7 +37554,7 @@ var render = function() {
       attrs: { id: "file-preview", src: _vm.uploadedImage }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "invalid-feedback", attrs: { role: "alert" } }, [
+    _c("span", { staticClass: "text-danger", attrs: { role: "alert" } }, [
       _c("strong", [_vm._v(_vm._s(_vm.error))])
     ])
   ])
@@ -37680,7 +37680,7 @@ var render = function() {
       attrs: { id: "file-preview", src: _vm.uploadedImage }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "invalid-feedback", attrs: { role: "alert" } }, [
+    _c("span", { staticClass: "text-danger", attrs: { role: "alert" } }, [
       _c("strong", [_vm._v(_vm._s(_vm.error))])
     ])
   ])

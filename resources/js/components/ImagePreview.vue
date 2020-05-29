@@ -9,7 +9,7 @@
              v-bind:src="uploadedImage"
              style="width:100%;">
 
-        <span class="invalid-feedback" role="alert">
+        <span class="text-danger" role="alert">
             <strong>{{ error }}</strong>
         </span>
     </div>

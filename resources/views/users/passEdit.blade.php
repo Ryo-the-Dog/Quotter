@@ -24,7 +24,7 @@
                                             @error('old-password') is-invalid @enderror" name="old-password"
                                            required autocomplete="old-password">
                                     @error('old-password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -38,7 +38,7 @@
                                             @error('new-password') is-invalid @enderror" name="new-password"
                                            required autocomplete="new-password">
                                     @error('new-password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror

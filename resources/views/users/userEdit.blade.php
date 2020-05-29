@@ -26,7 +26,7 @@
                                            required autocomplete="name" autofocus>
 
                                     @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -43,7 +43,7 @@
                                            required autocomplete="email">
 
                                     @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -58,7 +58,7 @@
                                 ></ImagePreview>
 
                                 @error('profile_img_path')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                 @enderror

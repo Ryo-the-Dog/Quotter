@@ -27,7 +27,7 @@
                                            required autocomplete="title" autofocus type="text"
                                            placeholder="30文字以内" maxlength="30">
                                     @error('title')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                     @enderror
@@ -43,7 +43,7 @@
                                 <Quoteimagepreview></Quoteimagepreview>
 
                                 @error('title_img_path')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                 @enderror
@@ -65,7 +65,7 @@
                                     </textarea>
 
                                     @error('phrase')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                     @enderror
@@ -88,7 +88,7 @@
                                     </select>
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('tag_ids[]')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                     @enderror
@@ -109,7 +109,7 @@
                                     </select>
                                     {{-- エラーがあった時に@error内のHTMLが表示される(この例はBootstrapの書き方) --}}
                                     @error('tag_ids[]')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                     @enderror
