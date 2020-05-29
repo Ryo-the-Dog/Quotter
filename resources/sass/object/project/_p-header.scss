@@ -8,16 +8,7 @@ project
 ==================================== */
 // サイトロゴ
 .navbar-logo {
-    width: 150px;
-    @include mq(sm){
-        width: 110px;
-    }
-    &-img {
-        width: 100%;
-    }
-    .navbar-brand{
-        margin-right: 0;
-    }
+
 }
 .navbar-expand-md .navbar-nav {
     flex-direction: row !important;

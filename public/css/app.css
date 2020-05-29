@@ -16909,6 +16909,19 @@ li {
   padding: 30px 0 60px;
 }
 
+/* ====================================
+ layout
+==================================== */
+
+/* フッターのレイアウトを定義しています
+------------------------------------ */
+
+.l-footer {
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .l-flex {
   display: flex;
 }
@@ -16917,7 +16930,28 @@ li {
 ------------------------------------ */
 
 /* ====================================
-component
+ component
+==================================== */
+
+/* ロゴを定義しています
+------------------------------------ */
+
+.c-logo {
+  width: 150px;
+}
+
+@media screen and (max-width: 479px) {
+  .c-logo {
+    width: 110px;
+  }
+}
+
+.c-logo-img {
+  width: 100%;
+}
+
+/* ====================================
+ component
 ==================================== */
 
 /* ボタンを定義しています
@@ -17128,10 +17162,6 @@ component
   }
 }
 
-.phrase-card__title {
-  margin-bottom: 20px;
-}
-
 @media screen and (max-width: 479px) {
   .phrase-card__title {
     font-size: 13px;
@@ -17205,6 +17235,7 @@ component
 .c-pagination {
   display: flex;
   justify-content: center;
+  padding-left: 0;
   margin-top: 40px;
 }
 
@@ -17275,24 +17306,6 @@ project
 
 /* カテゴリーメニュー
 ==================================== */
-
-.navbar-logo {
-  width: 150px;
-}
-
-@media screen and (max-width: 479px) {
-  .navbar-logo {
-    width: 110px;
-  }
-}
-
-.navbar-logo-img {
-  width: 100%;
-}
-
-.navbar-logo .navbar-brand {
-  margin-right: 0;
-}
 
 .navbar-expand-md .navbar-nav {
   flex-direction: row !important;

@@ -49,9 +49,9 @@
             <nav class="navbar navbar-expand-md navbar-light ">
                 <div class="container">
 
-                    <div class="navbar-logo">
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src="{{asset('/img/quotter_logo.png')}}" alt="Quotter" class="navbar-logo-img">
+                    <div class="c-logo">
+                        <a class="navbar-brand" href="{{route('phrases')}}">
+                            <img src="{{asset('/img/quotter_logo.png')}}" alt="Quotter" class="c-logo__img">
                         </a>
                     </div>
 

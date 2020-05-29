@@ -31,11 +31,15 @@
 @import 'layout/l-wrapper';
 // メインコンテンツ
 @import 'layout/l-main';
+// フッター
+@import 'layout/l-footer';
 // flexbox
 @import 'layout/l-flexbox';
 
 /* Component
 ------------------------------------ */
+// ロゴ
+@import 'object/component/c-logo';
 // ボタン
 @import 'object/component/c-btn';
 // アイコン
