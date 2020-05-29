@@ -15,12 +15,14 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('profile.edit') }}"  enctype="multipart/form-data">
                             @csrf
+
+                            <!-- ユーザーの名前 -->
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                           name="name" value="@if(!empty(old('name') ) ){{old('name')}}@elseif(!empty($auth) ){{$auth->name}}@endif"
+                                           name="name" value="@if(!empty(old('name'))){{old('name')}}@elseif(!empty($auth)){{$auth->name}}@endif"
                                            required autocomplete="name" autofocus>
 
                                     @error('name')
@@ -31,6 +33,7 @@
                                 </div>
                             </div>
 
+                            <!-- ユーザーのEメール -->
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -49,15 +52,11 @@
 
                             <div class="form-group row">
                                 <label for="profile_img_path"  class="col-md-4 col-form-label text-md-right">{{ __('Profile Image') }}</label>
-                                {{-- ⭕️一応最低限登録は行える。
-                                だから残りの課題は、
-                                1.登録済みのプロフィール画像を取得する
-                                2.表示=assetメソッドが必要
-                                3.未登録の場合にはno-imgを表示する
-                                4.エラーの時                         --}}
-                                <ImageTest
+
+                                <ImagePreview
                                 :auth="{{$auth}}"
-                                ></ImageTest>
+                                ></ImagePreview>
+
                                 @error('profile_img_path')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>

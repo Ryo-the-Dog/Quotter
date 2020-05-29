@@ -32,7 +32,8 @@ if(token) {
 
 Vue.component('like',require('./components/Like.vue').default);
 Vue.component('counter', require('./components/Counter.vue').default);
-Vue.component('imagetest', require('./components/ImageTest.vue').default);
+Vue.component('imagepreview', require('./components/ImagePreview.vue').default);
+Vue.component('quoteimagepreview', require('./components/QuoteImagePreview.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -43,25 +44,4 @@ Vue.component('imagetest', require('./components/ImageTest.vue').default);
 new Vue({
     el: '#app',
 });
-
-// ログインチェックしてからアプリを生成する
-// const createApp = async () => {
-//     //await store.dispatch('auth/currentUser')
-//
-//     new Vue({
-//         el: '#app',
-//         // router,
-//         store,
-//         components: { App },
-//         template: '<App />'
-//     })
-// }
-//
-// createApp()
-// const app = new Vue({
-//     el: '#app',
-//     // router, // ルーティングの定義を読み込む
-//     // components: { App }, // ルートコンポーネントの使用を宣言する
-//     // template: '<App />' // ルートコンポーネントを描画する
-// });
 

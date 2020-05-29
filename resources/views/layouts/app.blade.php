@@ -40,7 +40,7 @@
     <div id="app" class="l-wrapper l-flex">
 
         @if (session('flash_message'))
-            <div class="alert alert-primary text-center flash-message" role="alert">
+            <div class="alert alert-primary text-center c-flash-message" role="alert">
                 {{ session('flash_message') }}
             </div>
         @endif

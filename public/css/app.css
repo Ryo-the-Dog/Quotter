@@ -16946,7 +16946,7 @@ li {
   }
 }
 
-.c-logo-img {
+.c-logo__img {
   width: 100%;
 }
 
@@ -17212,6 +17212,39 @@ li {
 }
 
 /* ====================================
+component
+==================================== */
+
+/* 入力フォームを定義しています
+------------------------------------ */
+
+.c-input--new-quote {
+  height: 80px !important;
+}
+
+.file-input {
+  line-height: 20px;
+}
+
+.profile-img-input {
+  margin-bottom: 5px;
+}
+
+/* ====================================
+ component
+==================================== */
+
+/* フラッシュメッセージを定義しています
+------------------------------------ */
+
+.c-flash-message {
+  background-color: rgba(108, 214, 199, 0.9);
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+/* ====================================
  component
 ==================================== */
 
@@ -17275,25 +17308,6 @@ li {
   transition: all 0.3s;
 }
 
-/* ====================================
-component
-==================================== */
-
-/* 入力フォームを定義しています
------------------------------------- */
-
-.new-quote__phrase {
-  height: 130px !important;
-}
-
-.file-input {
-  line-height: 20px;
-}
-
-.profile-img-input {
-  margin-bottom: 5px;
-}
-
 /* Project
 ------------------------------------ */
 
@@ -17351,13 +17365,6 @@ project
 
 .sort-nav .nav-link.active {
   color: #212529 !important;
-}
-
-.flash-message {
-  background-color: rgba(108, 214, 199, 0.9);
-  width: 100%;
-  position: absolute;
-  z-index: 1;
 }
 
 .p-footer {

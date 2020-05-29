@@ -1,18 +1,18 @@
 <template>
-<!--  2  -->
+    <div class="col-md-6">
 
-        <div class="col-md-6">
+        <input class="form-control file-input profile-img-input" id="file-sample" type="file" name="profile_img_path"
+               v-preview-input="uploadedImage"
+               @change="onFileChange">
+        <img class="img" id="file-preview"
+             v-show="uploadedImage"
+             v-bind:src="uploadedImage"
+             style="width:100%;">
 
-            <input class="form-control file-input profile-img-input" id="file-sample" type="file" name="profile_img_path"
-                   v-preview-input="uploadedImage"
-                   @change="onFileChange">
-            <img class="img" id="file-preview"
-                 v-show="uploadedImage"
-                 v-bind:src="uploadedImage"
-                 style="width:100%;">
-        </div>
-
-
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ error }}</strong>
+        </span>
+    </div>
 </template>
 
 <script>
@@ -21,11 +21,21 @@
         data() {
             return {
                 uploadedImage: this.auth.profile_img_path?'/storage/img/'+this.auth.profile_img_path:'/storage/img/noimg.png',
+                sizeLimit: 1024000,
+                error: null,
             };
         },
         methods: {
             onFileChange(e) {
                 let files = e.target.files;
+
+                if(files[0].size > this.sizeLimit){
+                    this.error = '画像サイズは1MB以下にしてください'
+                    return false
+                }else{
+                    this.error = null
+                }
+
                 this.createImage(files[0]); //File情報格納
             },
             //アップロードした画像を表示

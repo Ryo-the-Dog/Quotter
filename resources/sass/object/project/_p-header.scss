@@ -6,10 +6,6 @@ project
 
 /* カテゴリーメニュー
 ==================================== */
-// サイトロゴ
-.navbar-logo {
-
-}
 .navbar-expand-md .navbar-nav {
     flex-direction: row !important;
     align-items: center;
@@ -38,7 +34,6 @@ project
 }
 // 並び替え
 .sort-nav {
-    //overflow-x: scroll !important;
     &__link {
         white-space: nowrap !important;
     }
@@ -49,11 +44,4 @@ project
         color: $black_normal !important;
     }
 }
-// フラッシュメッセージ
-.flash-message {
-    background-color: rgba(108,214,199,0.9);
-    width: 100%;
-    position: absolute;
-    z-index: 1;
 
-}
