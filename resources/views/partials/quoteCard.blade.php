@@ -76,25 +76,25 @@
                     </form>
                 @endif
             </div>
-
-
-            <!-- 詳細ページでは投稿者の情報を表示する -->
-            @if(Route::currentRouteName() == 'phrases.show' )
-                <div class="p-phrase-profile" >
-
-                    <div class="p-phrase-profile__img">
-                        @if(empty($phrase->user->profile_img_path))
-                            <img src="{{asset('/img/noimg.png')}}" alt="{{$phrase->user->name}}">
-                        @else
-                            <img src="{{$phrase->user->profile_img_path}}" alt="{{$phrase->user->name}}">
-                        @endif
-                    </div>
-    
-                    <p class="p-phrase-profile__name">{{$phrase->user->name}}</p>
-                    <p class="p-phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
-                    <span>の投稿</span>
-                </div>
-            @endif
         </div>
+
+        <!-- 詳細ページでは投稿者の情報を表示する -->
+        @if(Route::currentRouteName() == 'phrases.show' )
+            <div class="p-phrase-profile" >
+
+                <div class="p-phrase-profile__img">
+                    @if(empty($phrase->user->profile_img_path))
+                        <img src="{{asset('/img/noimg.png')}}" alt="{{$phrase->user->name}}">
+                    @else
+                        <img src="{{$phrase->user->profile_img_path}}" alt="{{$phrase->user->name}}">
+                    @endif
+                </div>
+
+                <p class="p-phrase-profile__name">{{$phrase->user->name}}</p>
+                <p class="p-phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
+                <span>の投稿</span>
+            </div>
+        @endif
+
     </div>
 </div>

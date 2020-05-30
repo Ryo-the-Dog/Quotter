@@ -17430,6 +17430,7 @@ project
   display: flex;
   align-items: center;
   border-top: solid 1px #e4e4e4;
+  width: 100%;
   margin-top: 10px;
   padding-top: 10px;
 }
