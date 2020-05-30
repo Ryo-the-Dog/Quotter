@@ -14,7 +14,7 @@ class Phrase_tagTableSeeder extends Seeder
     {
         DB::table('phrase_tag')->delete();
 
-        DB::table('category_step')->insert([
+        DB::table('phrase_tag')->insert([
             [
                 'phrase_id' => 1,
                 'tag_id' => 4,

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PhrasesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PhrasesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Phrase_tagTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Phrase_tagTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +179,7 @@
       <workItem from="1590675893129" duration="367000" />
       <workItem from="1590676348414" duration="77000" />
       <workItem from="1590724865569" duration="10366000" />
-      <workItem from="1590808594584" duration="10300000" />
+      <workItem from="1590808594584" duration="10396000" />
     </task>
     <servers />
   </component>
