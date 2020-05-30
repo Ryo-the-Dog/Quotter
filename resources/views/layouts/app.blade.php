@@ -68,8 +68,8 @@
                             @endif
                         @else
                             <!-- ログイン中のみ会員用メニューを表示する -->
-                            <li class="nav-item dropdown c-dropdown c-navbar__link">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item dropdown c-dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle c-navbar__link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     アカウント <span class="caret"></span>
                                 </a>
 
