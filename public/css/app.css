@@ -16945,6 +16945,12 @@ li {
   color: #626b73;
 }
 
+@media screen and (max-width: 767px) {
+  .c-navbar__link {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
 .c-navbar__link:hover {
   color: #212529;
   transition: all 0.3s;

@@ -13,6 +13,10 @@
     &__link {
         color: $gray;
 
+        @include mq(md) {
+            padding: 0.5rem 1rem !important;
+        }
+
         &:hover {
             color: $black_normal;
             transition: all $transition_speed;
