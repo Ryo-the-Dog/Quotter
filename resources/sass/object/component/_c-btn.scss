@@ -7,11 +7,14 @@
 .c-btn--green {
     background-color: $color_main !important;
     border-color: $color_main !important;
+    padding: 0.375rem 0.75rem;
+
     &:hover {
         background-color: $color_main_hover !important;
         border-color: $color_main_hover !important;
         transition: all .3s;
     }
+
     a {
         text-decoration: none;
     }

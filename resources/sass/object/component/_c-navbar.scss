@@ -14,7 +14,7 @@
         color: $gray;
 
         @include mq(md) {
-            padding: 0.5rem 1rem !important;
+            padding: 0.5rem !important;
         }
 
         &:hover {
