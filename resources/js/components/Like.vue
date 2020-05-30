@@ -1,6 +1,6 @@
 <template>
 
-    <span v-if="userId" class="card-menu-right__btn">
+    <span v-if="userId" class="c-card__btn">
         <!-- 未ログインの場合spanタグにする？ -->
         <span v-if="!liked" @click="like(phraseId)" class="c-btn-like c-btn-like--off like-btn off">
             <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}
@@ -10,7 +10,7 @@
         </span>
     </span>
 
-    <span v-else class="card-menu-right__btn">
+    <span v-else class="c-card__btn">
         <!-- 未ログインの場合spanタグにする？ -->
         <a :href="loginRoute" class="c-btn-like c-btn-like--off">
             <i class="far fa-heart c-icon--gray-heart"></i>{{likeCount}}

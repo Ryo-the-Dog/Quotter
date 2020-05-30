@@ -17089,24 +17089,7 @@ li {
 /* フレーズカードを定義しています
 ------------------------------------ */
 
-.phrase-card {
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 767px) {
-  .phrase-card {
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .phrase-card {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-.phrase-card__link-large {
+.c-card__link-large {
   position: absolute;
   top: 0;
   left: 0;
@@ -17116,17 +17099,13 @@ li {
   z-index: 2;
 }
 
-.phrase-card__main {
-  justify-content: space-between;
-}
-
-.phrase-card__body {
+.c-card__body {
   height: 230px;
   position: relative;
   z-index: 1;
 }
 
-.phrase-card__body:hover {
+.c-card__body:hover {
   box-shadow: 0 2px 4px 1px rgba(25, 25, 25, 0.2);
   text-decoration: none;
   transform: scale(1.01);
@@ -17134,81 +17113,81 @@ li {
 }
 
 @media screen and (max-width: 479px) {
-  .phrase-card__body {
+  .c-card__body {
     padding: 10px !important;
   }
 }
 
-.phrase-card__body.detailPage:hover {
+.c-card__body.detailPage:hover {
   box-shadow: none;
   text-decoration: none;
   transform: none;
 }
 
-.phrase-card__phraseArea {
+.c-card__main {
+  justify-content: space-between;
+}
+
+.c-card__phraseArea {
   width: 77%;
   margin-right: 1%;
 }
 
-.phrase-card__phrase {
+.c-card__phrase {
   color: #46494c;
   font-weight: bold;
 }
 
 @media screen and (max-width: 479px) {
-  .phrase-card__phrase {
-    font-size: 13px;
+  .c-card__phrase {
+    font-size: 14px;
     margin-right: 5px;
   }
 }
 
 @media screen and (max-width: 479px) {
-  .phrase-card__title {
-    font-size: 13px;
+  .c-card__title {
+    font-size: 14px;
   }
 }
 
-.phrase-card__link {
-  color: #919aa2;
-  margin-right: 10px;
-  position: relative;
-  z-index: 3;
-}
-
-.phrase-card__link:hover {
-  color: #46494c;
-  text-decoration: underline;
-  transition: all 0.3s;
-}
-
-.phrase-card__img {
+.c-card__img-outer {
   height: 130px;
   width: 22%;
   max-width: 100px;
 }
 
 @media screen and (max-width: 479px) {
-  .phrase-card__img {
+  .c-card__img-outer {
     line-height: 130px;
   }
 }
 
-.phrase-card__img img {
+.c-card__img {
   width: 100%;
 }
 
-.card-menu-left {
-  height: 28px;
-  line-height: 28px;
-}
-
-.card-menu-right__btn {
+.c-card__link {
+  color: #919aa2;
+  margin-right: 10px;
   position: relative;
   z-index: 3;
 }
 
-.card-menu-right__btn:not(:last-child) {
-  margin-right: 10px;
+.c-card__link:hover {
+  color: #46494c;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+
+.c-card__menu {
+  align-items: center;
+}
+
+.c-card__btn {
+  margin-left: 10px;
+  position: relative;
+  z-index: 3;
 }
 
 /* ====================================
@@ -17406,6 +17385,23 @@ project
 
 .mypage-tabs .nav-link.active {
   color: #525961;
+}
+
+/* ====================================
+ project
+==================================== */
+
+/* クオートのカードを定義しています
+------------------------------------ */
+
+.p-quote-card {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-quote-card {
+    margin-bottom: 20px;
+  }
 }
 
 /* ====================================

@@ -3,3 +3,10 @@
 ==================================== */
 /* クオートのカードを定義しています
 ------------------------------------ */
+.p-quote-card {
+    margin-bottom: $space_xl;
+
+    @include mq(md) {
+        margin-bottom: $space_l;
+    }
+}

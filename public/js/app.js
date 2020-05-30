@@ -2090,7 +2090,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // props: ['auth'],
   data: function data() {
     return {
       uploadedImage: '/img/noimg.png',
@@ -37579,7 +37578,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.userId
-    ? _c("span", { staticClass: "card-menu-right__btn" }, [
+    ? _c("span", { staticClass: "c-card__btn" }, [
         !_vm.liked
           ? _c(
               "span",
@@ -37612,7 +37611,7 @@ var render = function() {
               ]
             )
       ])
-    : _c("span", { staticClass: "card-menu-right__btn" }, [
+    : _c("span", { staticClass: "c-card__btn" }, [
         _c(
           "a",
           {

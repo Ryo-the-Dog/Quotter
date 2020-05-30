@@ -12,7 +12,7 @@
         <div class="row">
             @forelse($phrases as $phrase)
 
-            @include('partials.phraseCard')
+            @include('partials.quoteCard')
 
             @empty
                 <p class="col-lg-6">投稿したクオートはありません。</p>

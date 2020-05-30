@@ -6,7 +6,7 @@
         <div class="row">
             @forelse($list as $phrase)
 
-                @include('partials.phraseCard')
+                @include('partials.quoteCard')
 
             @empty
                 <p class="col-lg-6">投稿がありません</p>
