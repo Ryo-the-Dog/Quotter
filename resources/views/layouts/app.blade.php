@@ -46,7 +46,7 @@
         @endif
 
         <header class="l-header bg-white shadow-sm">
-            <nav class="navbar navbar-expand-md navbar-light ">
+            <nav class="navbar navbar-expand-md c-navbar">
                 <div class="container">
 
                     <div class="c-logo">
@@ -55,15 +55,8 @@
                         </a>
                     </div>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <ul class="navbar-nav ml-auto c-navbar__nav l-flex">
 
-                    <ul class="navbar-nav mr-auto">
-                    </ul>
-
-                    <ul class="navbar-nav ml-auto l-flex">
-                        <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -74,12 +67,13 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <!-- ログイン中のみ会員用メニューを表示する -->
+                            <li class="nav-item dropdown c-dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     アカウント <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right c-dropdown__menu" aria-labelledby="navbarDropdown">
                                     {{-- route内にはweb.phpのnameメソッドで定義したパスを指定する。 --}}
                                     <a class="dropdown-item" href="{{ route('phrases.mypage') }}">
                                         {{__('Mypage')}}
@@ -104,15 +98,15 @@
                 </div>
             </nav>
 
+            <!-- クオート一覧画面のみカテゴリーナビを表示する -->
             @if(Route::currentRouteName() == 'phrases'  )
-            <div class="navbar navbar-expand-md navbar-light">
+            <nav class="navbar navbar-expand-md c-navbar">
                 <div class="container">
 
-                    <!-- カテゴリーナビ -->
-                    <ul class="navbar-nav mr-auto category-nav">
+                    <ul class="c-navbar__nav mr-auto c-navbar--category">
 
-                        <li class="nav-item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
-                            <a class="nav-link category-nav__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
+                        <li class="nav-item c-navbar--category__item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
+                            <a class="nav-link c-navbar--category__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => $sort_id]) }}">
                                 ALL
                             </a>
@@ -120,7 +114,7 @@
 
                         @forelse($tag_list as $tag)
                             <li class="nav-item @if($tag_id == $tag->id) active @endif">
-                                <a class="nav-link category-nav__link @if($tag_id == $tag->id) active @endif"
+                                <a class="nav-link c-navbar__link @if($tag_id == $tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id, 'sort_id' => $sort_id]) }}">
                                     {{ $tag->name }}
                                 </a>
@@ -131,17 +125,17 @@
                     </ul>
 
                     <!-- 並び替えナビ -->
-                    <ul class="navbar-nav ml-auto sort-nav">
+                    <ul class="c-navbar__nav ml-auto c-navbar--sort">
 
-                        <li class="nav-item @if($sort_id === 'like') active @endif">
-                            <a class="nav-link sort-nav__link @if($sort_id === 'like') active @endif"
+                        <li class="nav-item c-navbar--sort__nav-item @if($sort_id === 'like') active @endif">
+                            <a class="nav-link c-navbar--sort__link @if($sort_id === 'like') active @endif"
                                 href="{{ route('phrases', ['sort_id' => 'like', 'tag_id' => $tag_id]) }}">
                                 いいね順
                             </a>
                         </li>
 
-                        <li class="nav-item @if($sort_id === 'new' || empty($sort_id)) active @endif">
-                            <a class="nav-link sort-nav__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
+                        <li class="nav-item c-navbar--sort__nav-item @if($sort_id === 'new' || empty($sort_id)) active @endif">
+                            <a class="nav-link c-navbar--sort__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => 'new', 'tag_id' => $tag_id]) }}">
                                 最新順
                             </a>
@@ -149,7 +143,7 @@
 
                     </ul>
                 </div>
-            </div>
+            </nav>
             @else
             @endif
         </header>

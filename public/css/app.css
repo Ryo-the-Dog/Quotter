@@ -16933,6 +16933,58 @@ li {
  component
 ==================================== */
 
+/* ナビゲーションを定義しています
+------------------------------------ */
+
+.c-navbar__nav {
+  flex-direction: row !important;
+  align-items: center;
+}
+
+.c-navbar--category {
+  overflow-x: scroll !important;
+}
+
+.c-navbar--category__item.active {
+  border-bottom: solid 1px #212529;
+}
+
+.c-navbar--category__link {
+  white-space: nowrap !important;
+}
+
+.c-navbar--category__link.active {
+  color: #212529 !important;
+}
+
+.c-navbar--sort__item.active {
+  border-bottom: solid 1px #212529;
+}
+
+.c-navbar--sort__link {
+  white-space: nowrap !important;
+}
+
+.c-navbar--sort__link.active {
+  color: #212529 !important;
+}
+
+/* ====================================
+ component
+==================================== */
+
+/* ドロップダウンメニューを定義しています
+------------------------------------ */
+
+.c-dropdown__menu {
+  text-align: center;
+  position: absolute !important;
+}
+
+/* ====================================
+ component
+==================================== */
+
 /* ロゴを定義しています
 ------------------------------------ */
 
@@ -17290,62 +17342,6 @@ component
 
 /* Project
 ------------------------------------ */
-
-/* ====================================
-project
-==================================== */
-
-/* ヘッダーを定義しています
------------------------------------- */
-
-/* カテゴリーメニュー
-==================================== */
-
-.navbar-expand-md .navbar-nav {
-  flex-direction: row !important;
-  align-items: center;
-}
-
-.navbar-expand-md .navbar-nav .nav-link {
-  padding-right: 0.5rem !important;
-  padding-left: 0.5rem !important;
-}
-
-.category-nav {
-  overflow-x: scroll !important;
-}
-
-.category-nav__link {
-  white-space: nowrap !important;
-}
-
-.category-nav .nav-item.active {
-  border-bottom: solid 1px #212529;
-}
-
-.category-nav .nav-link.active {
-  color: #212529 !important;
-}
-
-.navbar-toggler {
-  display: none !important;
-}
-
-.navbar-expand-md .navbar-nav .dropdown-menu {
-  position: absolute !important;
-}
-
-.sort-nav__link {
-  white-space: nowrap !important;
-}
-
-.sort-nav .nav-item.active {
-  border-bottom: solid 1px #212529;
-}
-
-.sort-nav .nav-link.active {
-  color: #212529 !important;
-}
 
 .p-footer {
   background-color: #fff;

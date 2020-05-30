@@ -38,6 +38,10 @@
 
 /* Component
 ------------------------------------ */
+// ナビゲーション
+@import 'object/component/c-navbar';
+// ドロップダウンメニュー
+@import 'object/component/c-dropdown';
 // ロゴ
 @import 'object/component/c-logo';
 // ボタン
@@ -55,8 +59,6 @@
 
 /* Project
 ------------------------------------ */
-// ヘッダー
-@import 'object/project/p-header';
 // フッター
 @import 'object/project/p-footer';
 // マイページのタブ
