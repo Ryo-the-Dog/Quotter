@@ -33,6 +33,7 @@
 
         // クオート詳細画面ではホバーイベントを無効化
         &.detailPage {
+            height: auto;
             &:hover {
                 box-shadow: none;
                 text-decoration: none;

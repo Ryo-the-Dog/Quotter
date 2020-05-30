@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-phrase-profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-phrase-profile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/quoteCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/quoteCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +178,7 @@
       <workItem from="1590675893129" duration="367000" />
       <workItem from="1590676348414" duration="77000" />
       <workItem from="1590724865569" duration="10366000" />
-      <workItem from="1590808594584" duration="4489000" />
+      <workItem from="1590808594584" duration="4646000" />
     </task>
     <servers />
   </component>

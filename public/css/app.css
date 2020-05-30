@@ -17118,6 +17118,10 @@ li {
   }
 }
 
+.c-card__body.detailPage {
+  height: auto;
+}
+
 .c-card__body.detailPage:hover {
   box-shadow: none;
   text-decoration: none;
