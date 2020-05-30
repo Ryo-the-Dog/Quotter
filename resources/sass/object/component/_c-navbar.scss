@@ -9,6 +9,15 @@
         align-items: center;
     }
 
+    &__link {
+        color: $gray_dark;
+
+        &:hover {
+            color: $black_normal;
+            transition: all $transition_speed;
+        }
+    }
+
 }
 
 // カテゴリーナビ

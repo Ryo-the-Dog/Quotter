@@ -59,7 +59,7 @@
 
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link c-navbar__link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -103,10 +103,10 @@
             <nav class="navbar navbar-expand-md c-navbar">
                 <div class="container">
 
-                    <ul class="c-navbar__nav mr-auto c-navbar--category">
+                    <ul class="navbar-nav mr-auto c-navbar__nav c-navbar--category">
 
                         <li class="nav-item c-navbar--category__item @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif">
-                            <a class="nav-link c-navbar--category__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
+                            <a class="nav-link  c-navbar__link c-navbar--category__link @if(Route::currentRouteName() === 'phrases' && empty($tag_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => $sort_id]) }}">
                                 ALL
                             </a>
@@ -114,7 +114,7 @@
 
                         @forelse($tag_list as $tag)
                             <li class="nav-item @if($tag_id == $tag->id) active @endif">
-                                <a class="nav-link c-navbar__link @if($tag_id == $tag->id) active @endif"
+                                <a class="nav-link c-navbar__link c-navbar--category__link @if($tag_id == $tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id, 'sort_id' => $sort_id]) }}">
                                     {{ $tag->name }}
                                 </a>
@@ -125,17 +125,17 @@
                     </ul>
 
                     <!-- 並び替えナビ -->
-                    <ul class="c-navbar__nav ml-auto c-navbar--sort">
+                    <ul class="navbar-nav ml-auto c-navbar__nav c-navbar--sort">
 
                         <li class="nav-item c-navbar--sort__nav-item @if($sort_id === 'like') active @endif">
-                            <a class="nav-link c-navbar--sort__link @if($sort_id === 'like') active @endif"
+                            <a class="nav-link c-navbar__link c-navbar--sort__link @if($sort_id === 'like') active @endif"
                                 href="{{ route('phrases', ['sort_id' => 'like', 'tag_id' => $tag_id]) }}">
                                 いいね順
                             </a>
                         </li>
 
                         <li class="nav-item c-navbar--sort__nav-item @if($sort_id === 'new' || empty($sort_id)) active @endif">
-                            <a class="nav-link c-navbar--sort__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
+                            <a class="nav-link c-navbar__link c-navbar--sort__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => 'new', 'tag_id' => $tag_id]) }}">
                                 最新順
                             </a>

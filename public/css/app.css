@@ -16941,6 +16941,15 @@ li {
   align-items: center;
 }
 
+.c-navbar__link {
+  color: #525961;
+}
+
+.c-navbar__link:hover {
+  color: #212529;
+  transition: all 0.3s;
+}
+
 .c-navbar--category {
   overflow-x: scroll !important;
 }
