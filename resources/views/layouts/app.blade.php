@@ -113,7 +113,7 @@
                         </li>
 
                         @forelse($tag_list as $tag)
-                            <li class="nav-item @if($tag_id == $tag->id) active @endif">
+                            <li class="nav-item c-navbar--category__item @if($tag_id == $tag->id) active @endif">
                                 <a class="nav-link c-navbar__link c-navbar--category__link @if($tag_id == $tag->id) active @endif"
                                    href="{{ route('phrases', ['tag_id' => $tag->id, 'sort_id' => $sort_id]) }}">
                                     {{ $tag->name }}
