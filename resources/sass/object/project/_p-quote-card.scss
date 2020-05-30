@@ -9,4 +9,9 @@
     @include mq(md) {
         margin-bottom: $space_l;
     }
+
+    // 詳細ページの場合
+    &.detailPage {
+        margin: 0 auto;
+    }
 }

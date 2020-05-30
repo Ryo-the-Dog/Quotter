@@ -19,7 +19,6 @@
 // ブレイクポイント
 @import 'foundation/f-breakpoint';
 @import 'foundation/f-base';
-//@import 'foundation/f-reset';
 
 /* Layout
 ------------------------------------ */
@@ -65,14 +64,10 @@
 @import 'object/project/p-mypage-tabs';
 // クオートのカード
 @import 'object/project/p-quote-card';
-// クオート詳細ページ
-@import 'object/project/p-phrase-detail';
 // クオート詳細ページのプロフィール
-@import 'object/project/p-phrase-profile';
+@import 'object/project/p-quote-profile';
 // プロフィール編集ページ
 @import 'object/project/p-profile-edit';
-// アカウント削除ページ
-@import 'object/project/p-user_delete';
 
 /* Utility
 ------------------------------------ */

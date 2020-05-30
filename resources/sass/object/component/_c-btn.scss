@@ -3,8 +3,8 @@
 ==================================== */
 /* ボタンを定義しています
 ------------------------------------ */
-// 共通ボタン
-.btn-primary {
+// 緑色ボタン
+.c-btn--green {
     background-color: $color_main !important;
     border-color: $color_main !important;
     &:hover {
@@ -86,14 +86,4 @@
         text-decoration: underline;
     }
 
-}
-
-// アカウント削除
-.userDelete {
-    margin-top: $space_l;
-
-    &-btn-area {
-        margin-left: auto;
-        text-align: right;
-    }
 }

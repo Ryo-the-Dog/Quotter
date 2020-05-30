@@ -17019,18 +17019,18 @@ li {
 /* ボタンを定義しています
 ------------------------------------ */
 
-.btn-primary {
+.c-btn--green {
   background-color: #6CD6C7 !important;
   border-color: #6CD6C7 !important;
 }
 
-.btn-primary:hover {
+.c-btn--green:hover {
   background-color: #59b3a6 !important;
   border-color: #59b3a6 !important;
   transition: all 0.3s;
 }
 
-.btn-primary a {
+.c-btn--green a {
   text-decoration: none;
 }
 
@@ -17096,15 +17096,6 @@ li {
 
 .back-btn-area button:hover {
   text-decoration: underline;
-}
-
-.userDelete {
-  margin-top: 20px;
-}
-
-.userDelete-btn-area {
-  margin-left: auto;
-  text-align: right;
 }
 
 /* ====================================
@@ -17378,23 +17369,23 @@ component
 /* マイページのタブを定義しています
 ------------------------------------ */
 
-.mypage-tabs {
+.p-mypage-tabs {
   flex-wrap: nowrap !important;
   margin-bottom: 30px;
   white-space: nowrap;
   overflow-x: scroll;
 }
 
-.mypage-tabs .active {
+.p-mypage-tabs .active {
   background-color: #fff !important;
 }
 
-.mypage-tabs .nav-link {
-  color: #919aa2;
+.p-mypage-tabs .nav-link {
+  color: #626b73;
 }
 
-.mypage-tabs .nav-link.active {
-  color: #525961;
+.p-mypage-tabs .nav-link.active {
+  color: #212529;
 }
 
 /* ====================================
@@ -17414,19 +17405,8 @@ component
   }
 }
 
-/* ====================================
-project
-==================================== */
-
-/* フレーズ詳細ページを定義しています
------------------------------------- */
-
-.phrase-detail-page {
+.p-quote-card.detailPage {
   margin: 0 auto;
-}
-
-.phrase-detail-page .phrase-card__body {
-  height: auto;
 }
 
 /* ====================================
@@ -17436,7 +17416,7 @@ project
 /* フレーズ詳細ページのプロフィールを定義しています
 ------------------------------------ */
 
-.p-phrase-profile {
+.p-quote-profile {
   display: flex;
   align-items: center;
   border-top: solid 1px #e4e4e4;
@@ -17445,21 +17425,21 @@ project
   padding-top: 10px;
 }
 
-.p-phrase-profile__img {
+.p-quote-profile__img {
   width: 60px;
   margin-right: 20px;
 }
 
-.p-phrase-profile__img img {
+.p-quote-profile__img img {
   width: 100%;
 }
 
-.p-phrase-profile__name {
+.p-quote-profile__name {
   margin-bottom: 0;
   margin-right: 15px;
 }
 
-.p-phrase-profile__date {
+.p-quote-profile__date {
   margin-bottom: 0;
   margin-right: 5px;
 }
@@ -17479,11 +17459,6 @@ project
 
 .profile-img img {
   width: 100%;
-}
-
-.delete-form {
-  width: 50%;
-  margin: 0 auto;
 }
 
 /* Utility

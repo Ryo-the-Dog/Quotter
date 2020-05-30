@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs mypage-tabs">
+<ul class="nav nav-tabs p-mypage-tabs">
     <li class="nav-item @if(Route::currentRouteName() == 'phrases.mypage') active @endif">
         <a class="nav-link @if(Route::currentRouteName() == 'phrases.mypage') active @endif" href="{{ route('phrases.mypage') }}">{{ __('My Quote List') }}</a>
     </li>

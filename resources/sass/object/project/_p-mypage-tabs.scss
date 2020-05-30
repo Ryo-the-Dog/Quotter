@@ -3,7 +3,7 @@
 ==================================== */
 /* マイページのタブを定義しています
 ------------------------------------ */
-.mypage-tabs {
+.p-mypage-tabs {
     flex-wrap: nowrap !important;
     margin-bottom: $font-size_xl;
     white-space: nowrap;
@@ -14,10 +14,10 @@
     }
 
     .nav-link {
-        color: $gray_light;
+        color: $gray;
 
         &.active {
-            color: $gray_dark;
+            color: $black_normal;
         }
     }
 }

@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
 
-        @include('partials.mypage_tabs')
+        @include('partials.mypageTabs')
 
 {{--        <h2>{{ __('Favorite Phrase List') }}</h2>--}}
         <div class="row">

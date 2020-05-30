@@ -1,4 +1,4 @@
-<div class="c-card p-quote-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">
+<div class="c-card p-quote-card @if(Route::currentRouteName() == 'phrases.show') detailPage col-lg-8 @else col-lg-6 @endif">
 
     <div class="card card-body c-card__body @if(Route::currentRouteName() === 'phrases.show') detailPage @endif">
 
@@ -80,9 +80,9 @@
 
         <!-- 詳細ページでは投稿者の情報を表示する -->
         @if(Route::currentRouteName() == 'phrases.show' )
-            <div class="p-phrase-profile" >
+            <div class="p-quote-profile" >
 
-                <div class="p-phrase-profile__img">
+                <div class="p-quote-profile__img">
                     @if(empty($phrase->user->profile_img_path))
                         <img src="{{asset('/img/noimg.png')}}" alt="{{$phrase->user->name}}">
                     @else
@@ -90,8 +90,8 @@
                     @endif
                 </div>
 
-                <p class="p-phrase-profile__name">{{$phrase->user->name}}</p>
-                <p class="p-phrase-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
+                <p class="p-quote-profile__name">{{$phrase->user->name}}</p>
+                <p class="p-quote-profile__date">{{$phrase->updated_at->format('Y/m/d')}}</p>
                 <span>の投稿</span>
             </div>
         @endif
