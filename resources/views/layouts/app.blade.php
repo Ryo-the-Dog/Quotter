@@ -127,14 +127,14 @@
                     <!-- 並び替えナビ -->
                     <ul class="navbar-nav ml-auto c-navbar__nav c-navbar--sort">
 
-                        <li class="nav-item c-navbar--sort__nav-item @if($sort_id === 'like') active @endif">
+                        <li class="nav-item c-navbar--sort__item @if($sort_id === 'like') active @endif">
                             <a class="nav-link c-navbar__link c-navbar--sort__link @if($sort_id === 'like') active @endif"
                                 href="{{ route('phrases', ['sort_id' => 'like', 'tag_id' => $tag_id]) }}">
                                 いいね順
                             </a>
                         </li>
 
-                        <li class="nav-item c-navbar--sort__nav-item @if($sort_id === 'new' || empty($sort_id)) active @endif">
+                        <li class="nav-item c-navbar--sort__item @if($sort_id === 'new' || empty($sort_id)) active @endif">
                             <a class="nav-link c-navbar__link c-navbar--sort__link @if($sort_id === 'new' || empty($sort_id)) active @endif"
                                href="{{ route('phrases', ['sort_id' => 'new', 'tag_id' => $tag_id]) }}">
                                 最新順
