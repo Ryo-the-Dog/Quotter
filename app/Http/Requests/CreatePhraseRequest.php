@@ -27,7 +27,7 @@ class CreatePhraseRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:30',
-            'title_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'title_img_path' => 'nullable|file|image|mimes:jpeg,png,jpg,gif|max:1024',
             'phrase' => 'required|string|max:100',
 //            'tag_ids[]' => 'required',
             'tag_ids[].*' => 'integer',

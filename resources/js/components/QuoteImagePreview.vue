@@ -14,7 +14,6 @@
 
 <script>
     export default {
-        // props: ['auth'],
         data() {
             return {
                 uploadedImage: '/img/noimg.png',

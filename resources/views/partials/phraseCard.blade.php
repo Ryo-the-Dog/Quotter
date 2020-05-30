@@ -1,6 +1,6 @@
-<div class="phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">
+{{--<div class="phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif">--}}
 
-    <div class="card card-body phrase-card__body @if(Route::currentRouteName() === 'phrases.show') detailPage @endif">
+    <div class="phrase-card @if(Route::currentRouteName() == 'phrases.show') phrase-detail-page col-lg-8 @else col-lg-6 @endif card card-body phrase-card__body @if(Route::currentRouteName() === 'phrases.show') detailPage @endif">
 
         @if(Route::currentRouteName() === 'phrases.show')
 
@@ -98,4 +98,4 @@
         @endif
 
     </div>
-</div>
+{{--</div>--}}
