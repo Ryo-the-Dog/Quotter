@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932d126c-ef12-4ec7-bd45-4ac2c7c100a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/_c-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-mypage-tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-mypage-tabs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-phrase-detail.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-phrase-profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-quote-profile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-quote-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/_p-quote-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/_p-user_delete.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/mypage_tabs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/mypage_tabs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/quoteCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/quoteCard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phrases/new.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/passEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/passEdit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/userEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/userEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhrasesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +180,7 @@
       <workItem from="1590675893129" duration="367000" />
       <workItem from="1590676348414" duration="77000" />
       <workItem from="1590724865569" duration="10366000" />
-      <workItem from="1590808594584" duration="9418000" />
+      <workItem from="1590808594584" duration="9713000" />
     </task>
     <servers />
   </component>
@@ -223,10 +204,10 @@
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
     <state x="265" y="355" key="com.intellij.ide.util.TipDialog/0.23.1680.1000@0.23.1680.1000" timestamp="1590725491626" />
-    <state x="357" y="257" width="982" height="550" key="find.popup" timestamp="1590847354800">
+    <state x="322" y="276" width="982" height="550" key="find.popup" timestamp="1590847715813">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>
-    <state x="357" y="257" width="982" height="550" key="find.popup/0.23.1680.1000@0.23.1680.1000" timestamp="1590847354800" />
+    <state x="322" y="276" width="982" height="550" key="find.popup/0.23.1680.1000@0.23.1680.1000" timestamp="1590847715813" />
     <state x="414" y="347" width="670" height="676" key="search.everywhere.popup" timestamp="1590585479453">
       <screen x="0" y="23" width="1680" height="1000" />
     </state>

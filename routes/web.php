@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     // マイページ画面(自分が投稿したフレーズ一覧)表示のルーティング
     Route::get('/mypage', 'PhrasesController@mypage')->name('phrases.mypage');
     // いいねしたフレーズ一覧
-    Route::get('/like_phrase', 'PhrasesController@like')->name('phrases.like');
+    Route::get('/like_quote', 'PhrasesController@like')->name('phrases.like');
     // 会員編集のルーティング
     Route::get('/profile_edit','UserController@edit')->name('profile.edit');
     Route::post('/profile_edit', 'UserController@update')->name('profile.update');
