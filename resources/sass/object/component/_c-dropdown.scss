@@ -5,6 +5,7 @@
 ------------------------------------ */
 .c-dropdown {
     &__menu {
+        min-width: 120px;
         text-align: center;
         position: absolute !important;
     }
