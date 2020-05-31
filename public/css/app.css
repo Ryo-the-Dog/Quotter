@@ -17028,7 +17028,7 @@ li {
 .c-btn--green {
   background-color: #6CD6C7 !important;
   border-color: #6CD6C7 !important;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.75rem !important;
 }
 
 .c-btn--green:hover {

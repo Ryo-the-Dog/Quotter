@@ -10,7 +10,7 @@
     <meta property="og:title" content="Quotter" >
     <meta property="og:description" content="Quotter(クオッター)は本や映画の好きなフレーズを「引用」してシェアできるサービスです。" >
     <meta property="og:image" content="{{ asset('/img/twitter_card.png') }}" >
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@ryonextStandard">
 
     <!-- CSRF Token -->
