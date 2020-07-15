@@ -1,6 +1,4 @@
-# タイトル
-Quotter
-<br>
+# Quotter
 http://quotter-share.herokuapp.com/
 
 ※ 動作確認に際して、会員登録がお手数の場合は下記のアイパスでログインをお願いします。
