@@ -1,5 +1,7 @@
 # Quotter
 http://quotter-share.herokuapp.com/
+<br/>
+![quotter_top](https://user-images.githubusercontent.com/59197416/89098774-64e79b00-d425-11ea-8905-2fa2a0e31bb9.png)
 
 ※ 動作確認に際して、会員登録がお手数の場合は下記のアイパスでログインをお願いします。
 <br/>
